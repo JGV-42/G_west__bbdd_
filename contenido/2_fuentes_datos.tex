@@ -1,0 +1,459 @@
+\section{Fuentes de datos}
+
+La unidad básica de análisis empleada en este estudio es la parcela, entendida como una superficie geográfica delimitada correspondiente a terrenos forestales definidos en el Inventario Forestal Nacional. Cada parcela está georreferenciada mediante coordenadas precisas, lo cual permite su identificación inequívoca en el espacio. Vemos las parcelas estudiadas en la Figura~\ref{fig:parcelas}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/mapa_parcelas.png}
+    \caption{\small Imagen del mapa peninsular con las parcelas contempladas representadas. Código de colores por provincias. Las islas Canarias no aparecen en la imagen pero sí que se contemplan en la base de datos.}
+    \label{fig:parcelas}
+\end{figure}
+
+\subsection{Datos meteorológicos}
+Los datos meteorológicos consisten en temperaturas (tanto de la superficie como del suelo) y cantidad de precipitaciones.
+
+\subsubsection*{Temperaturas}
+
+Los datos de temperaturas empleados provienen del dataset \textit{ERA5-Land hourly data from 1950 to present} \cite{copuernicus_temps}, procedentes del \textit{Climate Data Store} de Copernicus. Este conjunto de datos cubre todo el mundo desde el $1950$ hasta alrededor de $2$ ó $3$ meses antes del presente. Se obtiene de modelos alimentados con mediciones de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. Proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $9$ km.
+
+\medskip
+
+Los datos se pueden descargar a través de la API del \textit{Climate Data Store} (CDSAPI) \cite{copernicus_api} con frecuencia hasta horaria. Las columnas empleadas se pueden ver en la Tabla \ref{tab:era5land}.
+
+\begin{table}[H]
+    % Definimos el espaciado entre filas
+    \renewcommand{\arraystretch}{2.5} % Puedes modificar este valor para aumentar o reducir el espaciado entre filas
+    
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|m{4cm}|m{3cm}|m{3cm}|m{6cm}|}
+    \cline{1-4}
+    \multicolumn{4}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} ERA5-Land Hourly Data from 1950 to Present}} \\
+    \cline{1-4}
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Nombre de variable} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Unidades} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Tipo de dato} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Descripción} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} t2m} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del aire a 2 metros sobre la superficie terrestre, marina o de aguas interiores.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} stl1} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del suelo en el nivel 1 (0-7 cm) de la capa de suelo.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} stl2} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del suelo en el nivel 2 (7-28 cm) de la capa de suelo.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} stl3} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del suelo en el nivel 3 (28-100 cm) de la capa de suelo.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} stl4} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del suelo en el nivel 4 (100-289 cm) de la capa de suelo.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} valid\_time} & \centering {\color[HTML]{202124} -} & \centering {\color[HTML]{202124} datetime64[ns]} & {\color[HTML]{202124} Fecha de los datos de temperatura. Formato: YYYY-MM-DD.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} latitude} & \centering {\color[HTML]{202124} Grados norte} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Grados de latitud de cada punto de los datos respecto al ecuador. Positivo hacia el norte, negativo hacia el sur.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} longitude} & \centering {\color[HTML]{202124} Grados este} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Grados de longitud de cada punto respecto al Meridiano de Greenwich. Positivo hacia el este, negativo hacia el oeste.} \\
+    \cline{1-4}
+    \cline{1-4}
+    \end{tabular}%
+    }
+    \caption{Datos horarios de ERA5-Land desde 1950 hasta el presente}
+    \label{tab:era5land}
+\end{table}
+
+
+\subsubsection*{Precipitaciones}
+
+Los datos de precipitaciones empleados provienen del dataset \textit{Temperature and precipitation climate impact indicators from 1970 to 2100 derived from European climate projections} \cite{copernicus_pr}, procedentes del \textit{Climate Data Store} de Copernicus. Este conjunto de datos contiene estimaciones tanto históricas como futuras de temperaturas y precipitaciones en Europa continental. Está disponible con resoluciones espaciales tanto de $0.11^\circ \times 0.11^\circ$ como de $5$km $\times$ $5$km, y una resolución temporal diaria, mensual o anual. Nosotros sólo emplearemos los datos de precipitaciones (deposiciones de agua sobre la superficie terrestre en forma de lluvia, nieve, hielo o granizo).
+
+\begin{table}[H]
+    % Definimos el espaciado entre filas
+    \renewcommand{\arraystretch}{2.5} % Puedes modificar este valor para aumentar o reducir el espaciado entre filas
+    
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|m{4cm}|m{3cm}|m{3cm}|m{6cm}|}  % Cambié 'm' por 'p' en la última columna
+    \cline{1-4}
+    \multicolumn{4}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Temperature and Precipitation Climate Impact Indicators from 1970 to 2100}} \\
+    \cline{1-4}
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Nombre de variable} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Unidades} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Tipo de dato} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Descripción} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} prAdjust (time, $y$, $x$)} & \centering {\color[HTML]{202124} $\frac{kg}{m^2s}$} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} La deposición de agua sobre la superficie terrestre en forma de lluvia, nieve, hielo o granizo. Los datos se dan como la masa de agua por unidad de área y tiempo.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} time} & \centering {\color[HTML]{202124} -} & \centering {\color[HTML]{202124} datetime64[ns]} & {\color[HTML]{202124} Fecha de los datos. Formato: YYYY-MM-DD.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} lat ($y$, $x$)} & \centering {\color[HTML]{202124} Grados norte} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Grados de latitud de cada punto de los datos respecto al ecuador. Positivo hacia el norte, negativo hacia el sur.} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} lon ($y$, $x$)} & \centering {\color[HTML]{202124} Grados este} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Grados de longitud de cada punto respecto al Meridiano de Greenwich. Positivo hacia el este, negativo hacia el oeste.} \\
+    \cline{1-4}
+    \end{tabular}
+    }
+    \caption{Indicadores de impacto climático de temperatura y precipitación desde 1970 hasta 2100 derivados de proyecciones climáticas europeas.}
+    \label{tab:climate_impact_indicators}
+\end{table}
+
+    Los datos se pueden descargar a través de la API del \textit{Climate Data Store} (CDSAPI) \cite{copernicus_api}. Las columnas empleadas se puede ver en la Tabla \ref{tab:climate_impact_indicators}
+
+
+\subsection{Datos satelitales}
+Los datos satelitales consisten en imágenes de la superficie terrestre y mapas digitales de elevación.
+
+\subsubsection*{Imágenes satelitales: Landsat}     
+    
+Estos conjuntos de datos contienen la reflectancia superficial y la temperatura (pese a que sólo utilizaremos los de reflectancia) de la superficie terrestre corregidas por la atmósfera. Landsat $5$ \cite{landsat5_data} contiene datos desde el $16$ de marzo de $1984$ hasta el $5$ de mayo de $2001$, mientras que Landsat $7$ \cite{landsat7_data} contiene datos desde el $28$ de mayo de $1999$ hasta el $19$ de enero de $2024$. Con estos dos conjuntos de datos abarcamos todo el periodo temporal de los datos forestales. En aquellos casos en los que una cierta fecha esté en ambos datasets, se escojerá Landsat $7$.
+
+\medskip
+
+Los datos contiene varias bandas espectrales relacionadas con la reflectancia de la superficie terrestre en diferentes longitudes de onda. Las que emplearemos están recogidas en la Tabla \ref{tab:landsat_columns}. Cada banda tiene información detallada sobre su mínima y máxima longitud de onda, así como su escala o desplazamiento. Además, incluye métricas de calidad y validación como la opacidad atmosférica (SR\_ATMOS\_OPACITY), que proporciona información sobre la densidad de la atmósfera y su influencia sobre la reflectancia de la superficie, así como indicadores de la calidad de la nube (SR\_CLOUD\_QA) y la calidad de los píxeles (QA\_PIXEL). También se encuentran datos de temperatura superficial y distancias relacionadas con los atributos radiométricos.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta la separación entre las filas
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{|m{3cm}|m{2cm}|m{2cm}|m{7cm}|} % Cambié 'p' por 'm' en la última columna para mantener la consistencia vertical
+    \cline{1-4}
+    \multicolumn{4}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} \begin{tabular}[c]{@{}c@{}}USGS Landsat 7 Level 2, Collection 2, Tier 1\\ USGS Landsat 5 Level 2, Collection 2, Tier 1\end{tabular}}} \\
+    \cline{1-4}
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Nombre de variable}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Unidades}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Tipo de dato}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Descripción}} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} SR\_B1}    & \centering {\color[HTML]{202124} -} & \centering float & {\color[HTML]{202124} Reflectancia superficial de la banda 1 (azul, $0.45-0.52$ $\mu$m)} \\
+    \centering {\color[HTML]{202124} SR\_B2}    & \centering {\color[HTML]{202124} -} & \centering float & {\color[HTML]{202124} Reflectancia de la superficie de la banda 2 (verde, $0.52-0.60$ $\mu$m)} \\
+    \centering {\color[HTML]{202124} SR\_B3}    & \centering {\color[HTML]{202124} -} & \centering float & Reflectancia superficial de la banda 3 (roja, $0.63-0.69$ $\mu$m) \\
+    \centering {\color[HTML]{202124} SR\_B4}    & \centering {\color[HTML]{202124} -} & \centering float & Reflectancia superficial de la banda 4 (infrarrojo cercano, $0.77-0.90$ $\mu$m) \\
+    \centering {\color[HTML]{202124} QA\_PIXEL} & \centering {\color[HTML]{202124} -} & \centering uint16 & Atributos de calidad de píxeles generados a partir del algoritmo CFMASK. \\
+    \cline{1-4}
+    \end{tabular}%
+    }
+    \caption{Columnas empleadas de los datasets de Landsat}
+    \label{tab:landsat_columns}
+\end{table}
+
+
+\subsubsection*{Mapa de elevación digital: \textit{NASA 30m Digital Elevation Model}}
+
+NASADEM \cite{nasadem_data} es una modernización del Modelo Digital de Elevación (DEM) y productos asociados generados a partir de los datos de la Misión de Topografía por Radar del Transbordador Espacial (SRTM). Se reprocesaron los datos originales de radar SRTM utilizando algoritmos mejorados e incorporando datos derivados principalmente del Sistema LIDAR del Satélite de Elevación de Hielo, Nubes y Tierra (ICESat) y de los instrumentos ASTER. 
+
+\begin{table}[H]
+    % Definimos el espaciado entre filas
+    \renewcommand{\arraystretch}{2.5} % Puedes modificar este valor para aumentar o reducir el espaciado entre filas
+    
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{4cm}|}
+    \cline{1-4}
+    \multicolumn{4}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} NASADEM: NASA 30m Digital Elevation Model}} \\
+    \cline{1-4}
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Nombre de variable} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Unidades} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Tipo de dato} & 
+    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Descripción} \\
+    \cline{1-4}
+    \centering {\color[HTML]{202124} elevation} & \centering {\color[HTML]{202124} metros (m)} & \centering {\color[HTML]{202124} int} & {\color[HTML]{202124} Altura de cada punto respecto al nivel del mar.} \\
+    \cline{1-4}
+    \end{tabular}%
+    }
+    \caption{Columnas empleadas de los datasets de NASADEM}
+    \label{tab:nasadem}
+\end{table}
+
+\subsection{Inventario Forestal Nacional (IFN)}\label{section:tablas_ifn}
+% - Qué versiones del IFN se utilizaron (IFN2, IFN3, IFN4)
+% - Variables extraídas (NPies, CD, especie, carbono, biomasa, etc.)
+% - Cobertura geográfica y temporal
+% - Nivel de agregación (parcela, masa, etc.)
+% - Cómo se accedieron los datos (formato, licencia, web)
+% - Observaciones sobre calidad o formato
+
+
+
+El Inventario Forestal Nacional (IFN) es uno de los principales recursos utilizados para obtener información sobre la situación de las masas forestales en España. Este inventario proporciona datos detallados sobre las especies arbóreas, su distribución, el estado de los bosques y otras características relevantes, lo que permite obtener una visión precisa de los cambios en los ecosistemas forestales a lo largo del tiempo. El IFN se lleva a cabo mediante un muestreo de parcelas dentro de las superficies forestales, y sus mediciones se repiten cada 10 años, lo que ofrece una base de datos temporal y espacialmente representativa. Serán las parcelas registradas en el IFN las que conformen esta base de datos. 
+
+\medskip
+
+Cada parcela está identificada por su provincia y número de Estadillo (identificación propia de esta base de datos). Contamos con las coordenadas de cada parcela en el sistema de coordenadas \textit{UTM (Universal Transverse Mercator)}, que es un sistema de proyección cartográfica ampliamente utilizado en cartografía y georreferenciación. Esto nos permitirá cruzar estas bases de datos con otras. 
+
+\medskip
+
+A lo largo de los años se han realizado en España cuatro inventarios forestales: 
+\begin{itemize}
+    \item IFN1: Realizado en la década de 1960.
+    \item IFN2: Llevado a cabo entre 1986 y 1995.
+    \item IFN3: Desarrollado entre 1997 y 2007.
+    \item IFN4: 2008- desarrollo continuo 
+\end{itemize}
+
+Empleamos los inventarios segundo, tercero y cuarto, descartando el primero por no estar digitalizado. El IFN es especialmente importante porque permite etiquetar los datos: da una estimación de las toneladas de carbono capturadas por los árboles de cada parcela.
+
+\medskip
+
+Los inventarios tercero y cuarto guardan una estructura prácticamente idéntica, el inventario segundo tiene otra notación y otro contenido.
+
+\paragraph{\textbf{IFN3 e IFN4}} Los datos en estas dos bases de datos están separados en dos grupos: datos de Campo y datos de Sig. Por otra parte, algunas variables se encuentran repetidas al existir datos de dos fuentes distintas: el Mapa Forestal Español (una herramienta cartográfica que representa detalladamente la distribución y características de los bosques y masas forestales en España) y el apeo de las parcelas (inspección propia del IFN del terreno). Tomamos las variables del apeo porque proporcionan una información temporal más completa, ya que queda registrada para cada parcela el año en el que se realizó la exploración de campo que dio lugar a la base de datos de apeo.
+
+\medskip
+%A priori, la información que se extrae de los inventarios puede parecer liosa, pero en líneas generales se puede estructurar en las siguientes tablas:
+%\begin{itemize}
+%    \item \textbf{parcelas}: esta tabla recoge la información referente a cada parcela que es constante en el tiempo, encontraríamos aquí datos como la ubicación y algunas características constantes del suelo como, por ejemplo, la rocosidad o la altitud.
+%    \item \textbf{parcela\_inventario}: esta tabla contiene la información referente a cada parcela que varía con el tiempo, por ejemplo, el ph o la textura del suelo.
+ %   \item \textbf{parcela_inventario_especie}: cada entrada de esta tabla se refiere a una especie concreta presente en una parcela, en un inventario. Aquí las variables recogidas buscan caracterizar la especie, describiendo su estado, origen o grado de ocupación en la parcela.
+%    \item \textbf{parcela_inventario_especie_cd}: esta última tabla desglosa las entradas de \texttt{parcela_inventario_especie} según la clase diamétrica de los árboles de la especie en la parcela. La clase diamétrica es una forma de medir el estado de desarrollo o edad de los árboles. Esta es la forma más fina de caracterizar la vegetación con la que contamos, aquí cada entrada caracteriza un grupo de árboles de un mismo tamaño y especie dentro de cada parcela e inventario. Se da el número de árboles y se caracteriza el volumen de leñas de los mismos.
+%\end{itemize}
+\medskip
+
+Las siguientes tablas documentan las variables extraídas de las bases de datos de los Inventarios Forestales Nacionales. En las columnas IFN2, IFN3 e IFN4 se especifica la procendencia de la información, esto es, la tabla de origen en el inventario. La columna \textit{Variable} contiene el nombre de la variable en cuestión, y la columna \textit{Tipo} especifica el tipo de dato de cada variable (int: números enteros, float: números decimales). Si el tipo de dato viene seguido de CF (clave foránea), significa que los valores numéricos de dicha variable no tienen un significado directo en términos de cálculos aritméticos, sino que actúan como identificadores para hacer referencia a otras tablas de la base de datos, obtenidas en los anexos de los inventarios. Finalmente, la columna \textit{Descripción} explica el significado de la variable correspondiente.
+
+\medskip
+
+La estructura de las cuatro tablas sigue un orden secuencial que refleja un incremento en la complejidad de las claves primarias. La primera tabla tiene como clave primaria la parcela, estableciendo la base de la organización (Tabla \ref{tab:parcela}). La segunda tabla incorpora la entidad inventario, ligando cada parcela a un momento concreto (Tabla \ref{tab:parcela_inventario}). En la tercera tabla, se incluye especie, lo que permite añadir más detalles sobre la vegetación (Tabla \ref{tab:parcela_inventario_especie}). Finalmente, en la cuarta tabla, la clave primaria se amplía para incluir especie, clase diamétrica (medida del tamaño del árbol) e inventario, detallando aún más la información (Tabla \ref{tab:parcela_inventario_especie_cd}). Así, cada tabla presenta un nivel progresivo de particularización, pasando de una simple parcela a un grupo de árboles de una especie y tamaño concreto, en una parcela y momento concreto. 
+
+
+También nos encontramos una tabla con información sobre los árboles pequeños de cada parcela en caso de existir (Tabla \ref{tab:brotes}). La información de esta tabla se añadirá las cuatro mencionadas anteriormente. Su procesado de tratará en apartados posteriores.
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.2}
+\setlength{\tabcolsep}{5pt}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|m{4cm}|>{\centering\arraybackslash}m{2cm}|}
+\hline
+\multicolumn{7}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{parcela: identificación, localización y caracterización de las parcelas del IFN}}} \\
+\hline
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN2}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN3}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN4}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Variable}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Tipo}} &
+\centering \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Descripción}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Anexo}} \\
+\hline
+DATEST & Campo: Listado Definitivo & Campo: PCDatosMap & \textbf{Provincia} & int (CF) & Código de la provincia en la que se encuentra la parcela. & Anexo \ref{anexo:provincias} \\
+\hline
+DATEST & Campo: Listado Definitivo & Campo: PCDatosMap & \textbf{Estadillo} & int (CF) & Número identificador de la parcela. & \\
+\hline
+DATEST & Campo: Listado Definitivo & Campo: PCDatosMap & CoorX & int & Coordenada X previa a los trabajos de campo del centro de la parcela, en metros (UTM). & \\
+\hline
+DATEST & Campo: Listado Definitivo & Campo: PCDatosMap & CoorY & int & Coordenada Y previa a los trabajos de campo del centro de la parcela, en metros (UTM).& \\
+\hline
+- & - & Campo: PCDatosMap & Huso & int & Huso geográfico en el que se encuentra la parcela. & \\
+\hline
+- & - & Campo: PCParcelas & Rocosid & int (CF) & Rocosidad o presencia de rocas en el terreno. & Anexo \ref{sec:Rocosid} \\
+\hline
+- & - & Campo: PCParcelas & TipSuelo1, TipSuelo2, TipSuelo3 & int (CF) & Tipos de suelo identificados en la parcela (diferentes categorías o clases). & Anexo \ref{sec:TipSuelo}\\
+\hline
+- & - & Campo: PCParcelas & MErosiva & int (CF) & Manifestaciones erosivas observadas en el terreno de la parcela. & Anexo \ref{sec:ManERo}\\
+\hline
+- & - & Campo: PC- Mayores & Distanci & float & Distancia entre cada pie mayor contenido en la parcela y el centro de la misma. Es un conjunto de valores para cada entrada. & \\
+\hline
+\end{tabular}%
+}
+\caption{Información de los inventarios segundo, tercero y cuarto que es constante para cada parcela entre los inventarios. Las variables en las que se detalla unicamente la tabla de procedencia del IFN4 se estraen de este y se generalizan para los tres inventarios.}
+\label{tab:parcela}
+\end{table}
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.2}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{1.5cm}|m{5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+\hline
+\multicolumn{7}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{parcela\_inventario: características del suelo y vegetación de las parcelas del IFN según el inventario.}}} \\
+\hline
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN2}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN3}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN4}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Variable}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Tipo}} &
+\centering \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Descripción}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Anexo}} \\
+\hline
+IIFL00BD & Campo: PCParcelas & Campo: PCParcelas & \textbf{Provincia} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{anexo:provincias} \\
+\hline
+IIFL00BD & Campo: PCParcelas & Campo: PCParcelas & \textbf{Estadillo} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & -- \\
+\hline
+IIFL00BD & Campo: PCParcelas & Campo: PCParcelas & DisEsp & int (CF) & Distribución espacial observada de las especies en la parcela. & Anexo \ref{sec:disEsp}\\
+\hline
+IIFL00BD & Campo: PCParcelas & Campo: PCParcelas & ComEsp & int (CF) & Composición específica observada de las especies en la parcela. & Anexo \ref{anexo:compesp} \\
+\hline
+- & Campo: PCParcelas & Campo: PCParcelas & Nivel1 & int (CF) & Nivel de usos del suelo. & Anexo \ref{sec:nivel1} \\
+\hline
+- & Campo: PCParcelas & Campo: PCParcelas & Nivel2 & int (CF) & Nivel morfoestructural de usos del suelo. & Anexo \ref{sec:nivel2} \\
+\hline
+- & Campo: PCParcelas & Campo: PCParcelas & Textura & int (CF) & Textura del suelo en la parcela (granulometría, por ejemplo, arcilloso, arenoso, etc.). & Anexo \ref{sec:textura} \\
+\hline
+- & Campo: PCParcelas & Campo: PCParcelas & MatOrg & int (CF) & Altura mínima observada de los árboles de la especie en la parcela. & Anexo \ref{sec:MatOrg} \\
+\hline
+- & Campo: PCParcelas & Campo: PCParcelas & PhSuelo & int (CF) & Altura máxima observada de los árboles de la especie en la parcela. & Anexo \ref{anexo:ph} \\
+\hline
+- & Campo: PCParcelas & Campo: PCParcelas & EspCMue & int (CF) & Espesor de capa muerta en la parcela, correspondiente al material orgánico sobre el suelo. & Anexo \ref{sec:EspMue} \\
+\hline
+-- & Campo: PCParcelas & Campo: PCParcelas & ModComb & int (CF) & Modelo de combustible. & Anexo \ref{sec:modComb} \\
+\hline
+-- & Campo: PCParcelas & Campo: PCParcelas & FccTot & int & Fracción de cabida cubierta total de la vegetación en la parcela según el capataz. & -- \\
+\hline
+-- & Campo: PCParcelas & Campo: PCParcelas & FccArb & int & Fracción de cabida cubierta de la vegetación arbórea. & -- \\
+\hline
+\end{tabular}%
+}
+\caption{Características del suelo y vegetación de las parcelas del IFN según el inventario. Las celdas para tablas del IFN2, IFN3 o IFN4 que contienen `-' indican que esa información no existe para dicho inventario. }
+\label{tab:parcela_inventario}
+\end{table}
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.2}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2cm}|m{5cm}|>{\centering\arraybackslash}m{2cm}|}
+\hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{parcela\_inventario\_especie: Información sobre las especies arbóreas en las parcelas según el inventario.}}} \\
+\hline
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN2}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN3 / IFN4}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Variable}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Tipo}} &
+\centering \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Descripción}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Anexo}} \\
+\hline
+DATEST & Campo: PCEspParc & \textbf{Provincia} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{anexo:provincias} \\
+\hline
+DATEST & Campo: PCEspParc & \textbf{Estadillo} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & -- \\
+\hline
+DATEST & Campo: PCEspParc & \textbf{Especie} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & -- \\
+\hline
+DATEST & Campo: PCEspParc & Ocupa & int & Grado de presencia de la especie en la parcela, valores de 1 a 10. & -- \\
+\hline
+- & Campo: PCEspParc & Estado & int (CF) & Fase de desarrollo de la especie arbórea. & Anexo \ref{sec:EstadoIFN34} \\
+\hline
+- & Campo: PCEspParc & FPMasa & int (CF) & Forma principal de la masa forestal (por ejemplo, coetánea, regular). & Anexo \ref{sec:FPMasa}\\
+\hline
+- & Campo: PCEspParc & TratMasa & int (CF) & Tratamiento de la masa forestal. & Anexo \ref{sec:tratmasa}\\
+\hline
+- & Campo: PCEspParc & OrgMasa1 & int (CF) &Código referente al origen de la masa. & Anexo \ref{sec:OrgMasa}\\
+\hline
+DATEST & - & MASA & int (CF) & Clasificación de la masa arbórea formada según su procedencia. & Anexo \ref{sec:masIFN2} \\
+\hline
+DATEST & - & ORIGEN & int (CF) & Origen de la masa arbórea. & Anexo \ref{sec:OrigenIFN2} \\
+\hline
+DATEST & - & ESTADO & int (CF) & Estado de desarrollo de la masa arbórea. &  Anexo \ref{sec:EstadoIFN2}\\
+\hline
+\end{tabular}%
+}
+\caption{Información sobre las especies arbóreas de las parcelas de cada IFN. El IFN2 tiene una estructura ligeramente diferente a los inventarios 3 y 4. Aunque las variables son similares tienen claves diferentes.}
+\label{tab:parcela_inventario_especie}
+\end{table}
+
+
+ 
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.2}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2cm}|m{5cm}|>{\centering\arraybackslash}m{2cm}|}
+\hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{parcela\_inventario\_especie\_cd: Información sobre las especies arbóreas por clase diamétrica e inventario.}}} \\
+\hline
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN2}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN3 / IFN4}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Variable}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Tipo}} &
+\centering \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Descripción}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Anexo}} \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & \textbf{Provincia} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{anexo:provincias} \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & \textbf{Estadillo} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & -- \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & \textbf{Especie} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{sec:especies} \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & CD & int & Clase diamétrica de la especie arbórea. & -- \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs y PCRegenera & NPies & int & Número de pies mayores por parcela, especie y clase diamétrica. & Tabla \ref{tab:brotes} \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & ABas & float & Área basimétrica por parcela, especie y clase diamétrica (m2/ha). & -- \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & VCC & float & Volumen con corteza por parcela, especie y clase diamétrica (m3/ha). & -- \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & VSC & float & Volumen sin corteza por parcela, especie y clase diamétrica (m3/ha). & -- \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & IAVC & float & Incremento anual del volumen con corteza por parcela, especie y clase diamétrica (m3/ha). & -- \\
+\hline
+IIFL03BD & Sig: Parcelas\_exs & VLE & float & Volumen de leñas por parcela, especie y clase diamétrica (m3/ha). & -- \\
+\hline
+- & Sig: Parcelas\_exs del IFN4 & CA & float & Fijación de carbono aéreo del arbolado (t/ha). & -- \\
+\hline
+- & Sig: Parcelas\_exs & CR & float & Fijación de carbono radical del arbolado (t/ha). & -- \\
+\hline
+\end{tabular}%
+}
+\caption{Información sobre las especies arbóreas de las parcelas por clase diamétrica e inventario. Las variables CA y CR solo están recogidas en los datos del IFN4. Estas variables se asignan posteriormente al IFN2 e IFN3. La información de esta tabla se completa con la información en la tabla \texttt{PCRegenera}.}
+\label{tab:parcela_inventario_especie_cd}
+\end{table}
+
+
+
+
+
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.2}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2.5cm}|m{9cm}|>{\centering\arraybackslash}m{2.5cm}|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{brotes: Información sobre la regeneración de las parcelas de IFN3 e IFN4}}} \\
+\hline
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Variable}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Tipo}} &
+\centering \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Descripción}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Anexo}} \\
+\hline
+\textbf{Provincia} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{anexo:provincias}\\
+\hline
+\textbf{Estadillo} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & \\
+\hline
+\textbf{Especie} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{sec:especies}\\
+\hline
+CatDes & int & Desarrollo de los pies de regeneración. & Anexo \ref{sec:CatDesDensidad}\\
+\hline
+Tipo & int (CF) & Origen de los pies. & Anexo \ref{sec:TipoReg}\\
+\hline
+Densidad & int (CF) & Número de ejemplares en la parcela para las categorías del desarrollo 1, 2 y 3. & Anexo \ref{sec:CatDesDensidad}\\
+\hline
+NumPies & int & Número de ejemplares en la parcela para la categoría del desarrollo 4. & Anexo \ref{sec:CatDesDensidad}\\
+\hline
+\end{tabular}%
+}
+\caption{Toda la información de esta tabla proviene de las tablas \texttt{Campo: PCRegenera} del IFN3 y \texttt{Campo: PCRegenera} del IFN4. Contiene información sobre los pies de regeneración por especie y categoría del desarrollo.}
+\label{tab:brotes}
+\end{table}
+
+\subsection{Imágenes aéreas (Ortofotos del PNOA)}
+Se propone el uso de ortofotos del \textbf{Plan Nacional de Ortofotografía Aérea} (PNOA), proporcionadas por el Instituto Geográfico Nacional de España a través de su servicio \textit{WMS Inspire} \cite{ign_pnoa}. Este servicio ofrece ortoimágenes actualizadas en alta resolución, normalmente con resoluciones espaciales entre 25 y 50 centímetros por píxel.
+
+Las imágenes pueden obtenerse mediante peticiones al servicio WMS de la capa \texttt{OI.OrthoimageCoverage}, restringidas espacialmente a un área circular de 100 metros de radio en torno al centro de cada parcela del Inventario Forestal Nacional (IFN), y temporalmente al año correspondiente al levantamiento de la parcela según el IFN3. Para ello, las coordenadas de las parcelas deben reproyectarse desde su sistema original (ETRS89/UTM zona 28 a 31) a coordenadas geográficas (EPSG:4326), y definirse los \texttt{bounding boxes} en grados con el fin de extraer imágenes con un tamaño fijo de 1000x1000 píxeles.
+
+El procedimiento puede implementarse en Python utilizando las bibliotecas \texttt{OWSLib}, \texttt{Pillow} y \texttt{Matplotlib}, lo que permite automatizar la recopilación de ortoimágenes asociadas a miles de parcelas. Este enfoque asegura una correspondencia temporal y espacial precisa entre los datos de campo y la observación remota. Sin embargo, dado que el conjunto de ortofotos completo supone un volumen muy elevado (alrededor de 25 GB) y que, además, estas imágenes son de fácil acceso para cualquier usuario, no se incluyen directamente en la base de datos, sino que se describe aquí el procedimiento recomendado para obtenerlas y utilizarlas, tanto para inspección visual como para posibles procesos de validación y enriquecimiento de atributos espaciales en trabajos posteriores.
+\begin{figure}[H]
+    \centering
+    
+    \begin{subfigure}[b]{0.31\textwidth}
+        \includegraphics[width=\linewidth]{15_1903_1997.0.jpg}
+        \label{fig:orto1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.31\textwidth}
+        \includegraphics[width=\linewidth]{25_2209_2001.0.jpg}
+        \label{fig:orto2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.31\textwidth}
+        \includegraphics[width=\linewidth]{37_688_2002.0.jpg}
+        \label{fig:orto3}
+    \end{subfigure}
+    
+    \caption{\small Ejemplos de ortofotos del PNOA para tres parcelas del IFN. Se observa la cobertura arbórea y estructura del terreno con resolución submétrica. Estas imágenes fueron descargadas mediante peticiones WMS automatizadas en torno al centro geográfico de cada parcela.}
+    \label{fig:ortofotos_ejemplo}
+\end{figure}

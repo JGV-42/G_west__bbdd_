@@ -1,0 +1,52 @@
+\section{Limitaciones y discusión}
+
+% Expón con transparencia las posibles limitaciones:
+% - Errores o incertidumbre en datos de entrada
+% - Desajustes espaciales o temporales
+% - Variables no incluidas que podrían ser útiles
+% - Ámbitos donde no conviene usar este dataset
+% También puedes mencionar posibles mejoras futuras.
+
+
+A pesar del esfuerzo por integrar múltiples fuentes de información de forma coherente y trazable, la base de datos presenta algunas limitaciones que es importante considerar a la hora de su interpretación o aplicación.
+
+\subsection*{Limitaciones en la superficie de las parcelas}
+
+Una de las principales limitaciones radica en la ausencia de una medición directa de la superficie real de las parcelas. En su lugar, se ha asumido superficies circulares a partir de radios estimados como la distancia máxima entre el centro de la parcela y el pié mayor más alejado. Esta simplificación geométrica, si bien operativamente útil, introduce cierta incertidumbre en aquellas variables cuya densidad se calcula por unidad de área (como el número de pies por hectárea o el carbono total). La geometría real de las parcelas, afectada por factores como pendientes, obstáculos o irregularidades en el terreno, podría desviarse de la forma circular idealizada.
+
+\subsection*{Estimación del carbono}
+
+La estimación del contenido de carbono aéreo (\texttt{CA}), radical (\texttt{CR}) y total (\texttt{c}) por especie, parcela e inventario representa una de las áreas con mayor incertidumbre dentro de la base de datos. Estas variables, registradas originalmente solo para el IFN4, se obtienen a partir de la medición del número de árboles de cada tamaño y especie según las directrices de la Guía del MITECO para la estimación de absorciones de CO$_2$ \cite{miteco_guia_co2}. Si bien esta fuente proporciona una metodología oficial y ampliamente adoptada, las variables \texttt{CA} y \texttt{CR} solo están disponibles para el inventario IFN4 y, además, muestran ausencia completa en varias provincias (07, 15, 27, 30, 31, 32, 33, 36, 39 y las del País Vasco), lo que impide realizar análisis completos a escala nacional sin imputación.
+
+\medskip
+
+Para resolver estos vacíos, se implementó un modelo \textit{Random Forest Regressor} entrenado con datos completos del IFN4. Este modelo utiliza como predictores un conjunto de variables forestales fácilmente medibles (\texttt{Especie}, \texttt{CD}, \texttt{VSC}, \texttt{NPies}, \texttt{ABas}, \texttt{IAVC}, \texttt{VCC} y \texttt{VLE}) y permite imputar valores ausentes tanto en el propio IFN4 como en los inventarios IFN2 e IFN3, que originalmente carecen de información sobre carbono. A pesar de que el modelo presenta métricas de rendimiento satisfactorias ($R^2_{\text{test}} > 0.90$ en ambos casos), las predicciones derivan de un modelo estadístico y no de mediciones directas, lo cual limita su uso en contextos que requieran alta precisión.
+
+\medskip
+
+Además, el hecho de considerar las entradas de la tabla \texttt{brotes} con valor de carbono cero introduce una simplificación que, si bien operativamente razonable, puede subestimar el carbono real presente en la regeneración natural o vegetación arbustiva. Esta base de datos se crea con el fin de servir a proyectos de créditos de carbono por reforestación y forestación, en los que el carbono contenido en los plantones (árboles en fases del desarrollo tempranas que se plantan) no se tiene en cuenta como carbono capturado. Es por ello que se ha tomado la decisión de considerar los árboles jóvenes como libres de carbono capturado. 
+
+
+\subsection*{Otras consideraciones}
+
+Además de las anteriores, se deben tener en cuenta ciertas limitaciones comunes a procesos de integración de datos heterogéneos:
+
+\begin{itemize}
+    \item \textbf{Desajustes espaciales}: a pesar de que las parcelas están georreferenciadas, pequeñas imprecisiones en las coordenadas pueden afectar la extracción de variables climáticas o espectrales de resolución fina.
+    
+    \item \textbf{Desajustes temporales}: algunos conjuntos de datos (especialmente los climáticos) se agregan a nivel estacional o anual, lo que puede no coincidir exactamente con la fecha real del muestreo de cada parcela.
+    
+    \item \textbf{Variables no incluidas}: existen otras variables potencialmente relevantes para ciertos estudios (e.g., parámetros fisiológicos, estado sanitario detallado, historia de gestión) que no están disponibles en la versión actual de la base de datos.
+\end{itemize}
+
+\subsection*{Posibles mejoras futuras}
+
+Entre las líneas de mejora futura destacan:
+
+\begin{itemize}
+    \item Integrar geometrías reales de las parcelas (shapefiles o polígonos precisos) cuando estén disponibles.
+    \item Refinar los modelos de estimación de carbono.
+    \item Añadir información de gestión, tratamientos y alteraciones naturales del medio (por ejemplo incendios).
+    \item Mejorar la resolución espacial y temporal de los datos climáticos y espectrales empleados.
+\end{itemize}
+
