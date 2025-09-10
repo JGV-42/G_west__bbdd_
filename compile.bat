@@ -19,7 +19,7 @@ pdflatex -interaction=nonstopmode main.tex
 
 ECHO.
 ECHO --- PASO 4: Ejecutando pdflatex (para ajustar referencias)... ---
-pdflatex -interaction=nonstopmode main.tex
+pdflatex -synctex=1 -interaction=nonstopmode main.tex
 
 ECHO.
 ECHO --- Proceso completado. ---
