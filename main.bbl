@@ -131,6 +131,152 @@
       \field{title}{Temperature and precipitation climate impact indicators from 1970 to 2100 derived from European climate projections}
       \field{year}{2021}
     \endentry
+    \entry{chave2014}{article}{}{}
+      \name{author}{24}{}{%
+        {{hash=96dcd1557addc8268aae043c16151e3e}{%
+           family={Chave},
+           familyi={C\bibinitperiod},
+           given={Jérôme},
+           giveni={J\bibinitperiod}}}%
+        {{hash=44460b6346b0f4b517ec77aeb191c640}{%
+           family={Réjou-Méchain},
+           familyi={R\bibinithyphendelim M\bibinitperiod},
+           given={Maxime},
+           giveni={M\bibinitperiod}}}%
+        {{hash=352b12da5c4762da668d369ad1fa9c3d}{%
+           family={Búrquez},
+           familyi={B\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=638790bfd397826175561b5578427a97}{%
+           family={Chidumayo},
+           familyi={C\bibinitperiod},
+           given={Emmanuel},
+           giveni={E\bibinitperiod}}}%
+        {{hash=0231f8a8f5122fa1cd7191d7531907b3}{%
+           family={Colgan},
+           familyi={C\bibinitperiod},
+           given={Matthew\bibnamedelima S.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=760cbf996782d3cd7455196e757d4573}{%
+           family={Delitti},
+           familyi={D\bibinitperiod},
+           given={Welington\bibnamedelimb B.\bibnamedelimi C.},
+           giveni={W\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=96a043bffc65eaa7cf489cabf7270ae1}{%
+           family={Duque},
+           familyi={D\bibinitperiod},
+           given={Alvaro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a8665bf1f76a9769da31472b809397ca}{%
+           family={Eid},
+           familyi={E\bibinitperiod},
+           given={Tron},
+           giveni={T\bibinitperiod}}}%
+        {{hash=af9db1271bb50de53a9452c0ea4e0424}{%
+           family={Fearnside},
+           familyi={F\bibinitperiod},
+           given={Philip\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=15173c6c584d5d1afe0382f52a51d6dd}{%
+           family={Goodman},
+           familyi={G\bibinitperiod},
+           given={Rosa\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=551ed8a31c4bb17375891527f9057df8}{%
+           family={Henry},
+           familyi={H\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=23e685ca6465e5853041a17bbc16569b}{%
+           family={Martínez-Yrízar},
+           familyi={M\bibinithyphendelim Y\bibinitperiod},
+           given={Angelina},
+           giveni={A\bibinitperiod}}}%
+        {{hash=eaff3ac5046f43f12a5aeb2e58dd8fea}{%
+           family={Mugasha},
+           familyi={M\bibinitperiod},
+           given={Wilson\bibnamedelima A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0aecb344d60bd35f9128dfaedb4c6037}{%
+           family={Muller-Landau},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Helene\bibnamedelima C.},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=e2a73cad407611f9294b5fc6ded4bcb4}{%
+           family={Mencuccini},
+           familyi={M\bibinitperiod},
+           given={Maurizio},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3ec45c7fab9ab80b89e4c9c01e6df75d}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Brian\bibnamedelima W.},
+           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=50ffc6146d8fa234e2e6c9d72e34fed2}{%
+           family={Ngomanda},
+           familyi={N\bibinitperiod},
+           given={Alfred},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5992532024b75caa63f17d410701d2cc}{%
+           family={Nogueira},
+           familyi={N\bibinitperiod},
+           given={Eurípedes\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b15cabf862cc513e620c092da5198d2e}{%
+           family={Ortiz-Malavassi},
+           familyi={O\bibinithyphendelim M\bibinitperiod},
+           given={Edgar},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e7ef6535a670bc27fbd21a8c8f1a70d6}{%
+           family={Pélissier},
+           familyi={P\bibinitperiod},
+           given={Raphaël},
+           giveni={R\bibinitperiod}}}%
+        {{hash=301f5d005dbcf82359cf9b683bf6929b}{%
+           family={Ploton},
+           familyi={P\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=84db7f625267b7d29486b29771730995}{%
+           family={Ryan},
+           familyi={R\bibinitperiod},
+           given={Casey\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=99cd18d009deeb3c341a3cfaf7e6c8a3}{%
+           family={Saldarriaga},
+           familyi={S\bibinitperiod},
+           given={Juan\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=9fff0a2bd053deb68726d13eeffd0fcd}{%
+           family={Vieilledent},
+           familyi={V\bibinitperiod},
+           given={Ghislain},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{e24b39cebb8e218918c3f996f0a18562}
+      \strng{fullhash}{6f99145df40d8c20de757ca1646d7854}
+      \strng{fullhashraw}{6f99145df40d8c20de757ca1646d7854}
+      \strng{bibnamehash}{e24b39cebb8e218918c3f996f0a18562}
+      \strng{authorbibnamehash}{e24b39cebb8e218918c3f996f0a18562}
+      \strng{authornamehash}{e24b39cebb8e218918c3f996f0a18562}
+      \strng{authorfullhash}{6f99145df40d8c20de757ca1646d7854}
+      \strng{authorfullhashraw}{6f99145df40d8c20de757ca1646d7854}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Global Change Biology}
+      \field{number}{10}
+      \field{title}{Improved allometric models to estimate the aboveground biomass of tropical trees}
+      \field{volume}{20}
+      \field{year}{2014}
+      \field{pages}{3177\bibrangedash 3190}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/gcb.12629
+      \endverb
+    \endentry
     \entry{copernicus_api}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=b65bb96181a9005169aaa9da4a23f233}{%
