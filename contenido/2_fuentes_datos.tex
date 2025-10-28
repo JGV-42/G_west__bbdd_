@@ -212,8 +212,7 @@ Las siguientes tablas documentan las variables extraídas de las bases de datos 
 
 \medskip
 
-La estructura de las cuatro tablas sigue un orden secuencial que refleja un incremento en la complejidad de las claves primarias. La primera tabla tiene como clave primaria la parcela, estableciendo la base de la organización (Tabla \ref{tab:parcela}). La segunda tabla incorpora la entidad inventario, ligando cada parcela a un momento concreto (Tabla \ref{tab:parcela_inventario}). En la tercera tabla, se incluye especie, lo que permite añadir más detalles sobre la vegetación (Tabla \ref{tab:parcela_inventario_especie}). Finalmente, en la cuarta tabla, la clave primaria se amplía para incluir especie, clase diamétrica (medida del tamaño del árbol) e inventario, detallando aún más la información (Tabla \ref{tab:parcela_inventario_especie_cd}). Así, cada tabla presenta un nivel progresivo de particularización, pasando de una simple parcela a un grupo de árboles de una especie y tamaño concreto, en una parcela y momento concreto. 
-
+La estructura de las tablas sigue un orden secuencial que refleja un incremento en la complejidad de las claves primarias. La primera tabla tiene como clave primaria la parcela, estableciendo la base de la organización (Tabla \ref{tab:parcela}). La segunda tabla incorpora la entidad inventario, ligando cada parcela a un momento concreto de exploración (Tabla \ref{tab:parcela_inventario}). En la tercera tabla, se incluye especie, lo que permite añadir más detalles sobre la vegetación (Tabla \ref{tab:parcela_inventario_especie}). En la cuarta tabla, la clave primaria se amplía para incluir especie, clase diamétrica (medida del tamaño del árbol) e inventario, detallando aún más la información (Tabla \ref{tab:parcela_inventario_especie_cd}). El último nivel de agregación es el árbol, esta tabla recoge los datos de los pies mayores\footnote{"Pies mayores" se refiere principalmente a árboles forestales con un diámetro superior a \(7,5\) cm y una altura de más de \(1,30\) m, según la terminología del Inventario Forestal Nacional.} identificados en los inventarios (no todos los árboles)dando lugar a una tabla cuya clave primaria es una combinación de parcela, inventario, especie y árbol (Tabla \ref{tab:parcela_inventario_especie_arbol}). Así, cada tabla presenta un nivel progresivo de particularización, pasando de una simple parcela a un grupo de árboles de una especie y tamaño concreto, en una parcela y momento concreto.
 
 También nos encontramos una tabla con información sobre los árboles pequeños de cada parcela en caso de existir (Tabla \ref{tab:brotes}). La información de esta tabla se añadirá las cuatro mencionadas anteriormente. Su procesado de tratará en apartados posteriores.
 
@@ -400,6 +399,60 @@ IIFL03BD & Sig: Parcelas\_exs & VLE & float & Volumen de leñas por parcela, esp
 
 
 
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.2}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\centering\arraybackslash}m{1.8cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2.5cm}|m{7cm}|>{\centering\arraybackslash}m{2cm}|}
+\hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{parcela\_inventario\_especie\_arbol: Información que caracteriza los pies mayores.}}} \\
+\hline
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN4}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Variable}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Tipo}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Descripción}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Anexo}} \\
+\hline
+Sig: Mayores\_exs & \textbf{Provincia} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{anexo:provincias} \\
+\hline
+Sig: Mayores\_exs & \textbf{Estadillo} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & -- \\
+\hline
+Sig: Mayores\_exs & \textbf{Especie} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{sec:especies} \\
+\hline
+Sig: Mayores\_exs & Rumbo & float & Rumbo medido desde el centro de la parcela hacia el árbol en cuestión, en grados centesimales. La medición se hace partiendo del norte y en sentido de las agujas del reloj. & -- \\
+\hline
+Sig: Mayores\_exs & Distanci & float & Distancia, en metros, del centro de la parcela al árbol & -- \\
+\hline
+Sig: Mayores\_exs & Ht & float & Altura total del árbol inventariado, expresada en metros. & -- \\
+\hline
+Sig: Mayores\_exs & Dn1 & float & Diámetro normal calculado apuntando la forcípula al centro de la parcela, en milímetros. & -- \\
+\hline
+Sig: Mayores\_exs & Dn2 & float & Diámetro normal calculado en dirección perpendicular al anterior, en milímetros. & -- \\
+\hline
+Sig: Mayores\_exs & CD & int & Clase diamétrica de la especie arbórea. & -- \\
+\hline
+Sig: Mayores\_exs & G & float & Área basimétrica, en metros cuadrados, del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs & VCC & float & Volumen con corteza en decímetros cúbicos del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs & VSC & float & Volumen sin corteza en decímetros cúbicos del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs & IAVC & float & Incremento anual del volumen con corteza en decímetros cúbicos del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs & VLE & float & Volumen de leñas en decímetros cúbicos del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs del IFN4 & CA & float & Fijación de carbono aéreo del pie medido (t). & -- \\
+\hline
+Sig: Mayores\_exs & CR & float & Fijación de carbono radical del pie medido (t). & -- \\
+\hline
+\end{tabular}%
+}
+\caption{Información sobre los pies mayores registrados en IFN4. Dicho inventario proporciona información suficiente para caracterizar las especies (objetivo principal de esta tabla). Resulta imposible hacer un seguimiento a lo largo de los inventarios de cada espécimen pues están registrados de forma irregular.}
+\label{tab:parcela_inventario_especie_arbol}
+\end{table}
+
+
+
 
 
 \begin{table}[H]
@@ -445,20 +498,21 @@ El procedimiento puede implementarse en Python utilizando las bibliotecas \textt
     \centering
     
     \begin{subfigure}[b]{0.31\textwidth}
-        \includegraphics[width=\linewidth]{15_1903_1997.0.jpg}
+        \includegraphics[width=\linewidth]{figuras/15_1903_1997.0.jpg}
         \label{fig:orto1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.31\textwidth}
-        \includegraphics[width=\linewidth]{25_2209_2001.0.jpg}
+        \includegraphics[width=\linewidth]{figuras/25_2209_2001.0.jpg}
         \label{fig:orto2}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.31\textwidth}
-        \includegraphics[width=\linewidth]{37_688_2002.0.jpg}
+        \includegraphics[width=\linewidth]{figuras/37_688_2002.0.jpg}
         \label{fig:orto3}
     \end{subfigure}
     
     \caption{\small Ejemplos de ortofotos del PNOA para tres parcelas del IFN. Se observa la cobertura arbórea y estructura del terreno con resolución submétrica. Estas imágenes fueron descargadas mediante peticiones WMS automatizadas en torno al centro geográfico de cada parcela.}
     \label{fig:ortofotos_ejemplo}
 \end{figure}
+

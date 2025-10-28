@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.9)  14 OCT 2025 09:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.9)  28 OCT 2025 08:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1145,46 +1145,46 @@ Package csquotes Info: Redefining alias 'default' -> 'spanish'.
 No file main.aux.
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 11.
-LaTeX Font Info:    Trying to load font information for FML+futm on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 29.
+LaTeX Font Info:    Trying to load font information for FML+futm on input line 29.
 (c:/texlive/2025/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 11.
-LaTeX Font Info:    Trying to load font information for FMS+futm on input line 11.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 29.
+LaTeX Font Info:    Trying to load font information for FMS+futm on input line 29.
  (c:/texlive/2025/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 11.
-LaTeX Font Info:    Trying to load font information for FMX+futm on input line 11.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 29.
+LaTeX Font Info:    Trying to load font information for FMX+futm on input line 29.
  (c:/texlive/2025/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Info: Redefining \. on input line 29.
+LaTeX Info: Redefining \% on input line 29.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 11.
+(babel)             Reported on input line 29.
 Package biblatex Info: Trying to load language 'spanish'...
 Package biblatex Info: ... file 'spanish.lbx' found.
  (c:/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
@@ -1217,8 +1217,8 @@ Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
 )
-Package biblatex Info: Reference section=0 on input line 11.
-Package biblatex Info: Reference segment=0 on input line 11.
+Package biblatex Info: Reference section=0 on input line 29.
+Package biblatex Info: Reference segment=0 on input line 29.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
 \caption@adjustwidth@hsize=\dimen327
@@ -1234,7 +1234,7 @@ Package caption Info: End \AtBeginDocument code.
  (c:/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-spanish.trsl
 File: translations-basic-dictionary-spanish.trsl (spanish translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `spanish'. on input line 11.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `spanish'. on input line 29.
  (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count519
@@ -1254,7 +1254,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 11.
+Package hyperref Info: Link coloring ON on input line 29.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1294,53 +1294,61 @@ Package hyperref Info: Link coloring ON on input line 11.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 11.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 11.
-LaTeX Font Info:    Trying to load font information for FML+futmi on input line 14.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 29.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 29.
+LaTeX Font Info:    Trying to load font information for FML+futmi on input line 32.
 (c:/texlive/2025/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 14.
+(Font)              scaled to size 11.03998pt on input line 32.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 14.
+(Font)              scaled to size 8.27998pt on input line 32.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 14.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
+(Font)              scaled to size 6.43999pt on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 32.
  (c:/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 14.
+(Font)              scaled to size 11.03998pt on input line 32.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 14.
+(Font)              scaled to size 8.27998pt on input line 32.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 14.
+(Font)              scaled to size 6.43999pt on input line 32.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 32.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 32.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 32.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 32.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 32.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 32.
  (./contenido/abstract.tex) (./contenido/1_introduccion.tex
 
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 22.
+(Font)              scaled to size 10.07397pt on input line 18.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 22.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 22.
+(Font)              scaled to size 7.63599pt on input line 18.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 22.
+(Font)              scaled to size 10.07397pt on input line 18.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 22.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 22.
+(Font)              scaled to size 7.63599pt on input line 18.
 [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 ./contenido/1_introduccion.tex:25: Illegal parameter number in definition of \abx@field@note.
 <to be read again> 
                    }
@@ -1365,7 +1373,7 @@ are all screwed up? I'm going to assume that you meant ##.
 
 LaTeX Warning: Reference `fig:parcelas' on page 3 undefined on input line 3.
 
-<figuras/mapa_parcelas.png, id=43, 3432.825pt x 2346.7675pt>
+<figuras/mapa_parcelas.png, id=45, 3432.825pt x 2346.7675pt>
 File: figuras/mapa_parcelas.png Graphic file (type png)
 <use figuras/mapa_parcelas.png>
 Package pdftex.def Info: figuras/mapa_parcelas.png  used on input line 7.
@@ -1433,245 +1441,249 @@ LaTeX Warning: Reference `tab:parcela_inventario_especie' on page 7 undefined on
 LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 7 undefined on input line 215.
 
 
-LaTeX Warning: Reference `tab:brotes' on page 7 undefined on input line 218.
-
-
-Underfull \hbox (badness 2229) in paragraph at lines 254--254
-\T1/futs/m/n/10.95 la que se en-cuen-tra la
- []
-
-
-LaTeX Warning: Reference `anexo:provincias' on page 7 undefined on input line 254.
-
-
-Underfull \hbox (badness 1990) in paragraph at lines 254--254
-[]|\T1/futs/m/n/10.95 Coordenada X pre-via a
- []
-
-
-Underfull \hbox (badness 2189) in paragraph at lines 254--254
-[]|\T1/futs/m/n/10.95 Coordenada Y pre-via a
- []
-
-
-Underfull \hbox (badness 5954) in paragraph at lines 254--254
-[]|\T1/futs/m/n/10.95 Huso geo-grá-fi-co en el
- []
-
-
-LaTeX Warning: Reference `sec:Rocosid' on page 7 undefined on input line 254.
-
-
-Underfull \hbox (badness 1253) in paragraph at lines 254--254
-[]|\T1/futs/m/n/10.95 Tipos de sue-lo iden-ti-fi-
- []
-
-
-LaTeX Warning: Reference `sec:TipSuelo' on page 7 undefined on input line 254.
-
-
-Underfull \hbox (badness 2245) in paragraph at lines 254--254
-\T1/futs/m/n/10.95 ma-yor con-te-ni-do en la
- []
-
-
-Underfull \hbox (badness 1009) in paragraph at lines 254--254
-\T1/futs/m/n/10.95 mis-ma. Es un con-jun-to
- []
+LaTeX Warning: Reference `tab:parcela_inventario_especie_arbol' on page 7 undefined on input line 215.
 
 
 
 [7]
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 304--304
+
+LaTeX Warning: Reference `tab:brotes' on page 8 undefined on input line 217.
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 253--253
+\T1/futs/m/n/10.95 la que se en-cuen-tra la
+ []
+
+
+LaTeX Warning: Reference `anexo:provincias' on page 8 undefined on input line 253.
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 253--253
+[]|\T1/futs/m/n/10.95 Coordenada X pre-via a
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 253--253
+[]|\T1/futs/m/n/10.95 Coordenada Y pre-via a
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 253--253
+[]|\T1/futs/m/n/10.95 Huso geo-grá-fi-co en el
+ []
+
+
+LaTeX Warning: Reference `sec:Rocosid' on page 8 undefined on input line 253.
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 253--253
+[]|\T1/futs/m/n/10.95 Tipos de sue-lo iden-ti-fi-
+ []
+
+
+LaTeX Warning: Reference `sec:TipSuelo' on page 8 undefined on input line 253.
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 253--253
+\T1/futs/m/n/10.95 ma-yor con-te-ni-do en la
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 253--253
+\T1/futs/m/n/10.95 mis-ma. Es un con-jun-to
+ []
+
+
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 303--303
  []|\T1/futs/m/n/10.95 IIFL00BD| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--304
+Underfull \hbox (badness 10000) in paragraph at lines 303--303
 []|\T1/futs/b/n/10.95 *Identificador pa-ra vin-cu-lar
  []
 
 
-LaTeX Warning: Reference `anexo:provincias' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `anexo:provincias' on page 8 undefined on input line 303.
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 304--304
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 303--303
  []|\T1/futs/m/n/10.95 IIFL00BD| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--304
+Underfull \hbox (badness 10000) in paragraph at lines 303--303
 []|\T1/futs/b/n/10.95 *Identificador pa-ra vin-cu-lar
  []
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 304--304
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 303--303
  []|\T1/futs/m/n/10.95 IIFL00BD| 
  []
 
 
-LaTeX Warning: Reference `sec:disEsp' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `sec:disEsp' on page 8 undefined on input line 303.
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 304--304
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 303--303
  []|\T1/futs/m/n/10.95 IIFL00BD| 
  []
 
 
-LaTeX Warning: Reference `anexo:compesp' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `anexo:compesp' on page 8 undefined on input line 303.
 
 
-LaTeX Warning: Reference `sec:nivel1' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `sec:nivel1' on page 8 undefined on input line 303.
 
 
-LaTeX Warning: Reference `sec:nivel2' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `sec:nivel2' on page 8 undefined on input line 303.
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 304--304
+Underfull \hbox (badness 5331) in paragraph at lines 303--303
 []|\T1/futs/m/n/10.95 Manifestaciones ero-si-vas ob-
  []
 
 
-LaTeX Warning: Reference `sec:ManERo' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `sec:ManERo' on page 8 undefined on input line 303.
 
 
-LaTeX Warning: Reference `sec:textura' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `sec:textura' on page 8 undefined on input line 303.
 
 
-LaTeX Warning: Reference `sec:MatOrg' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `sec:MatOrg' on page 8 undefined on input line 303.
 
 
-LaTeX Warning: Reference `sec:modComb' on page 8 undefined on input line 304.
+LaTeX Warning: Reference `sec:modComb' on page 8 undefined on input line 303.
 
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
 []|\T1/futs/b/n/10.95 *Identificador pa-ra vin-cu-lar
  []
 
 
-LaTeX Warning: Reference `anexo:provincias' on page 9 undefined on input line 347.
+LaTeX Warning: Reference `anexo:provincias' on page 9 undefined on input line 346.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
 []|\T1/futs/b/n/10.95 *Identificador pa-ra vin-cu-lar
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
 []|\T1/futs/b/n/10.95 *Identificador pa-ra vin-cu-lar
  []
 
 
-LaTeX Warning: Reference `sec:EstadoIFN34' on page 9 undefined on input line 347.
+LaTeX Warning: Reference `sec:EstadoIFN34' on page 9 undefined on input line 346.
 
 
-LaTeX Warning: Reference `sec:FPMasa' on page 9 undefined on input line 347.
+LaTeX Warning: Reference `sec:FPMasa' on page 9 undefined on input line 346.
 
 
-LaTeX Warning: Reference `sec:tratmasa' on page 9 undefined on input line 347.
+LaTeX Warning: Reference `sec:tratmasa' on page 9 undefined on input line 346.
 
 
-LaTeX Warning: Reference `sec:OrgMasa' on page 9 undefined on input line 347.
+LaTeX Warning: Reference `sec:OrgMasa' on page 9 undefined on input line 346.
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 347--347
+Underfull \hbox (badness 1242) in paragraph at lines 346--346
 \T1/futs/m/n/10.95 rea for-ma-da se-gún su pro-ce-
  []
 
 
-LaTeX Warning: Reference `sec:masIFN2' on page 9 undefined on input line 347.
+LaTeX Warning: Reference `sec:masIFN2' on page 9 undefined on input line 346.
 
 
-LaTeX Warning: Reference `sec:OrigenIFN2' on page 9 undefined on input line 347.
+LaTeX Warning: Reference `sec:OrigenIFN2' on page 9 undefined on input line 346.
 
 
-LaTeX Warning: Reference `sec:EstadoIFN2' on page 9 undefined on input line 347.
+LaTeX Warning: Reference `sec:EstadoIFN2' on page 9 undefined on input line 346.
 
 
 
 [9]
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--395
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
 []|\T1/futs/b/n/10.95 *Identificador pa-ra vin-cu-lar
  []
 
 
-LaTeX Warning: Reference `anexo:provincias' on page 10 undefined on input line 395.
+LaTeX Warning: Reference `anexo:provincias' on page 10 undefined on input line 394.
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--395
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
 []|\T1/futs/b/n/10.95 *Identificador pa-ra vin-cu-lar
  []
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--395
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
 []|\T1/futs/b/n/10.95 *Identificador pa-ra vin-cu-lar
  []
 
 
-LaTeX Warning: Reference `sec:especies' on page 10 undefined on input line 395.
+LaTeX Warning: Reference `sec:especies' on page 10 undefined on input line 394.
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-LaTeX Warning: Reference `tab:brotes' on page 10 undefined on input line 395.
+LaTeX Warning: Reference `tab:brotes' on page 10 undefined on input line 394.
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Underfull \hbox (badness 6125) in paragraph at lines 395--395
+Underfull \hbox (badness 6125) in paragraph at lines 394--394
 []|\T1/futs/m/n/10.95 Área ba-si-mé-tri-ca por par-ce-
  []
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Overfull \hbox (0.9675pt too wide) in paragraph at lines 395--395
+Overfull \hbox (0.9675pt too wide) in paragraph at lines 394--394
  []|\T1/futs/m/n/10.95 IIFL03BD| 
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 395--395
+Underfull \hbox (badness 1048) in paragraph at lines 394--394
 []|\T1/futs/m/n/10.95 Volumen de le-ñas por par-ce-
  []
 
@@ -1679,57 +1691,74 @@ Underfull \hbox (badness 1048) in paragraph at lines 395--395
 
 [10]
 
-LaTeX Warning: Reference `anexo:provincias' on page 11 undefined on input line 433.
+LaTeX Warning: Reference `anexo:provincias' on page 11 undefined on input line 449.
 
 
-LaTeX Warning: Reference `sec:especies' on page 11 undefined on input line 433.
+LaTeX Warning: Reference `sec:especies' on page 11 undefined on input line 449.
 
 
-LaTeX Warning: Reference `sec:CatDesDensidad' on page 11 undefined on input line 433.
-
-
-LaTeX Warning: Reference `sec:TipoReg' on page 11 undefined on input line 433.
-
-
-LaTeX Warning: Reference `sec:CatDesDensidad' on page 11 undefined on input line 433.
-
-
-LaTeX Warning: Reference `sec:CatDesDensidad' on page 11 undefined on input line 433.
-
-
-
-[11{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Overfull \hbox (54.3357pt too wide) in paragraph at lines 441--442
-[]\T1/futs/m/n/10.95 Las imá-ge-nes pue-den ob-te-ner-se me-dian-te pe-ti-cio-nes al ser-vi-cio WMS de la ca-pa \T1/cmtt/m/n/10.95 OI.OrthoimageCoverage\T1/futs/m/n/10.95 ,
+Underfull \hbox (badness 2005) in paragraph at lines 449--449
+[]|\T1/futs/m/n/10.95 Diámetro nor-mal cal-cu-la-do en di-rec-ción
  []
 
-<15_1903_1997.0.jpg, id=113, 1003.75pt x 1003.75pt>
-File: 15_1903_1997.0.jpg Graphic file (type jpg)
-<use 15_1903_1997.0.jpg>
-Package pdftex.def Info: 15_1903_1997.0.jpg  used on input line 448.
-(pdftex.def)             Requested size: 132.30428pt x 132.29936pt.
-<25_2209_2001.0.jpg, id=114, 1003.75pt x 1003.75pt>
-File: 25_2209_2001.0.jpg Graphic file (type jpg)
-<use 25_2209_2001.0.jpg>
-Package pdftex.def Info: 25_2209_2001.0.jpg  used on input line 453.
-(pdftex.def)             Requested size: 132.30428pt x 132.29936pt.
-<37_688_2002.0.jpg, id=115, 1003.75pt x 1003.75pt>
-File: 37_688_2002.0.jpg Graphic file (type jpg)
-<use 37_688_2002.0.jpg>
-Package pdftex.def Info: 37_688_2002.0.jpg  used on input line 458.
-(pdftex.def)             Requested size: 132.30428pt x 132.29936pt.
-)
+
+
+[11]
+Overfull \vbox (21.98335pt too high) has occurred while \output is active []
+
+
 
 [12]
 
-[13 <./15_1903_1997.0.jpg> <./25_2209_2001.0.jpg> <./37_688_2002.0.jpg>] (./contenido/3_metodologia.tex
-
-LaTeX Warning: Reference `fig:imagenes_sat_primavera_2004' on page 14 undefined on input line 35.
+LaTeX Warning: Reference `anexo:provincias' on page 13 undefined on input line 486.
 
 
+LaTeX Warning: Reference `sec:especies' on page 13 undefined on input line 486.
 
-[14]
-<figuras/ejemplo_imagen_sat_mala_calidad.png, id=135, 718.18312pt x 603.75563pt>
+
+LaTeX Warning: Reference `sec:CatDesDensidad' on page 13 undefined on input line 486.
+
+
+LaTeX Warning: Reference `sec:TipoReg' on page 13 undefined on input line 486.
+
+
+LaTeX Warning: Reference `sec:CatDesDensidad' on page 13 undefined on input line 486.
+
+
+LaTeX Warning: Reference `sec:CatDesDensidad' on page 13 undefined on input line 486.
+
+
+Overfull \hbox (54.3357pt too wide) in paragraph at lines 494--495
+[]\T1/futs/m/n/10.95 Las imá-ge-nes pue-den ob-te-ner-se me-dian-te pe-ti-cio-nes al ser-vi-cio WMS de la ca-pa \T1/cmtt/m/n/10.95 OI.OrthoimageCoverage\T1/futs/m/n/10.95 ,
+ []
+
+<figuras/15_1903_1997.0.jpg, id=122, 1003.75pt x 1003.75pt>
+File: figuras/15_1903_1997.0.jpg Graphic file (type jpg)
+<use figuras/15_1903_1997.0.jpg>
+Package pdftex.def Info: figuras/15_1903_1997.0.jpg  used on input line 501.
+(pdftex.def)             Requested size: 132.30428pt x 132.29936pt.
+<figuras/25_2209_2001.0.jpg, id=123, 1003.75pt x 1003.75pt>
+File: figuras/25_2209_2001.0.jpg Graphic file (type jpg)
+<use figuras/25_2209_2001.0.jpg>
+Package pdftex.def Info: figuras/25_2209_2001.0.jpg  used on input line 506.
+(pdftex.def)             Requested size: 132.30428pt x 132.29936pt.
+<figuras/37_688_2002.0.jpg, id=124, 1003.75pt x 1003.75pt>
+File: figuras/37_688_2002.0.jpg Graphic file (type jpg)
+<use figuras/37_688_2002.0.jpg>
+Package pdftex.def Info: figuras/37_688_2002.0.jpg  used on input line 511.
+(pdftex.def)             Requested size: 132.30428pt x 132.29936pt.
+
+
+[13])
+
+[14 <./figuras/15_1903_1997.0.jpg> <./figuras/25_2209_2001.0.jpg> <./figuras/37_688_2002.0.jpg>] (./contenido/3_metodologia.tex
+
+LaTeX Warning: Reference `fig:imagenes_sat_primavera_2004' on page 15 undefined on input line 35.
+
+
+
+[15]
+<figuras/ejemplo_imagen_sat_mala_calidad.png, id=144, 718.18312pt x 603.75563pt>
 File: figuras/ejemplo_imagen_sat_mala_calidad.png Graphic file (type png)
 <use figuras/ejemplo_imagen_sat_mala_calidad.png>
 Package pdftex.def Info: figuras/ejemplo_imagen_sat_mala_calidad.png  used on input line 39.
@@ -1739,36 +1768,36 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line 5
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
 
-[15 <./figuras/ejemplo_imagen_sat_mala_calidad.png>]
+[16 <./figuras/ejemplo_imagen_sat_mala_calidad.png>]
 
-[16]
+[17]
 
-LaTeX Warning: Reference `tab:codificacion_especies' on page 17 undefined on input line 121.
+LaTeX Warning: Reference `tab:codificacion_especies' on page 18 undefined on input line 121.
 
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 125.
 
-LaTeX Warning: Reference `fig:husos' on page 17 undefined on input line 136.
+LaTeX Warning: Reference `fig:husos' on page 18 undefined on input line 136.
 
-<figuras/husos.jpeg, id=158, 715.11165pt x 498.663pt>
+<figuras/husos.jpeg, id=167, 715.11165pt x 498.663pt>
 File: figuras/husos.jpeg Graphic file (type jpg)
 <use figuras/husos.jpeg>
 Package pdftex.def Info: figuras/husos.jpeg  used on input line 139.
 (pdftex.def)             Requested size: 256.07741pt x 178.56741pt.
 
 
-[17]
+[18]
 
-LaTeX Warning: Reference `tab:brotes' on page 18 undefined on input line 152.
-
-
-LaTeX Warning: Reference `sec:CatDesDensidad' on page 18 undefined on input line 152.
+LaTeX Warning: Reference `tab:brotes' on page 19 undefined on input line 152.
 
 
-LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 18 undefined on input line 152.
+LaTeX Warning: Reference `sec:CatDesDensidad' on page 19 undefined on input line 152.
 
 
-LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 18 undefined on input line 152.
+LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 19 undefined on input line 152.
+
+
+LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 19 undefined on input line 152.
 
 
 Overfull \hbox (16.11829pt too wide) in paragraph at lines 152--153
@@ -1776,18 +1805,13 @@ Overfull \hbox (16.11829pt too wide) in paragraph at lines 152--153
  []
 
 
-LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 18 undefined on input line 167.
+LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 19 undefined on input line 167.
 
 
 
-[18 <./figuras/husos.jpeg>]
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 195.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 195.
+[19 <./figuras/husos.jpeg>]
 
-
-LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 19 undefined on input line 195.
+LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 20 undefined on input line 195.
 
 ./contenido/3_metodologia.tex:203: Incompatible glue units.
 \es@sppercent ...fnum \gluestretchorder \lastskip 
@@ -1809,17 +1833,17 @@ Overfull \hbox (13.64117pt too wide) in paragraph at lines 203--204
  []
 
 
-LaTeX Warning: Reference `tab:brotes' on page 19 undefined on input line 211.
+LaTeX Warning: Reference `tab:brotes' on page 20 undefined on input line 211.
 
 
-LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 19 undefined on input line 215.
+LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 20 undefined on input line 215.
 
 
-LaTeX Warning: Reference `tab:parcela_inventario_especie' on page 19 undefined on input line 215.
+LaTeX Warning: Reference `tab:parcela_inventario_especie' on page 20 undefined on input line 215.
 
 
 
-[19]
+[20]
 ./contenido/3_metodologia.tex:223: Incompatible glue units.
 \es@sppercent ...fnum \gluestretchorder \lastskip 
                                                   =\z@ \unskip \fi \textorma...
@@ -1828,182 +1852,189 @@ l.223 ... equivale a un error relativo del $19\,\%
 I'm going to assume that 1mu=1pt when they're mixed.
 
 
-Overfull \hbox (80.73524pt too wide) in paragraph at lines 227--228
-\T1/futs/m/n/10.95 ra-men-te au-xi-liar. La va-ria-ble \T1/cmtt/m/n/10.95 ht \T1/futs/m/n/10.95 que-da, por tan-to, in-te-gra-da en la ta-bla \T1/cmtt/m/n/10.95 parcela_inventario_especie_cd\T1/futs/m/n/10.95 ,
+Overfull \hbox (2.64774pt too wide) in paragraph at lines 227--228
+[]\T1/futs/m/n/10.95 La va-ria-ble \T1/cmtt/m/n/10.95 ht \T1/futs/m/n/10.95 que-da, por tan-to, in-te-gra-da en la ta-bla \T1/cmtt/m/n/10.95 parcela_inventario_especie_cd\T1/futs/m/n/10.95 ,
  []
 
 
 
-[20])
+[21])
 
-[21] (./contenido/4_estructura.tex
+[22] (./contenido/4_estructura.tex
 Overfull \hbox (25.65471pt too wide) in paragraph at lines 22--23
 \T1/futs/m/n/10.95 (\T1/cmtt/m/n/10.95 parcela_id\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 inventario_id\T1/futs/m/n/10.95 ), in-clu-yen-do atri-bu-tos edá-fi-cos y de con-tex-to (p. ej., \T1/cmtt/m/n/10.95 nivel1_id\T1/futs/m/n/10.95 ,
  []
 
 
-Overfull \hbox (50.62086pt too wide) in paragraph at lines 25--26
+Overfull \hbox (50.62086pt too wide) in paragraph at lines 26--27
 []\T1/futs/b/n/10.95 parcela_inventario_estacion\T1/futs/m/n/10.95 : al-ma-ce-na agre-ga-dos climático-biofísicos por es-ta-ción (\T1/cmtt/m/n/10.95 estacion_id\T1/futs/m/n/10.95 )
  []
 
 
-Overfull \hbox (31.48824pt too wide) in paragraph at lines 30--31
+Overfull \hbox (31.48824pt too wide) in paragraph at lines 31--32
 \T1/futs/m/n/10.95 fi-nen los va-lo-res po-si-bles y sus des-crip-cio-nes. Por ejem-plo, \T1/cmtt/m/n/10.95 cat_textura\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 cat_nivel1\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 cat_tratmasa
  []
 
 
-LaTeX Warning: Reference `fig:GWest_BBDD' on page 22 undefined on input line 34.
+LaTeX Warning: Reference `fig:GWest_BBDD' on page 23 undefined on input line 35.
 
-<figuras/Estrctr_BBDD_GWest.png, id=198, 1383.1675pt x 1757.56625pt>
+<figuras/Estrctr_BBDD_GWest.png, id=207, 1029.09468pt x 895.84688pt>
 File: figuras/Estrctr_BBDD_GWest.png Graphic file (type png)
 <use figuras/Estrctr_BBDD_GWest.png>
-Package pdftex.def Info: figuras/Estrctr_BBDD_GWest.png  used on input line 38.
-(pdftex.def)             Requested size: 384.1096pt x 488.06564pt.
+Package pdftex.def Info: figuras/Estrctr_BBDD_GWest.png  used on input line 39.
+(pdftex.def)             Requested size: 384.1096pt x 334.38342pt.
 
 
-[22]
-Overfull \hbox (40.71112pt too wide) in paragraph at lines 49--50
+[23]
+Overfull \hbox (40.71112pt too wide) in paragraph at lines 50--51
 []\T1/futs/b/n/10.95 Identificador\T1/futs/m/n/10.95 : cla-ves pri-ma-rias y fo-rá-neas ter-mi-na-das en \T1/cmtt/m/n/10.95 _id \T1/futs/m/n/10.95 (p.ej., \T1/cmtt/m/n/10.95 parcela_id\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 inventario_id\T1/futs/m/n/10.95 ,
  []
 
 
-Overfull \hbox (26.75613pt too wide) in paragraph at lines 53--54
+Overfull \hbox (26.75613pt too wide) in paragraph at lines 54--55
 \T1/futs/m/n/10.95 po-ni-bles o en-mas-ca-ra-dos por ca-li-dad (\T1/cmtt/m/n/10.95 NA\T1/futs/m/n/10.95 ); los ran-gos es-pe-ra-dos se do-cu-men-tan en \T1/cmtt/m/n/10.95 meta_variables\T1/futs/m/n/10.95 .
  []
 
 
 
-[23 <./figuras/Estrctr_BBDD_GWest.png>]
-Overfull \hbox (65.07135pt too wide) in alignment at lines 79--84
+[24 <./figuras/Estrctr_BBDD_GWest.png>]
+Overfull \hbox (65.07135pt too wide) in alignment at lines 81--86
  [] [] [] [] 
  []
 
 
-Overfull \hbox (65.07135pt too wide) in alignment at lines 84--88
+Overfull \hbox (65.07135pt too wide) in alignment at lines 86--90
  [] [] [] [] 
  []
 
 
-Overfull \hbox (65.07135pt too wide) in alignment at lines 88--92
+Overfull \hbox (65.07135pt too wide) in alignment at lines 90--94
  [] [] [] [] 
  []
 
 
-Overfull \hbox (65.07135pt too wide) in alignment at lines 92--94
+Overfull \hbox (65.07135pt too wide) in alignment at lines 94--96
  [] [] [] [] 
  []
 
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 103.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 103.
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
 []|\T1/cmtt/m/n/10 tipsuelo1_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
 \T1/cmtt/m/n/10 tipsuelo2_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
 []|\T1/cmtt/m/n/10 parcela_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
 []|\T1/cmtt/m/n/10 nivel1_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--123
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
 []|\T1/cmtt/m/n/10 parcela_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--123
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
 \T1/cmtt/m/n/10 inventario_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--134
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
 []|\T1/cmtt/m/n/10 parcela_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--134
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
 \T1/cmtt/m/n/10 inventario_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 []|\T1/futs/m/n/10 Numérico dis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--146
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
 []|\T1/cmtt/m/n/10 parcela_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--146
+Underfull \hbox (badness 7133) in paragraph at lines 150--150
+[]|\T1/futs/m/n/10 grados cen-te-si-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+[]|\T1/futs/m/n/10 Numérico dis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
+[]|\T1/cmtt/m/n/10 parcela_id\T1/futs/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
 \T1/cmtt/m/n/10 inventario_id\T1/futs/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 163--163
 []|\T1/futs/m/n/10 mm/(m$[]\FMS/futm/m/n/10 ^^A$\T1/futs/m/n/10 día),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
 []|\T1/cmtt/m/n/10 NDVI_*\T1/futs/m/n/10 , \T1/cmtt/m/n/10 EVI_*\T1/futs/m/n/10 ,
  []
 
 
-Overfull \hbox (3.4282pt too wide) in paragraph at lines 158--158
+Overfull \hbox (3.4282pt too wide) in paragraph at lines 174--174
 []|\T1/cmtt/m/n/10 grupos.nombregrupo| 
  []
 
 
-Overfull \hbox (65.07135pt too wide) in alignment at lines 94--159
+Overfull \hbox (65.07135pt too wide) in alignment at lines 96--175
  [] [] [] [] 
  []
 
-[24]
-Overfull \hbox (62.8865pt too wide) in paragraph at lines 166--167
+[25] [26]
+Overfull \hbox (62.8865pt too wide) in paragraph at lines 182--183
 []\T1/futs/b/n/10.95 Rangos y do-mi-nios\T1/futs/m/n/10.95 : se ve-ri-fi-can con-tra \T1/cmtt/m/n/10.95 rango_esperado \T1/futs/m/n/10.95 y \T1/cmtt/m/n/10.95 valores_especiales \T1/futs/m/n/10.95 de \T1/cmtt/m/n/10.95 meta_variables\T1/futs/m/n/10.95 . 
  []
 
+)
 
+[27] (./contenido/5_disponibilidad.tex)
 
-[25])
-
-[26] (./contenido/5_disponibilidad.tex)
-
-[27] (./contenido/6_aplicaciones.tex
+[28] (./contenido/6_aplicaciones.tex
 Overfull \hbox (0.99376pt too wide) in paragraph at lines 23--24
 []\T1/futs/b/n/10.95 Evaluación de ser-vi-cios eco-sis-té-mi-cos\T1/futs/m/n/10.95 : me-dian-te los in-di-ca-do-res de car-bono (aé-reo, sub-
  []
 
 )
 
-[28] (./contenido/7_limitaciones.tex
+[29] (./contenido/7_limitaciones.tex
 
-[29]
-Overfull \hbox (4.7587pt too wide) in paragraph at lines 49--50
+[30]
+Overfull \hbox (4.7587pt too wide) in paragraph at lines 48--49
 []\T1/futs/m/n/10.95 Añadir in-for-ma-ción de ges-tión, tra-ta-mien-tos y al-te-ra-cio-nes na-tu-ra-les del me-dio (por ejem-
  []
 
 )
 
-[30] (./contenido/8_conclusion.tex)
+[31] (./contenido/8_conclusion.tex)
 
-[31] (./contenido/9_anexos.tex
-
-[32]
+[32] (./contenido/9_anexos.tex
 
 [33]
 
@@ -2011,76 +2042,76 @@ Overfull \hbox (4.7587pt too wide) in paragraph at lines 49--50
 
 [35]
 
-./contenido/9_anexos.tex:342: LaTeX Error: Not allowed in LR mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.342 }
-       
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./contenido/9_anexos.tex:342: Missing } inserted.
-<inserted text> 
-                }
-l.342 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./contenido/9_anexos.tex:342: Extra }, or forgotten \endgroup.
-\multirow@vbox ...\if #1b\relax \else \vfill \fi }
-                                                  
-l.342 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-./contenido/9_anexos.tex:342: LaTeX Error: Not allowed in LR mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.342 }
-       
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./contenido/9_anexos.tex:342: Missing } inserted.
-<inserted text> 
-                }
-l.342 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./contenido/9_anexos.tex:342: Extra }, or forgotten \endgroup.
-\multirow@vbox ...\if #1b\relax \else \vfill \fi }
-                                                  
-l.342 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-
 [36]
+
+./contenido/9_anexos.tex:342: LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.342 }
+       
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./contenido/9_anexos.tex:342: Missing } inserted.
+<inserted text> 
+                }
+l.342 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./contenido/9_anexos.tex:342: Extra }, or forgotten \endgroup.
+\multirow@vbox ...\if #1b\relax \else \vfill \fi }
+                                                  
+l.342 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+./contenido/9_anexos.tex:342: LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.342 }
+       
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./contenido/9_anexos.tex:342: Missing } inserted.
+<inserted text> 
+                }
+l.342 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./contenido/9_anexos.tex:342: Extra }, or forgotten \endgroup.
+\multirow@vbox ...\if #1b\relax \else \vfill \fi }
+                                                  
+l.342 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
 
 [37]
 
@@ -2089,6 +2120,8 @@ deleted material, e.g., by typing `I$}'.
 [39]
 
 [40]
+
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 643--643
 []|\T1/futs/m/n/10 Mezcla de fron-do-sas de
  []
@@ -2113,24 +2146,24 @@ Underfull \hbox (badness 7522) in paragraph at lines 801--801
 []|\T1/futs/m/n/10 Betula his-pa-ni-ca, Abe-dul
  []
 
-[41
+[42
 
-] [42] [43] [44] [45] [46] [47] [48]
+] [43] [44] [45] [46] [47] [48] [49]
 
-[49])
-c:/Users/maide/Downloads/vs/latex/G_west__bbdd_/main.tex:48: Illegal parameter number in definition of \abx@field@note.
+[50])
+c:/Users/maide/Downloads/vs/latex/G_west__bbdd_/main.tex:67: Illegal parameter number in definition of \abx@field@note.
 <to be read again> 
                    }
-l.48 
+l.67 
      
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-c:/Users/maide/Downloads/vs/latex/G_west__bbdd_/main.tex:48: You can't use `macro parameter character #' in horizontal mode.
+c:/Users/maide/Downloads/vs/latex/G_west__bbdd_/main.tex:67: You can't use `macro parameter character #' in horizontal mode.
 <argument> ...om/ecmwf/cdsapi?tab=readme-ov-file##
                                                   
-l.48 
+l.67 
      
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -2138,22 +2171,22 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 
-Overfull \hbox (10.65108pt too wide) in paragraph at lines 48--48
+Overfull \hbox (10.65108pt too wide) in paragraph at lines 67--67
 []\T1/futs/m/n/10.95 ECMWF. \T1/futs/m/it/10.95 CD-SA-PI\T1/futs/m/n/10.95 . GitHub re-po-si-tory. link: https://github.com/ecmwf/cdsapi?tab=readme-
  []
 
 
-Overfull \hbox (2.35689pt too wide) in paragraph at lines 48--48
+Overfull \hbox (2.35689pt too wide) in paragraph at lines 67--67
 []\T1/futs/m/n/10.95 J. Mu-ñoz Sa-ba-ter. \T1/futs/m/it/10.95 ERA5-Land hourly da-ta from 1950 to pre-sent\T1/futs/m/n/10.95 . Co-per-ni-cus Cli-ma-te Chan-
  []
 
 
 
-[50
+[51
 
 ]
 
-[51] (./main.aux
+[52] (./main.aux
 LaTeX Info: Redefining \sptext on input line 32.
 LaTeX Info: Redefining \. on input line 32.
 LaTeX Info: Redefining \% on input line 32.
@@ -2187,18 +2220,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43213 strings out of 467800
- 879564 string characters out of 5436062
- 2050594 words of memory out of 5000000
- 70947 multiletter control sequences out of 15000+600000
- 752417 words of font info for 177 fonts, out of 8000000 for 9000
+ 43227 strings out of 467800
+ 879931 string characters out of 5436062
+ 2051087 words of memory out of 5000000
+ 70955 multiletter control sequences out of 15000+600000
+ 757479 words of font info for 181 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,20n,124p,1360b,2163s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,20n,124p,1596b,2163s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><c:/texlive/2025/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on main.pdf (51 pages, 9534482 bytes).
+Output written on main.pdf (52 pages, 9857145 bytes).
 PDF statistics:
- 571 PDF objects out of 1000 (max. 8388607)
- 486 compressed objects within 5 object streams
- 232 named destinations out of 1000 (max. 500000)
+ 580 PDF objects out of 1000 (max. 8388607)
+ 494 compressed objects within 5 object streams
+ 235 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
