@@ -114,13 +114,19 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
 
 
 \begin{itemize}
-    \item \textbf{Creación de identificadores para cada tabla.} Para facilitar el manejo de los datos lo primero que se hace es crear un identificador para cada parcela. Esto se lleva a cabo concatenando \texttt{Estadillo} y \texttt{Provincia}. Este identificador debe tratarse con mucha atención pues es lo que permitirá relacionar las observaciones de uno y otro inventario. A partir de esta clave se construyen las claves primarias de cada tabla que deben ser tratadas para asegurar su unicidad: \texttt{idparcela\_inventario}, \texttt{idparcela\_inventario\_especie} e \texttt{idparcela\_inventario\_especie\_cd}.
+    \item \textbf{Creación de identificadores para cada tabla.} Para facilitar el manejo de los datos lo primero que se hace es crear un identificador para cada parcela. Esto se lleva a cabo concatenando \texttt{Estadillo} y \texttt{Provincia}. Este identificador debe tratarse con mucha atención pues es lo que permitirá relacionar las observaciones de uno y otro inventario.
     
     \medskip
     
     \item \textbf{Normalización de los códigos de las especies.} Se normaliza la codificación de las especies para que coincidan entre inventarios siguiendo la Tabla \ref{tab:codificacion_especies}. 
 
-    
+    \medskip
+
+    \item \textbf{Creación de la variable \texttt{grupo\_id}.} Esta variable identifica el grupo arbóreo al que pertenece cada especie, permitiendo agrupar las entradas por grandes géneros o tipos taxonómicos. La variable \texttt{grupo\_id} fue creada específicamente para esta base de datos mediante una asignación sistemática basada en el nombre científico o común de la especie. 
+    \medskip
+
+\item \textbf{Creación de la variable \texttt{tipo\_especie}.} Dicha variable clasifica cada especie arbórea según su morfología en dos categorías principales: \texttt{0 = conífera} y \texttt{1 = frondosa}. Esta codificación binaria sigue los criterios de la FAO FRA y \textit{Forest Europe} para la tipificación de masas forestales. Esta variable es esencial para la aplicación de modelos alométricos diferenciados en el cálculo de biomasa y carbono, dado que las coníferas y las frondosas presentan estructuras de crecimiento y relaciones biomasa–altura distintas.
+
     \medskip
 
     \item \textbf{Filtrado por las coordenadas de las parcelas. } Eliminamos las parcelas que no tengan unas coordenadas válidas ($\texttt{CoorX}, \texttt{CoorY} =0$ o faltante). Consideramos dos parcelas como coincidentes entre dos inventarios cuando  tienen un mismo \texttt{idparcela} y sus coordenadas (tanto en X como en Y) estan a una distancia inferior a $300$m. Eliminamos las parcelas que no estén en al menos dos inventarios. Las coordenadas de los inventarios son progresivamente más precisas, siendo las coordenadas del cuarto inventario las mejores. Como, una vez filtradas, se considera una única ubicación para cada parcela, empleamos las coordenadas del inventario cuarto por defecto. En caso de no existir se emplean las coordenadas del inventario tercero, nunca las del segundo. 
@@ -130,8 +136,8 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
     \item \textbf{Corrección en el huso geográfico.} Al proyectar las coordenadas de las parcelas sobre el mapa encontramos muchos errores (parcelas sobre el mar, en otros países o sobre la provincia equivocada). Tras la exploración de los datos encontramos que los errores se deben a una mala asignación de los husos geográficos. Vemos en la figura \ref{fig:husos} estas divisiones del territorio. 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.4\textwidth]{figuras/husos.jpeg}
-        \caption{\small Imagen del mapa peninsular con los husos geográficos. Se contemplan las bandas de huso 29, 30 y 31. Las islas Canarias no aparecen en la imagen pero sí que se contemplan en la base de datos (huso 28 y 29).}
+        \includegraphics[width=0.6\textwidth]{figuras/husos.jpeg}
+        \caption{\small Esquema de España con los límites de los husos UTM 28, 29, 30 y 31 (cada 6° de longitud). Incluye cajas de referencia para Península, Baleares y Canarias.}
         \label{fig:husos}
     \end{figure}
     
@@ -190,18 +196,60 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
 
     \medskip
 
-    Algunas provincias (las provincias $07, 15, 27, 30, 31, 32, 33, 36, 39$ y del País Vasco) no tienen las variables \texttt{CA} y \texttt{CR} registradas por lo que es necesario estimarlas. Para solucionar estos faltantes, además de los debidos a fallos en la recogida de los datos, se emplea un  modelo \textit{RandomForestRegressor}
-\footnote{Para evaluar el modelo se dividen los datos en un $80\%$ para entrenamiento y un $20\%$ para validación. El modelo para \texttt{CA} obtiene: $\text{MSE}_{\text{CA, train}}= 0.28$, $\text{MSE}_{\text{CA, test}} = 5.48$, $R^2_{\text{CA, train}} = 0.99$, $R^2_{\text{CA, test}} = 0.91$. Para \texttt{CR}, las métricas son: $\text{MSE}_{\text{CR, train}}= 0.24$, $\text{MSE}_{\text{CR, test}}= 1.34$, $R^2_{\text{CR, train}} = 0.99$, $R^2_{\text{CR, test}} = 0.94$.}
-, que permite predecir estos valores a partir de las características disponibles en los datos. El modelo se entrena utilizando un conjunto de variables predictoras, que incluyen \texttt{Especie,  CD, VSC, NPies, ABas, IAVC, VCC} y \texttt{VLE}. Este mismo modelo se aplica para asignar etiquetas de carbono a los datos del inventario tercero y segundo (IFN2 e IFN3). Los datos provenientes de la tabla \texttt{brotes} (Tabla \ref{tab:brotes}) se consideran de carbono $0$. 
+    Algunas provincias —en concreto las provincias \textbf{07, 15, 27, 30, 31, 32, 33, 36, 39} y las del \textbf{País Vasco}— no cuentan con las variables \texttt{CA} (carbono aéreo) y \texttt{CR} (carbono radical) registradas, por lo que es necesario estimarlas. Para suplir estos valores ausentes, así como los faltantes derivados de errores en la toma de datos, se empleó un modelo \textit{RandomForestRegressor}, que permite predecir de forma robusta los valores de \texttt{CA} y \texttt{CR} a partir de las características disponibles en la base de datos.
 
-\medskip
+    \medskip
 
-\item \textbf{Creación de la variable \texttt{c} (carbono).} Creamos la variable \texttt{c} que será la variable objetivo del modelo como \texttt{c=CA+CR} para cada entrada de la tabla \texttt{parcela\_inventario\_especie\_cd} (tabla \ref{tab:parcela_inventario_especie_cd}). Los valores de estas variables se registran en toneladas por hectárea y, por tanto, para generalizar a las entradas de la tabla \texttt{parcela\_inventario\_especie} (Tabla \ref{tab:parcela_inventario_especie}) solo se requiere agrupar en \texttt{parcela\_inventario\_especie\_cd} por especie y sumar los valores de \texttt{c}.
+    El modelo se entrenó utilizando un conjunto de variables predictoras que incluyen \texttt{Especie}, \texttt{CD}, \texttt{VSC}, \texttt{NPies}, \texttt{ABas}, \texttt{IAVC}, \texttt{VCC} y \texttt{VLE}. Para evaluar su desempeño, los datos se dividieron en un $80\,\%$ para entrenamiento y un $20\,\%$ para validación.
 
-\item \textbf{Filtrado por valores de \texttt{c} y número de árboles.} Se eliminan de la base de datos las parcelas que no registran carbono capturado en ningún inventario (\texttt{c} igual a 0 en IFN2, IFN3 e IFN4). Además, se eliminan las especies de las parcelas que no tienen registro en ninguno de los inventarios de la presencia de árboles (aquellos valores de \texttt{parcela\_inventario\_especie} no presentes en \texttt{parcela\_inventario\_especie\_cd}). 
+    \medskip
 
-\medskip
+    En el caso del modelo para \texttt{CA}, se obtuvo un error cuadrático medio (MSE) de $0.28$ en entrenamiento y $5.48$ en prueba, con un coeficiente de determinación $R^2$ de $0.99$ y $0.91$, respectivamente. Para \texttt{CR}, el modelo alcanzó un $\text{MSE}_{\text{train}} = 0.24$ y $\text{MSE}_{\text{test}} = 1.34$, con valores de $R^2_{\text{train}} = 0.99$ y $R^2_{\text{test}} = 0.94$. Estos resultados indican una alta capacidad explicativa y un buen grado de generalización del modelo en ambos casos.
 
-\item \textbf{Estimación de la superficie de la parcela.} El IFN no proporciona las dimensiones de cada parcela registrada. Para estimar este dato empleamos la variable \texttt{Distanci} de la tabla parcela (\ref{tab:parcela}). Las coordenadas de cada parcela registran el punto central de la parcela y de la documentación de los inventarios se entiende que se trata de parcelas circulares. La variable \texttt{Distanci} registra un conjunto de medidas correspondientes a la distancia entre cada pie mayor contenido en la parcela y el centro de la misma. Estimamos el radio de la parcela como la mayor de dichas distancias (distancia entre el centro de la parcela y el árbol más alejado contenido en ella). Registramos las variables \texttt{Radio} en metros y la variable \texttt{Superficie} en hectáreas. Las parcelas que no cuentan con mediciones de \texttt{Distanci} validas se imputan con la media. 
- 
+    \medskip
+
+    Finalmente, este mismo procedimiento se aplicó para estimar las etiquetas de carbono en los datos correspondientes al \textbf{Inventario Forestal Nacional segundo y tercero (IFN2 e IFN3)}, mientras que los registros procedentes de la tabla \texttt{brotes} (Tabla~\ref{tab:brotes}) se consideraron de carbono $0$.
+
+    \medskip
+
+    \item \textbf{Creación de la variable \texttt{c} (tC/ha).} Creamos la variable \texttt{c} que será la variable objetivo del modelo como \texttt{c=CA+CR} para cada entrada de la tabla \texttt{parcela\_inventario\_especie\_cd} (tabla \ref{tab:parcela_inventario_especie_cd}). Los valores de estas variables se registran en toneladas por hectárea y, por tanto, para generalizar a las entradas de la tabla \texttt{parcela\_inventario\_especie} (Tabla \ref{tab:parcela_inventario_especie}) solo se requiere agrupar en \texttt{parcela\_inventario\_especie\_cd} por especie y sumar los valores de \texttt{c}.
+
+    \medskip
+
+    \item \textbf{Creación de la variable \texttt{ht} (m).} Esta variable representa la altura media del conjunto de árboles correspondientes a una misma especie y clase diamétrica dentro de cada parcela. Su estimación se realizó mediante un modelo \textit{CatBoost Regressor}, entrenado a partir de los datos del \textit{SIG Mayores\_exs} del IFN4, utilizando como variables explicativas la especie y la clase diamétrica (\texttt{cd\_id}).  
+
+    \medskip
+
+    El modelo obtuvo un desempeño satisfactorio, con un error cuadrático medio (RMSE) de $3.41$, un error absoluto medio (MAE) de $2.57$m y un coeficiente de determinación $R^2 = 0.71$. En términos prácticos, esto significa que el modelo se equivoca, en promedio, en unos $2.6$~m en la predicción de la altura de los árboles, lo que equivale a un error relativo del $19\,\%$ respecto a la altura media observada ($\overline{\text{Ht}} \approx 13.3$~m).
+    
+    \medskip
+
+    La variable \texttt{ht} queda, por tanto, integrada en la tabla \texttt{parcela\_inventario\_especie\_cd}, con un origen documentado y plenamente trazable.
+
+    \medskip
+
+    \item \textbf{Contenido de la tabla \texttt{parcela\_especie\_arbol}.} Cabe destacar que dicha tabla contiene unicamente los pies mayores registrados en el cuarto inventario forestal nacional pues debido a errores en la etiquetación de los árboles resulta imposible relacionar las observaciones entre inventarios. Se incluye porque permite relacionar la clase diamétrica y la altura de las especies inventariadas así como recoger los datos de volúmenes y carbono almacenado al nivel de árbol. 
+
+    \item \textbf{Creación de la variable \texttt{carbono\_bruto} (tC).} Esta variable representa el carbono total capturado por el conjunto de árboles pertenecientes a una misma especie y clase diamétrica dentro de cada parcela. Su cálculo se realiza a partir de las variables \texttt{npies}, \texttt{ht}, \texttt{clase\_especie} y \texttt{cd\_id}, que describen respectivamente el número de pies por clase, la altura media, el tipo de especie (conífera o frondosa) y la clase diamétrica del arbolado.
+
+    El procedimiento sigue un modelo alométrico adaptado de \cite{chave2014} y las directrices del IPCC (2006). La biomasa aérea individual se estima mediante ecuaciones específicas según el tipo de especie: 
+    \[
+    \text{Biomasa}_{\text{coníferas}} = 0.05 \times (\text{cd}^2 \times \text{Ht})^{0.9}, \qquad
+    \text{Biomasa}_{\text{frondosas}} = 0.067 \times (\text{cd}^2 \times \text{Ht})^{0.9}.
+    \]
+    A partir de esta biomasa, el carbono por árbol se obtiene aplicando el factor de conversión recomendado por el IPCC:
+    \[
+    \text{Carbono}_{\text{árbol}} = \frac{\text{Biomasa} \times 0.5}{1000}.
+    \]
+    El \texttt{carbono\_bruto} total se calcula multiplicando el carbono por árbol por el número de pies (\texttt{npies}) existentes en la clase diamétrica correspondiente:
+    \[
+    \text{Carbono\_bruto} = \text{Carbono}_{\text{árbol}} \times \text{npies}.
+    \]
+
+    El resultado se expresa en \textbf{toneladas de carbono (tC)} por parcela y especie, sin normalizar por superficie (es decir, no en toneladas por hectárea). Esta decisión permite mantener un proceso de cálculo más \textit{trazable} y directamente interpretable a partir de las variables observadas, evitando depender de los factores de expansión o conversiones específicas del IFN. Además, facilita la replicabilidad y la comparación entre inventarios, al derivarse íntegramente de datos medidos o modelados de manera transparente.
+
+    \medskip
+
+    \item \textbf{Estimación de la superficie de la parcela.} El IFN no proporciona las dimensiones de cada parcela registrada. Para estimar este dato empleamos la variable \texttt{Distanci} de la tabla \textit{SIG Mayores\_exs} del IFN3 e IFN4, priorizando el segundo (se asigna un único valor por parcela). Las coordenadas de cada parcela registran el punto central de la parcela y de la documentación de los inventarios se entiende que se trata de parcelas circulares. La variable \texttt{Distanci} registra un conjunto de medidas correspondientes a la distancia entre cada pie mayor contenido en la parcela y el centro de la misma. Estimamos el radio de la parcela como la mayor de dichas distancias (distancia entre el centro de la parcela y el árbol más alejado contenido en ella). Registramos las variables \texttt{Radio} en metros y la variable \texttt{Superficie} en hectáreas. Las parcelas que no cuentan con mediciones de \texttt{Distanci} validas se imputan con la media. 
+    
 \end{itemize}

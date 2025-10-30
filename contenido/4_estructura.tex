@@ -7,281 +7,178 @@
 % Puedes presentar una tabla con:
 % | Variable | Descripción | Unidad | Tipo de dato |
 
-La base de datos resultante se ha estructurado con el objetivo de facilitar su explotación en tareas de análisis espacial, modelización ecológica y evaluación de escenarios forestales y climáticos. Su diseño responde a una lógica jerárquica y relacional, en la que la parcela forestal constituye la unidad básica sobre la que se integran distintas capas de información.
+La base de datos se organiza bajo un modelo relacional normalizado que garantiza la integridad referencial y la trazabilidad de los datos. Todas las claves primarias (\textit{PK}) están definidas explícitamente y siguen una nomenclatura uniforme terminada en \texttt{\_id}, representando la granularidad del dato en cada nivel jerárquico. De igual forma, las claves foráneas (\textit{FK}) se encuentran activas y estrictamente validadas, cubriendo el 100\% de los valores no nulos y asegurando la ausencia de registros huérfanos.
 
-\medskip
+El esquema se ha diseñado para ser evolutivo y auditable. Las relaciones principales (PK/FK) permanecen estables, mientras que las tablas son extensibles, permitiendo incorporar nuevas métricas sin comprometer la coherencia estructural. La tabla \texttt{meta\_variables} complementa esta arquitectura documentando el tipo, unidades, método de cálculo, rango esperado y fuente de cada variable, lo que facilita la trazabilidad analítica y la reproducibilidad de los resultados.
 
-La combinación de criterios espaciales (coordenadas geográficas), temporales (año e inventario) y jerárquicos (especie y clase diamétrica) garantiza una base de datos homogénea, precisa y fácilmente explotable para análisis posteriores. Esta estructura modular permite acceder y consultar los datos a diferentes niveles de detalle, manteniendo la trazabilidad de los registros originales.
+\subsection*{Panorama de entidades}
 
-\medskip
+Las tablas se agrupan en dos conjuntos: \textbf{núcleo} y \textbf{catálogos}.  
+El núcleo contiene las entidades troncales que almacenan la información principal del sistema, mientras que los catálogos definen dominios controlados para las variables categóricas, garantizando consistencia terminológica en toda la base de datos.
 
-La base de datos está compuesta por cinco tablas principales, representadas esquemáticamente en la Figura~\ref{fig:estructura_ddbb}:
+\paragraph{Núcleo}
 \begin{itemize}
-    \item \texttt{parcelas}: contiene la información básica de localización y características edáficas de cada parcela.
-    \item \texttt{parcela\_inventario}: registra la información general recolectada por parcela en cada inventario.
-    \item \texttt{parcela\_inventario\_especie}: añade el componente específico de cada especie presente en cada inventario y parcela.
-    \item \texttt{parcela\_inventario\_especie\_cd}: desagrega los datos por clases diamétricas para cada especie.
-    \item \texttt{parcela\_inventario\_estacion}: integra estadísticas climáticas y espectrales a nivel estacional.
+  \item \textbf{parcelas}: identifica la unidad espacial (\texttt{parcela\_id}) y almacena su geometría básica (coordenadas, superficie, elevación, pendiente, etc.). Es la entidad raíz del modelo.
+  \item \textbf{parcela\_inventario}: describe el estado de cada parcela en un inventario determinado (\texttt{parcela\_id}, \texttt{inventario\_id}), incluyendo atributos edáficos y de contexto (p. ej., \texttt{nivel1\_id}, \texttt{textura\_id}).
+  \item \textbf{parcela\_inventario\_especie}: detalla la presencia y condición de cada especie dentro de una parcela e inventario, incorporando descriptores de masa y tratamientos silvícolas.
+  \item \textbf{parcela\_inventario\_especie\_cd}: describe las poblaciones arbóreas por parcela, especie y \emph{clase diamétrica} (\texttt{cd\_id}): n.º de pies (\texttt{npies}), área basimétrica (\texttt{abas}), volúmenes (\texttt{vcc}, \texttt{vsc}, \texttt{vle}), incrementos (\texttt{iavc}) y carbono (\texttt{ca}, \texttt{cr}).
+  \item \textbf{parcela\_especie\_arbol}: caracteriza los pies mayores identificados por parcela y especie en el inventario cuarto. Recoge las caracteristicas particulares de cada pie como altura (\texttt{ht}), diámetros (\texttt{dn1} y \texttt{dn2}), ubicación respecto del centro de la parcela (\texttt{rumbo}, \texttt{distancia}), volumen (\texttt{vcc, vsc, vle}), incremento (\texttt{iavc}) y carbono (\texttt{ca, cr}).  
+  \item \textbf{parcela\_inventario\_estacion}: almacena agregados climático-biofísicos por estación (\texttt{estacion\_id}) en la misma granularidad parcela–inventario, incluyendo variables como precipitación (\texttt{PR}) y temperatura (\texttt{T2M, SKT, STL*}), junto a índices de vegetación (NDVI, EVI, NDII, GNDVI).
+  \item \textbf{especies} y \textbf{grupos}: recogen la información taxonómica y su clasificación jerárquica, estableciendo la relación entre especies individuales y grupos funcionales.
 \end{itemize}
 
-Las Tablas~\ref{tab:parcela1}, \ref{tab:parcela_inventario1}, \ref{tab:parcela_estacional1}, \ref{tab:parcela_inventario_especie1} y \ref{tab:parcela_inventario_especie_cd1} muestran en detalle la estructura, incluyendo los tipos de datos y una breve descripción de su contenido.
+\paragraph{Catálogos}
+Cada variable categórica posee una tabla de catálogo propia (\texttt{cat\_}), donde se definen los valores posibles y sus descripciones. Por ejemplo, \texttt{cat\_textura}, \texttt{cat\_nivel1}, \texttt{cat\_tratmasa} o \texttt{cat\_origen}. Todas siguen un patrón uniforme: la clave primaria es el identificador de la variable (\texttt{<variable>\_id}), y las tablas núcleo referencian este mismo campo como clave foránea. Esto permite mantener un dominio controlado y una semántica coherente en toda la base de datos.
 
+\subsection*{Representación del esquema}
+
+La Figura~\ref{fig:GWest_BBDD} muestra el esquema general de las tablas nucleares y sus principales relaciones. Este diagrama resume la estructura interna de la base de datos y su jerarquía de dependencias.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{figuras/estructura_base_datos_informe_con_leyenda.png}
-    \caption{Estructura de la base de datos}
-    \label{fig:estructura_ddbb}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figuras/Estrctr_BBDD_GWest.png}
+  \caption{Esquema relacional de las tablas nucleares de la base de datos.}
+  \label{fig:GWest_BBDD}
 \end{figure}
 
+\subsection*{Tipología de datos y convenciones}
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{2.2}
-\setlength{\tabcolsep}{5pt}
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{3cm}|m{8cm}|}
-\hline
-\multicolumn{3}{|c|}{\cellcolor[HTML]{D9EAD3}\textbf{\color[HTML]{000000}parcelas: identificación, localización y caracterización básica de las parcelas forestales}} \\
-\hline
-\cellcolor[HTML]{D9EAD3}\textbf{\color[HTML]{000000}Variable} &
-\cellcolor[HTML]{D9EAD3}\textbf{\color[HTML]{000000}Tipo} &
-\cellcolor[HTML]{D9EAD3}\textbf{\color[HTML]{000000}Descripción}  \\
-\hline
-\textbf{idparcela} & varchar(50) & Identificador único de la parcela \\
-\hline
-latitud & float & Coordenada de latitud de la parcela \\
-\hline
-longitud & float & Coordenada de longitud de la parcela \\
-\hline
-%presencia & int & Indica presencia de la parcela en los distintos inventarios (Anexo \ref{anexo:presencia}) \\
-%\hline
-created\_at & timestamp & Fecha de creación del registro \\
-\hline
-updated\_at & timestamp & Fecha de última modificación del registro \\
-\hline
-ele\_values & float & Altura de la parcela desde el nivel del mar \\
-\hline
-asp\_values & float & Orientación de la parcela en grados \\
-\hline
-slo\_values & float & Pendiente del terreno de la parcela \\
-\hline
-periodo23 & int & Años transcurridos entre el apeo de la parcela en el IFN2 y el apeo en el IFN3 \\
-\hline
-periodo24 & int & Años transcurridos entre el apeo de la parcela en el IFN2 y el apeo en el IFN4 \\
-\hline
-periodo34 & int & Años transcurridos entre el apeo de la parcela en el IFN3 y el apeo en el IFN3 \\
-\hline
-tipsuelo1, tipsuelo2, tipsuelo3 & int & Tipos de suelo identificados en la parcela (diferentes categorías o clases) \\
-\hline
-radio & float & Estimación del radio circular de la parcela (m)\\
-\hline
-superficie & float & Estimación de la superficie circular de la parcela ($m^2$) \\
-\hline
-rocosid & int & Grado de rocosidad del terreno \\
-\hline
-merosiva & int & Manifestaciones erosivas observadas en la parcela \\
-\hline
-\end{tabular}%
-}
-\caption{Estructura de la tabla \texttt{parcelas}. Contiene información general, geográfica y edáfica de cada unidad de muestreo en la base de datos. Se pueden consultar las claves de las variables en los anexos.}
-\label{tab:parcela1}
-\end{table}
+Cada columna se tipifica en una de cuatro categorías:
+\begin{itemize}
+  \item \textbf{Numérico}: magnitudes continuas (p.\,ej., \texttt{npies}, \texttt{vcc}, \texttt{ndvi\_mean}, \texttt{elevacion}).
+  \item \textbf{Categórico}: códigos discretos con dominio controlado mediante catálogos \texttt{cat\_*} (p.\,ej., \texttt{nivel1\_id}, \texttt{textura\_id}, \texttt{tratmasa\_id}).
+  \item \textbf{Identificador}: claves primarias y foráneas terminadas en \texttt{\_id} (p.\,ej., \texttt{parcela\_id}, \texttt{inventario\_id}, \texttt{especie\_id}, \texttt{cd\_id}).
+  \item \textbf{Geográfico}: coordenadas y derivados topográficos (\texttt{latitud}, \texttt{longitud}, \texttt{coorx}/\texttt{coory}, \texttt{pendiente}, \texttt{orientacion}).
+\end{itemize}
 
+Las variables satelitales y climáticas usan convenciones de \emph{valores especiales} para datos no disponibles o enmascarados por calidad (\texttt{NA}); los rangos esperados se documentan en \texttt{meta\_variables}. Todas las claves categóricas referencian explícitamente su catálogo homólogo (\texttt{<variable>\_id} $\rightarrow$ \texttt{cat\_<variable>(<variable>\_id)}).
 
+\subsection*{Cardinalidad y completitud}
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{2.2}
-\setlength{\tabcolsep}{5pt}
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{3cm}|m{9cm}|}
-\hline
-\multicolumn{3}{|c|}{\cellcolor[HTML]{D9EAD3}\textbf{\color[HTML]{000000}parcela\_inventario: registros asociados a cada parcela para los inventarios IFN2, IFN3 e IFN4}} \\
-\hline
-\cellcolor[HTML]{D9EAD3}\textbf{Campo} &
-\cellcolor[HTML]{D9EAD3}\textbf{Tipo} &
-\cellcolor[HTML]{D9EAD3}\textbf{Descripción} \\
-\hline
-idparcela\_inventario\_ano & varchar(50) & Identificador único por parcela y año \\
-\hline
-\textbf{idparcela\_inventario} & varchar(50) & Identificador del inventario de la parcela \\
-\hline
-idparcela & varchar(50) & Identificador de la parcela \\
-\hline
-inventario & int & Número del inventario (2, 3 o 4) \\
-\hline
-ano & int & Año de apeo de la parcela e inventario \\
-\hline
-fcctot & int & Fracción de cabida cubierta total en la parcela e inventario\\
-\hline
-textura & int & Textura del suelo en la parcela e inventario\\
-\hline
-matorg & int & Contenido de materia orgánica en la parcela e inventario\\
-\hline
-phsuelo & int & pH del suelo en la parcela e inventario\\
-\hline
-modcomb & int & Modelo de combustible en la parcela e inventario\\
-\hline
-espcmue & int & Espesor de capa muerta en la parcela e inventario\\
-\hline
-fccarb & int & Fracción cubierta arbórea en la parcela e inventario\\
-\hline
-disesp & int & Distribución espacial de las especies en la parcela e inventario\\
-\hline
-comesp & int & Composición de las especies en la parcela e inventario\\
-\hline
-%suelo & int & Variable creada por clustering con las caracteristicas del suelo\\
-%\hline
-clasuelo & int & Clase del suelo (ifn2)\\
-\hline
-created\_at & datetime & Fecha de creación del registro \\
-\hline
-updated\_at & datetime & Fecha de última modificación del registro \\
-\hline
-\end{tabular}%
-}
-\caption{Estructura de la tabla \texttt{parcela\_inventario}. Contiene los registros asociados a cada parcela en cada inventario (IFN2, IFN3, IFN4).}
-\label{tab:parcela_inventario1}
-\end{table}
+El volumen actual por tabla es:
+\begin{center}
+\begin{tabular}{l r}
+\toprule
+\textbf{Tabla} & \textbf{Número de registros} \\
+\midrule
+\texttt{parcelas} & 52{,}298 \\
+\texttt{parcela\_inventario} & 147{,}995 \\
+\texttt{parcela\_inventario\_especie} & 417{,}119 \\
+\texttt{parcela\_inventario\_especie\_cd} & 1{,}191{,}070 \\
+\texttt{parcela\_especie\_arbol} & 855{,}860 \\
+\texttt{parcela\_inventario\_estacion} & 470{,}056 \\
+\texttt{especies} & 195 \\
+\texttt{grupos} & 33 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
+Las \textit{FK} estructurales están activas y cubren el 100\,\% de los valores no nulos (sin huérfanos). La completitud de campos numéricos puede verse afectada por enmascaramientos de calidad en series satelitales/climáticas, registrados como \texttt{NA} según \texttt{meta\_variables}. Las variables categóricas presentan dominios cerrados controlados por sus catálogos.
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{2.2}
-\setlength{\tabcolsep}{5pt}
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{3cm}|m{9.5cm}|}
-\hline
-\multicolumn{3}{|c|}{\cellcolor[HTML]{D9EAD3}\textbf{\color[HTML]{000000}parcela\_inventario\_especie: información por especie forestal presente en cada parcela e inventario}} \\
-\hline
-\cellcolor[HTML]{D9EAD3}\textbf{Campo} &
-\cellcolor[HTML]{D9EAD3}\textbf{Tipo} &
-\cellcolor[HTML]{D9EAD3}\textbf{Descripción} \\
-\hline
-idparcela & varchar(50) & Identificador de la parcela \\
-\hline
-inventario & int & Número del inventario (2, 3 o 4) \\
-\hline
-especie & int & Código de la especie forestal \\
-\hline
-idparcela\_inventario & varchar(50) & Identificador del inventario de la parcela \\
-\hline
-\textbf{idparcela\_inventario\_especie} & varchar(50) & Identificador único por parcela, inventario y especie \\
-\hline
-fpmasa & int & Forma principal de la masa formada por la especie en la parcela e inventario\\
-\hline
-ocupa & int & Ocupación de la especie en la parcela e inventario\\
-\hline
-estado & int & Estado general de la masa formada por la especie en la parcela e inventario\\
-\hline
-tratmasa & int & Tipo de tratamiento aplicado a la masa formada por la especie en la parcela e inventario\\
-\hline
-orgmasa1 & int & Origen principal de la masa formada por la especie en la parcela e inventario\\
-\hline
-masa & int & Tipo de masa forestal (ifn2)\\
-\hline
-origen & int & Origen de la masa formada por la especie en la parcela e inventario\\
-\hline
-ca & float & Carbono aéreo capturado por la especie en la parcela e inventario (t/ha)\\
-\hline
-cr & float & Carbono radical capturado por la especie en la parcela e inventario (t/ha)\\
-\hline
-c & float & Carbono total capturado por la especie en la parcela e inventario (t/ha)\\
-\hline
-created\_at & datetime & Fecha de creación del registro \\
-\hline
-updated\_at & datetime & Fecha de última modificación del registro \\
-\hline
-\end{tabular}%
-}
-\caption{Estructura de la tabla \texttt{parcela\_inventario\_especie}. Contiene información por especie forestal presente en cada parcela en cada inventario.}
-\label{tab:parcela_inventario_especie1}
-\end{table}
+\subsection*{Diccionario resumido de variables (núcleo)}
+\small
+\setlength{\LTcapwidth}{\textwidth}
+\begin{longtable}{p{3.2cm} p{7.6cm} p{2.4cm} p{2.4cm}}
+\caption{Resumen de variables principales por entidad. El diccionario completo se encuentra documentado en \texttt{meta\_variables}.}\\
+\toprule
+\textbf{Variable} & \textbf{Descripción} & \textbf{Unidad} & \textbf{Tipo de dato} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Variable} & \textbf{Descripción} & \textbf{Unidad} & \textbf{Tipo de dato} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\emph{Continúa en la siguiente página}} \\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
 
+\multicolumn{4}{l}{\textbf{parcelas}} \\
+\texttt{parcela\_id} & Identificador único de parcela (IFN). & -- & Identificador \\
+\texttt{latitud}, \texttt{longitud} & Coordenadas geográficas (WGS84). & ° & Geográfico \\
+\texttt{coorx}, \texttt{coory} & Coordenadas UTM; \texttt{huso} especifica zona. & m (UTM) & Geográfico \\
+\texttt{elevacion} & Cota sobre el nivel del mar (NASADEM). & m & Numérico \\
+\texttt{pendiente} & Inclinación del terreno. & ° & Numérico \\
+\texttt{orientacion} & Orientación del terreno (0–360). & ° & Numérico \\
+\texttt{presencia\_id} & Presencia en IFN $\rightarrow$ \texttt{cat\_presencia}. & -- & Categórico \\
+\texttt{tipsuelo1\_id}, \texttt{tipsuelo2\_id}, \texttt{tipsuelo3\_id} & Tipos de suelo $\rightarrow$ \texttt{cat\_tipsuelo*}. & -- & Categórico \\
+\texttt{rocosidad\_id} & Rocosidad $\rightarrow$ \texttt{cat\_rocosidad}. & -- & Categórico \\
+\texttt{radio}, \texttt{superficie} & Radio de parcela y superficie derivada. & m; ha & Numérico \\
+\addlinespace
 
+\multicolumn{4}{l}{\textbf{parcela\_inventario}} \\
+\texttt{parcela\_id}, \texttt{inventario\_id} & Clave compuesta (parcela-inventario). & -- & Identificador \\
+\texttt{ano} & Año de apeo. & año & Numérico \\
+\texttt{nivel1\_id}, \texttt{nivel2\_id} & Morfoestructura. $\rightarrow$ \texttt{cat\_nivel*}. & -- & Categórico \\
+\texttt{textura\_id} & Textura de suelo $\rightarrow$ \texttt{cat\_textura}. & -- & Categórico \\
+\texttt{merosiva\_id} & Manifestaciones erosivas $\rightarrow$ \texttt{cat\_merosiva}. & -- & Categórico \\
+\texttt{matorg\_id} & Materia orgánica $\rightarrow$ \texttt{cat\_matorg}. & -- & Categórico \\
+\texttt{modcomb\_id} & Modelo de combustible $\rightarrow$ \texttt{cat\_modcomb}. & -- & Categórico \\
+\texttt{disesp\_id} & Distribución espacial $\rightarrow$ \texttt{cat\_disesp}. & -- & Categórico \\
+\texttt{comesp\_id} & Composición específica $\rightarrow$ \texttt{cat\_comesp}. & -- & Categórico \\
+\texttt{fccarb}, \texttt{fcctot} & Fracción de cabida cubierta (árboles). & \% & Numérico \\
+\addlinespace
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{2.2}
-\setlength{\tabcolsep}{5pt}
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|>{\centering\arraybackslash}m{6cm}|>{\centering\arraybackslash}m{3cm}|m{8.5cm}|}
-\hline
-\multicolumn{3}{|c|}{\cellcolor[HTML]{D9EAD3}\textbf{\color[HTML]{000000}parcela\_inventario\_especie\_cd: información por clase diamétrica para cada especie en cada parcela}} \\
-\hline
-\cellcolor[HTML]{D9EAD3}\textbf{Campo} &
-\cellcolor[HTML]{D9EAD3}\textbf{Tipo} &
-\cellcolor[HTML]{D9EAD3}\textbf{Descripción} \\
-\hline
-cd & int & Clase diamétrica del conjunto de árboles estudiado \\
-\hline
-idparcela\_inventario\_especie & varchar(50) & ID de especie por parcela e inventario \\
-\hline
-\textbf{idparcela\_inventario\_especie\_cd} & varchar(50) & Identificador único del registro \\
-\hline
-npies & float & Número de pies de la clase diamétrica y especie en la parcela e inventario \\
-\hline
-abas & float & Área basal total del conjunto de árboles de la clase diamétrica y especie en la parcela e inventario \\
-\hline
-vcc & float & Volumen con corteza del conjunto de árboles de la clase diamétrica y especie en la parcela e inventario\\
-\hline
-vsc & float & Volumen sin corteza del conjunto de árboles de la clase diamétrica y especie en la parcela e inventario\\
-\hline
-iavc & float & Incremento anual del volumen con corteza del conjunto de árboles de la clase diamétrica y especie en la parcela e inventario\\
-\hline
-vle & float & Volumen de leñas del conjunto de árboles de la clase diamétrica y especie en la parcela e inventario\\
-\hline
-created\_at & datetime & Fecha de creación del registro \\
-\hline
-updated\_at & datetime & Fecha de última modificación del registro \\
-\hline
-\end{tabular}%
-}
-\caption{Estructura de la tabla \texttt{parcela\_inventario\_especie\_cd}. Incluye información por clase diamétrica (CD) para cada especie presente en una parcela.}
-\label{tab:parcela_inventario_especie_cd1}
-\end{table}
+\multicolumn{4}{l}{\textbf{parcela\_inventario\_especie}} \\
+\texttt{parcela\_id}, \texttt{inventario\_id}, \texttt{especie\_id} & Clave compuesta (parcela-inventario-especie). & -- & Identificador \\
+\texttt{ocupa} & Grado de ocupación de la especie. & (0--10) & Numérico \\
+\texttt{estado\_id} & Estado de desarrollo. $\rightarrow$ \texttt{cat\_estado}. & -- & Categórico \\
+\texttt{fpmasa\_id} & Forma principal de masa $\rightarrow$ \texttt{cat\_fpmasa}. & -- & Categórico \\
+\texttt{tratmasa\_id} & Tratamientos selvícolas $\rightarrow$ \texttt{cat\_tratmasa}. & -- & Categórico \\
+\texttt{orgmasa1\_id} & Origen de masa (IFN3/4)$\rightarrow$ \texttt{cat\_orgmasa1}. & -- & Categórico \\
+\texttt{masa\_id} & Clasificación de masa $\rightarrow$ \texttt{cat\_masa}. & -- & Categórico \\
+\texttt{origen\_id} & Origen de la masa (IFN2) $\rightarrow$ \texttt{cat\_origen}. & -- & Categórico \\
+\addlinespace
 
+\multicolumn{4}{l}{\textbf{parcela\_inventario\_especie\_cd}} \\
+\texttt{parcela\_id}, \texttt{inventario\_id}, \texttt{especie\_id} & Clave compuesta ( parcela-inventario-especie-cd). & -- & Identificador \\
+\texttt{cd\_id} & Clase diamétrica (CD) reglamento IFN. & cm & Numérico discreto \\
+\texttt{npies} & Número de pies. & pies/ha & Numérico \\
+\texttt{abas} & Área basimétrica. & m$^{2}$/ha & Numérico \\
+\texttt{vcc}, \texttt{vsc}, \texttt{vle} & Volúmenes (con/sin corteza; leñas). & m$^{3}$/ha & Numérico \\
+\texttt{iavc} & Incremento anual del volumen con corteza. & m$^{3}$/ha$\cdot$año & Numérico \\
+\texttt{ca}, \texttt{cr} & Carbono aéreo y radical. & tC/ha & Numérico \\
+\texttt{ht} & Altura media (modelo CatBoost). & m & Numérico \\
+\texttt{carbono\_bruto} & Carbono total estimado (alometrías). & t & Numérico \\
+\addlinespace
 
+\multicolumn{4}{l}{\textbf{parcela\_especie\_arbol}} \\
+\texttt{parcela\_id}, \texttt{especie\_id} & Clave compuesta (parcela–especie–árbol). & -- & Identificador \\ 
+\texttt{arbol\_id} & Identificador del árbol dentro de parcela y especie. & -- & Entero \\ 
+\texttt{rumbo} & Rumbo desde el centro de la parcela al árbol. & grados centesimales & Numérico \\ 
+\texttt{distancia} & Distancia desde el centro de la parcela al árbol. & m & Numérico \\ 
+\texttt{cd} & Clase diamétrica (reglamento IFN). & cm & Numérico discreto \\ 
+\texttt{ht} & Altura total del árbol inventariado. & m & Numérico \\ 
+\texttt{dn1}, \texttt{dn2} & Diámetros normales perpendiculares. & mm & Numérico \\ 
+\texttt{abas} & Área basimétrica del pie medido. & m$^{2}$ & Numérico \\ 
+\texttt{iavc} & Incremento anual del volumen con corteza. & dm$^{3}$/año & Numérico \\ 
+\texttt{vcc}, \texttt{vsc}, \texttt{vle} & Volúmenes (con corteza, sin corteza, leñas). & dm$^{3}$ & Numérico \\ 
+\texttt{ca}, \texttt{cr} & Carbono aéreo y radical del árbol. & t & Numérico \\
+\addlinespace
 
+\multicolumn{4}{l}{\textbf{parcela\_inventario\_estacion}} \\
+\texttt{parcela\_id}, \texttt{inventario\_id}, \texttt{estacion\_id} & Clave compuesta (agregado estacional). & -- & Identificador \\
+\texttt{PR\_*} & Estadísticos de precipitación (mean, max, min, std, sum). & mm/(m$^2\cdot$día), mm/m$^2$ & Numérico \\
+\texttt{T2M\_*}, \texttt{SKT\_*} & Aire 2\,m y temperatura superficial (mean, max, min, std). & °C & Numérico \\
+\texttt{STL1\_*}--\texttt{STL4\_*} & Temperatura del suelo por niveles (mean, max, min, std). & °C & Numérico \\
+\texttt{NDVI\_*}, \texttt{EVI\_*}, \texttt{NDII\_*}, \texttt{GNDVI\_*} & Índices de vegetación (max, mean, median, min, std). & adimensional & Numérico \\
+\addlinespace
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{2.2}
-\setlength{\tabcolsep}{5pt}
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{3cm}|m{9.5cm}|}
-\hline
-\multicolumn{3}{|c|}{\cellcolor[HTML]{D9EAD3}\textbf{\color[HTML]{000000}parcela\_inventario\_estacion: métricas climáticas y espectrales por estación e inventario}} \\
-\hline
-\cellcolor[HTML]{D9EAD3}\textbf{Campo} &
-\cellcolor[HTML]{D9EAD3}\textbf{Tipo} &
-\cellcolor[HTML]{D9EAD3}\textbf{Descripción} \\
-\hline
-\textbf{idparcela\_inventario\_season} & varchar(50) & Identificador único por parcela e inventario por estación \\
-\hline
-idparcela & varchar(50) & Identificador de la parcela \\
-\hline
-inventario & int & Número del inventario (2, 3 o 4) \\
-\hline
-season & varchar(50) & Estación del año (e.g., invierno, primavera) \\
-\hline
-pr\_mean, sum, max, min, std  & float & Estadísticos de precipitación \\
-\hline
-t2m\_mean, max, min, std & float & Estadísticos de temperatura del aire a 2m del suelo\\
-\hline
-skt\_mean, max, min, std & float & Estadísticos de temperatura de la superficie del suelo \\
-\hline
-stl1\ – \ stl4\_mean, max, min, std & float & Estadísticos de temperatura en 4 capas del subsuelo \\
-\hline
-evi-gndvi-ndii-ndvi\_mean, max, min, std & float & Estadísticos de índices espectrales \\
-\hline
-created\_at & datetime & Fecha de creación del registro \\
-\hline
-updated\_at & datetime & Fecha de última modificación del registro \\
-\hline
-\end{tabular}%
-}
-\caption{Estructura de la tabla \texttt{parcela\_inventario\_estacion}. Contiene métricas climáticas y espectrales agregadas estacionalmente para cada parcela e inventario.}
-\label{tab:parcela_estacional1}
-\end{table}
+\multicolumn{4}{l}{\textbf{especies} y \textbf{grupos}} \\
+\texttt{especie\_id} & Identificador de especie IFN. & -- & Identificador \\
+\texttt{nombre}, \texttt{sinonimia} & Denominación IFN y sinónimos. & -- & Texto \\
+\texttt{tipo\_especie} & 0\,= conífera; 1\,= frondosa. & -- & Categórico \\
+\texttt{grupo\_id} & Grupo funcional $\rightarrow$ \texttt{grupos}. & -- & Identificador \\
+\texttt{grupos.nombregrupo} & Nombre del grupo. & -- & Texto \\
+\end{longtable}
+\normalsize
+\subsection*{Calidad de datos y valores faltantes}
+
+Las validaciones automáticas garantizan:
+\begin{enumerate}
+  \item \textbf{Integridad referencial}: todas las \textit{FK} (\texttt{parcela\_id}, \texttt{inventario\_id}, \texttt{especie\_id} y catálogos \texttt{cat\_*}) están resueltas sin registros huérfanos.
+  \item \textbf{Rangos y dominios}: se verifican contra \texttt{rango\_esperado} y \texttt{valores\_especiales} de \texttt{meta\_variables}.
+  \item \textbf{Faltantes}: en variables derivadas de teledetección o reanálisis es esperable \texttt{NA} por enmascaramiento de nubes o cobertura temporal; estos valores se excluyen de los estadísticos agregados o se imputan explícitamente según el análisis.
+\end{enumerate}

@@ -5,7 +5,7 @@ La unidad básica de análisis empleada en este estudio es la parcela, entendida
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{figuras/mapa_parcelas.png}
-    \caption{\small Imagen del mapa peninsular con las parcelas contempladas representadas. Código de colores por provincias. Las islas Canarias no aparecen en la imagen pero sí que se contemplan en la base de datos.}
+    \caption{\small Imagen del mapa peninsular con las parcelas contempladas representadas. Las islas Canarias no aparecen en la imagen pero sí que se contemplan en la base de datos.}
     \label{fig:parcelas}
 \end{figure}
 
@@ -15,7 +15,7 @@ Los datos meteorológicos consisten en temperaturas (tanto de la superficie como
 \subsubsection*{Temperaturas}
 
 
-Los datos de temperaturas empleados provienen del dataset \textit{ERA5-Land hourly data from 1950 to present} \cite{copuernicus_temps}, procedentes del \textit{Climate Data Store} de Copernicus. Este conjunto de datos cubre todo el mundo desde el $1950$ hasta alrededor de $2$ ó $3$ meses antes del presente. Se obtiene de modelos alimentados con mediciones de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. Proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $9$ km.
+Los datos de temperaturas empleados provienen del dataset \textit{ERA5-Land hourly data from 1950 to present} \cite{copuernicus_temps}, procedentes del \textit{Climate Data Store} de Copernicus. Este conjunto de datos cubre toda la superficie terrestre de forma continua desde el $1950$ hasta el presente, actualizandose con un margen de $2$ a $3$ meses y recopila información de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. Proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $9$ km.
 
 \medskip
 
@@ -62,7 +62,7 @@ Los datos se pueden descargar a través de la API del \textit{Climate Data Store
 
 \subsubsection*{Precipitaciones}
 
-Los datos de precipitaciones empleados provienen del dataset \textit{Temperature and precipitation climate impact indicators from 1970 to 2100 derived from European climate projections} \cite{copernicus_pr}, procedentes del \textit{Climate Data Store} de Copernicus. Este conjunto de datos contiene estimaciones tanto históricas como futuras de temperaturas y precipitaciones en Europa continental. Está disponible con resoluciones espaciales tanto de $0.11^\circ \times 0.11^\circ$ como de $5$km $\times$ $5$km, y una resolución temporal diaria, mensual o anual. Nosotros sólo emplearemos los datos de precipitaciones (deposiciones de agua sobre la superficie terrestre en forma de lluvia, nieve, hielo o granizo).
+Los datos de precipitaciones empleados provienen del dataset \textit{Temperature and precipitation climate impact indicators from 1970 to 2100 derived from European climate projections} \cite{copernicus_pr}, procedentes del \textit{Climate Data Store} de Copernicus. Este conjunto de datos contiene estimaciones tanto históricas como futuras de temperaturas y precipitaciones en Europa continental. Está disponible con resoluciones espaciales tanto de $0.11^\circ \times 0.11^\circ$ como de $5$km $\times$ $5$km, y una resolución temporal diaria, mensual o anual. De dicho \textit{dataset} empleamos los registros de deposiciones de agua sobre la superficie terrestre en forma de lluvia, nieve, hielo o granizo (tabla \ref{tab:climate_impact_indicators}).
 
 \begin{table}[H]
     % Definimos el espaciado entre filas
@@ -101,11 +101,15 @@ Los datos satelitales consisten en imágenes de la superficie terrestre y mapas 
 
 \subsubsection*{Imágenes satelitales: Landsat}     
     
-Estos conjuntos de datos contienen la reflectancia superficial y la temperatura (pese a que sólo utilizaremos los de reflectancia) de la superficie terrestre corregidas por la atmósfera. Landsat $5$ \cite{landsat5_data} contiene datos desde el $16$ de marzo de $1984$ hasta el $5$ de mayo de $2001$, mientras que Landsat $7$ \cite{landsat7_data} contiene datos desde el $28$ de mayo de $1999$ hasta el $19$ de enero de $2024$. Con estos dos conjuntos de datos abarcamos todo el periodo temporal de los datos forestales. En aquellos casos en los que una cierta fecha esté en ambos datasets, se escojerá Landsat $7$.
+De esta fuente se pueden obtener tanto datos térmicos como de reflectancia de la superficie terrestre corregidos por la atmósfera. Estos últimos son los que se incluyen en la base de datos. La reflectancia representa la fracción de radiación solar que una superficie devuelve hacia el sensor después de ser iluminada, y permite caracterizar sus propiedades físicas, como la vegetación, el suelo o el agua, a partir de diferentes longitudes de onda.
 
 \medskip
 
-Los datos contiene varias bandas espectrales relacionadas con la reflectancia de la superficie terrestre en diferentes longitudes de onda. Las que emplearemos están recogidas en la Tabla \ref{tab:landsat_columns}. Cada banda tiene información detallada sobre su mínima y máxima longitud de onda, así como su escala o desplazamiento. Además, incluye métricas de calidad y validación como la opacidad atmosférica (SR\_ATMOS\_OPACITY), que proporciona información sobre la densidad de la atmósfera y su influencia sobre la reflectancia de la superficie, así como indicadores de la calidad de la nube (SR\_CLOUD\_QA) y la calidad de los píxeles (QA\_PIXEL). También se encuentran datos de temperatura superficial y distancias relacionadas con los atributos radiométricos.
+Landsat 5 \cite{landsat5_data} proporciona datos desde el 16 de marzo de 1984 hasta el 5 de mayo de 2001, mientras que Landsat 7 \cite{landsat7_data} cubre el período comprendido entre el 28 de mayo de 1999 y el 19 de enero de 2024. La base de datos incorporará información de ambos satélites para abarcar todo el intervalo temporal correspondiente al IFN, priorizando los datos de Landsat 7 por su mayor calidad y continuidad.
+
+\medskip
+
+Los datos incluyen varias bandas espectrales que describen la reflectancia de la superficie terrestre en diferentes rangos del espectro electromagnético. Las bandas empleadas se detallan en la Tabla \ref{tab:landsat_columns}. Cada una contiene información sobre su longitud de onda mínima y máxima, así como sobre sus factores de escala y desplazamiento. Además, se incorporan métricas de calidad y validación, como la opacidad atmosférica (\textit{SR\_ATMOS\_OPACITY}), que mide la densidad de la atmósfera y su influencia en la señal registrada; los indicadores de calidad de nubes (\textit{SR\_CLOUD\_QA}); y la calidad de píxel (\textit{QA\_PIXEL}). También se incluyen datos de temperatura superficial y parámetros radiométricos asociados a la adquisición.
 
 \begin{table}[H]
     \centering
@@ -135,7 +139,7 @@ Los datos contiene varias bandas espectrales relacionadas con la reflectancia de
 
 \subsubsection*{Mapa de elevación digital: \textit{NASA 30m Digital Elevation Model}}
 
-NASADEM \cite{nasadem_data} es una modernización del Modelo Digital de Elevación (DEM) y productos asociados generados a partir de los datos de la Misión de Topografía por Radar del Transbordador Espacial (SRTM). Se reprocesaron los datos originales de radar SRTM utilizando algoritmos mejorados e incorporando datos derivados principalmente del Sistema LIDAR del Satélite de Elevación de Hielo, Nubes y Tierra (ICESat) y de los instrumentos ASTER. 
+NASADEM \cite{nasadem_data} es una versión actualizada del Modelo Digital de Elevación (DEM) y de los productos asociados generados a partir de los datos obtenidos por la Misión de Topografía por Radar del Transbordador Espacial (SRTM). Este modelo se emplea para obtener los datos de elevación del terreno. Los datos originales de radar SRTM fueron reprocesados mediante algoritmos mejorados e integrados con información complementaria proveniente principalmente del sistema LIDAR del Satélite de Elevación de Hielo, Nubes y Tierra (ICESat) y de los instrumentos ASTER, lo que permitió incrementar la precisión y cobertura del modelo.
 
 \begin{table}[H]
     % Definimos el espaciado entre filas
@@ -186,13 +190,13 @@ A lo largo de los años se han realizado en España cuatro inventarios forestale
     \item IFN4: 2008- desarrollo continuo 
 \end{itemize}
 
-Empleamos los inventarios segundo, tercero y cuarto, descartando el primero por no estar digitalizado. El IFN es especialmente importante porque permite etiquetar los datos: da una estimación de las toneladas de carbono capturadas por los árboles de cada parcela.
+Se emplean los inventarios segundo, tercero y cuarto, descartando el primero por no estar digitalizado.
 
 \medskip
 
 Los inventarios tercero y cuarto guardan una estructura prácticamente idéntica, el inventario segundo tiene otra notación y otro contenido.
 
-\paragraph{\textbf{IFN3 e IFN4}} Los datos en estas dos bases de datos están separados en dos grupos: datos de Campo y datos de Sig. Por otra parte, algunas variables se encuentran repetidas al existir datos de dos fuentes distintas: el Mapa Forestal Español (una herramienta cartográfica que representa detalladamente la distribución y características de los bosques y masas forestales en España) y el apeo de las parcelas (inspección propia del IFN del terreno). Tomamos las variables del apeo porque proporcionan una información temporal más completa, ya que queda registrada para cada parcela el año en el que se realizó la exploración de campo que dio lugar a la base de datos de apeo.
+\paragras{\textbf{IFN3 e IFN4}} Los datos en estas dos bases de datos están separados en dos grupos: datos de Campo y datos de Sig. Por otra parte, algunas variables se encuentran repetidas al existir datos de dos fuentes distintas: el Mapa Forestal Español (una herramienta cartográfica que representa detalladamente la distribución y características de los bosques y masas forestales en España) y el apeo de las parcelas (inspección propia del IFN del terreno). Tomamos las variables del apeo porque proporcionan una información temporal más completa, ya que queda registrada para cada parcela el año en el que se realizó la exploración de campo que dio lugar a la base de datos de apeo.
 
 \medskip
 %A priori, la información que se extrae de los inventarios puede parecer liosa, pero en líneas generales se puede estructurar en las siguientes tablas:
@@ -208,8 +212,7 @@ Las siguientes tablas documentan las variables extraídas de las bases de datos 
 
 \medskip
 
-La estructura de las cuatro tablas sigue un orden secuencial que refleja un incremento en la complejidad de las claves primarias. La primera tabla tiene como clave primaria la parcela, estableciendo la base de la organización (Tabla \ref{tab:parcela}). La segunda tabla incorpora la entidad inventario, ligando cada parcela a un momento concreto (Tabla \ref{tab:parcela_inventario}). En la tercera tabla, se incluye especie, lo que permite añadir más detalles sobre la vegetación (Tabla \ref{tab:parcela_inventario_especie}). Finalmente, en la cuarta tabla, la clave primaria se amplía para incluir especie, clase diamétrica (medida del tamaño del árbol) e inventario, detallando aún más la información (Tabla \ref{tab:parcela_inventario_especie_cd}). Así, cada tabla presenta un nivel progresivo de particularización, pasando de una simple parcela a un grupo de árboles de una especie y tamaño concreto, en una parcela y momento concreto. 
-
+La estructura de las tablas sigue un orden secuencial que refleja un incremento en la complejidad de las claves primarias. La primera tabla tiene como clave primaria la parcela, estableciendo la base de la organización (Tabla \ref{tab:parcela}). La segunda tabla incorpora la entidad inventario, ligando cada parcela a un momento concreto de exploración (Tabla \ref{tab:parcela_inventario}). En la tercera tabla, se incluye especie, lo que permite añadir más detalles sobre la vegetación (Tabla \ref{tab:parcela_inventario_especie}). En la cuarta tabla, la clave primaria se amplía para incluir especie, clase diamétrica (medida del tamaño del árbol) e inventario, detallando aún más la información (Tabla \ref{tab:parcela_inventario_especie_cd}). El último nivel de agregación es el árbol, esta tabla recoge los datos de los pies mayores\footnote{"Pies mayores" se refiere principalmente a árboles forestales con un diámetro superior a \(7,5\) cm y una altura de más de \(1,30\) m, según la terminología del Inventario Forestal Nacional.} identificados en los inventarios (no todos los árboles)dando lugar a una tabla cuya clave primaria es una combinación de parcela, inventario, especie y árbol (Tabla \ref{tab:parcela_inventario_especie_arbol}). Así, cada tabla presenta un nivel progresivo de particularización, pasando de una simple parcela a un grupo de árboles de una especie y tamaño concreto, en una parcela y momento concreto.
 
 También nos encontramos una tabla con información sobre los árboles pequeños de cada parcela en caso de existir (Tabla \ref{tab:brotes}). La información de esta tabla se añadirá las cuatro mencionadas anteriormente. Su procesado de tratará en apartados posteriores.
 
@@ -243,8 +246,6 @@ DATEST & Campo: Listado Definitivo & Campo: PCDatosMap & CoorY & int & Coordenad
 - & - & Campo: PCParcelas & Rocosid & int (CF) & Rocosidad o presencia de rocas en el terreno. & Anexo \ref{sec:Rocosid} \\
 \hline
 - & - & Campo: PCParcelas & TipSuelo1, TipSuelo2, TipSuelo3 & int (CF) & Tipos de suelo identificados en la parcela (diferentes categorías o clases). & Anexo \ref{sec:TipSuelo}\\
-\hline
-- & - & Campo: PCParcelas & MErosiva & int (CF) & Manifestaciones erosivas observadas en el terreno de la parcela. & Anexo \ref{sec:ManERo}\\
 \hline
 - & - & Campo: PC- Mayores & Distanci & float & Distancia entre cada pie mayor contenido en la parcela y el centro de la misma. Es un conjunto de valores para cada entrada. & \\
 \hline
@@ -282,14 +283,16 @@ IIFL00BD & Campo: PCParcelas & Campo: PCParcelas & ComEsp & int (CF) & Composici
 \hline
 - & Campo: PCParcelas & Campo: PCParcelas & Nivel2 & int (CF) & Nivel morfoestructural de usos del suelo. & Anexo \ref{sec:nivel2} \\
 \hline
+- & - & Campo: PCParcelas & MErosiva & int (CF) & Manifestaciones erosivas observadas en el terreno de la parcela. & Anexo \ref{sec:ManERo}\\
+\hline
 - & Campo: PCParcelas & Campo: PCParcelas & Textura & int (CF) & Textura del suelo en la parcela (granulometría, por ejemplo, arcilloso, arenoso, etc.). & Anexo \ref{sec:textura} \\
 \hline
 - & Campo: PCParcelas & Campo: PCParcelas & MatOrg & int (CF) & Altura mínima observada de los árboles de la especie en la parcela. & Anexo \ref{sec:MatOrg} \\
 \hline
-- & Campo: PCParcelas & Campo: PCParcelas & PhSuelo & int (CF) & Altura máxima observada de los árboles de la especie en la parcela. & Anexo \ref{anexo:ph} \\
-\hline
-- & Campo: PCParcelas & Campo: PCParcelas & EspCMue & int (CF) & Espesor de capa muerta en la parcela, correspondiente al material orgánico sobre el suelo. & Anexo \ref{sec:EspMue} \\
-\hline
+%- & Campo: PCParcelas & Campo: PCParcelas & PhSuelo & int (CF) & Altura máxima observada de los árboles de la especie en la parcela. & Anexo \ref{anexo:ph} \\
+%\hline
+%- & Campo: PCParcelas & Campo: PCParcelas & EspCMue & int (CF) & Espesor de capa muerta en la parcela, correspondiente al material orgánico sobre el suelo. & Anexo \ref{sec:EspMue} \\
+%\hline
 -- & Campo: PCParcelas & Campo: PCParcelas & ModComb & int (CF) & Modelo de combustible. & Anexo \ref{sec:modComb} \\
 \hline
 -- & Campo: PCParcelas & Campo: PCParcelas & FccTot & int & Fracción de cabida cubierta total de la vegetación en la parcela según el capataz. & -- \\
@@ -396,6 +399,60 @@ IIFL03BD & Sig: Parcelas\_exs & VLE & float & Volumen de leñas por parcela, esp
 
 
 
+\begin{table}[H]
+\renewcommand{\arraystretch}{2.2}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\centering\arraybackslash}m{1.8cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2.5cm}|m{7cm}|>{\centering\arraybackslash}m{2cm}|}
+\hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{parcela\_inventario\_especie\_arbol: Información que caracteriza los pies mayores.}}} \\
+\hline
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{IFN4}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Variable}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Tipo}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Descripción}} &
+\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000}\textbf{Anexo}} \\
+\hline
+Sig: Mayores\_exs & \textbf{Provincia} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{anexo:provincias} \\
+\hline
+Sig: Mayores\_exs & \textbf{Estadillo} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & -- \\
+\hline
+Sig: Mayores\_exs & \textbf{Especie} & \textbf{int (CF)} & \textbf{*Identificador para vincular con otras tablas} & Anexo \ref{sec:especies} \\
+\hline
+Sig: Mayores\_exs & Rumbo & float & Rumbo medido desde el centro de la parcela hacia el árbol en cuestión, en grados centesimales. La medición se hace partiendo del norte y en sentido de las agujas del reloj. & -- \\
+\hline
+Sig: Mayores\_exs & Distanci & float & Distancia, en metros, del centro de la parcela al árbol & -- \\
+\hline
+Sig: Mayores\_exs & Ht & float & Altura total del árbol inventariado, expresada en metros. & -- \\
+\hline
+Sig: Mayores\_exs & Dn1 & float & Diámetro normal calculado apuntando la forcípula al centro de la parcela, en milímetros. & -- \\
+\hline
+Sig: Mayores\_exs & Dn2 & float & Diámetro normal calculado en dirección perpendicular al anterior, en milímetros. & -- \\
+\hline
+Sig: Mayores\_exs & CD & int & Clase diamétrica de la especie arbórea. & -- \\
+\hline
+Sig: Mayores\_exs & G & float & Área basimétrica, en metros cuadrados, del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs & VCC & float & Volumen con corteza en decímetros cúbicos del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs & VSC & float & Volumen sin corteza en decímetros cúbicos del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs & IAVC & float & Incremento anual del volumen con corteza en decímetros cúbicos del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs & VLE & float & Volumen de leñas en decímetros cúbicos del pie medido. & -- \\
+\hline
+Sig: Mayores\_exs del IFN4 & CA & float & Fijación de carbono aéreo del pie medido (t). & -- \\
+\hline
+Sig: Mayores\_exs & CR & float & Fijación de carbono radical del pie medido (t). & -- \\
+\hline
+\end{tabular}%
+}
+\caption{Información sobre los pies mayores registrados en IFN4. Dicho inventario proporciona información suficiente para caracterizar las especies (objetivo principal de esta tabla). Resulta imposible hacer un seguimiento a lo largo de los inventarios de cada espécimen pues están registrados de forma irregular.}
+\label{tab:parcela_inventario_especie_arbol}
+\end{table}
+
+
+
 
 
 \begin{table}[H]
@@ -441,20 +498,21 @@ El procedimiento puede implementarse en Python utilizando las bibliotecas \textt
     \centering
     
     \begin{subfigure}[b]{0.31\textwidth}
-        \includegraphics[width=\linewidth]{15_1903_1997.0.jpg}
+        \includegraphics[width=\linewidth]{figuras/15_1903_1997.0.jpg}
         \label{fig:orto1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.31\textwidth}
-        \includegraphics[width=\linewidth]{25_2209_2001.0.jpg}
+        \includegraphics[width=\linewidth]{figuras/25_2209_2001.0.jpg}
         \label{fig:orto2}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.31\textwidth}
-        \includegraphics[width=\linewidth]{37_688_2002.0.jpg}
+        \includegraphics[width=\linewidth]{figuras/37_688_2002.0.jpg}
         \label{fig:orto3}
     \end{subfigure}
     
     \caption{\small Ejemplos de ortofotos del PNOA para tres parcelas del IFN. Se observa la cobertura arbórea y estructura del terreno con resolución submétrica. Estas imágenes fueron descargadas mediante peticiones WMS automatizadas en torno al centro geográfico de cada parcela.}
     \label{fig:ortofotos_ejemplo}
 \end{figure}
+
