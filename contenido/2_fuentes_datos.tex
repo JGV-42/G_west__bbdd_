@@ -12,24 +12,18 @@ La unidad básica de análisis empleada en este estudio es la parcela, entendida
 \subsection{Datos meteorológicos}
 Los datos meteorológicos consisten en temperaturas (tanto de la superficie como del suelo) y cantidad de precipitaciones.
 
-\subsubsection*{Temperaturas}
+\subsubsection*{Temperaturas y precipitaciones}
 
-Los datos de temperaturas empleados provienen del dataset \textit{ERA5-Land Daily Aggregated - ECMWF Climate Reanalysis}, procedentes del \textit{Climate Data Store} de Copernicus \cite{copernicus_api} y accedidos a través de Google Earth Engine \cite{copernicus_era5_land_daily}. Este conjunto de datos cubre toda la superficie terrestre de forma continua desde el $1950$ hasta el presente, actualizandose con un margen de $2$ a $3$ meses y recopila información de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. Proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $10$ km.
+Los datos de temperaturas empleados provienen del dataset \textit{ERA5-Land Daily Aggregated - ECMWF Climate Reanalysis}, procedentes del \textit{Climate Data Store} de Copernicus \cite{copernicus_api} y accedidos a través de Google Earth Engine \cite{copernicus_era5_land_daily}. Este conjunto de datos cubre toda la superficie terrestre de forma continua desde el $1950$ hasta el presente, actualizandose con un margen de $2$ a $3$ meses y recopila información de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. 
+
+Para el caso de las temperaturas proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. Mientras, para las precipitaciones nos proporciona información de precipitaciones acumuladas en metros. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $10$ km.
 
 \medskip
 
 Los datos se pueden descargar a través de la API del \textit{Climate Data Store} (CDSAPI) \cite{copernicus_api} o a través de Google Earth Engine \cite{copernicus_era5_land_daily}. Las variables extraídas se pueden están recogidas en la tabla \ref{tab:era5_land}.
 
 
-
-\subsubsection*{Precipitaciones}
-
-Los datos de precipitaciones empleados provienen del dataset \textit{ERA5-Land Daily Aggregated - ECMWF Climate Reanalysis}, procedentes del \textit{Climate Data Store} de Copernicus \cite{copernicus_api} y accedidos a través de Google Earth Engine \cite{copernicus_era5_land_daily}. Este conjunto de datos cubre toda la superficie terrestre de forma continua desde el $1950$ hasta el presente, actualizandose con un margen de $2$ a $3$ meses y recopila información de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. Proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $10$ km..
-
-Los datos se pueden descargar a través de la API del \textit{Climate Data Store} (CDSAPI) \cite{copernicus_api}. Las columnas empleadas se puede ver en la Tabla \ref{tab:era5_land}.
-
-
-    \begin{table}[H]
+\begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.5} % Aumenta la separación entre las filas
 \resizebox{\columnwidth}{!}{%
