@@ -624,6 +624,40 @@
       \verb https://www.miteco.gob.es/content/dam/miteco/es/cambio-climatico/temas/mitigacion-politicas-y-medidas/instruccionescalculadoraabexante_tcm30-485629.pdf
       \endverb
     \endentry
+    \entry{miteco_ifn4_manual}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=116efb60b65e868fc5279098a59a27a5}{%
+           family={{Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO)}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Gobierno de España}%
+      }
+      \list{location}{1}{%
+        {Madrid, España}%
+      }
+      \strng{namehash}{116efb60b65e868fc5279098a59a27a5}
+      \strng{fullhash}{116efb60b65e868fc5279098a59a27a5}
+      \strng{fullhashraw}{116efb60b65e868fc5279098a59a27a5}
+      \strng{bibnamehash}{116efb60b65e868fc5279098a59a27a5}
+      \strng{authorbibnamehash}{116efb60b65e868fc5279098a59a27a5}
+      \strng{authornamehash}{116efb60b65e868fc5279098a59a27a5}
+      \strng{authorfullhash}{116efb60b65e868fc5279098a59a27a5}
+      \strng{authorfullhashraw}{116efb60b65e868fc5279098a59a27a5}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Subdirección General de Política Forestal y Lucha contra la Desertificación}
+      \field{title}{Manual de campo y base de datos del Cuarto Inventario Forestal Nacional (IFN4)}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-forestal-nacional/cuarto_inventario.html
+      \endverb
+      \verb{url}
+      \verb https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-forestal-nacional/cuarto_inventario.html
+      \endverb
+    \endentry
     \entry{cmnucc1992}{article}{}{}
       \name{author}{1}{}{%
         {{hash=289d6d295de5d9f9e01197fab2b80b67}{%
@@ -792,7 +826,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{miteco_ifn4_manual}
 \endrefsection
 \endinput
 
