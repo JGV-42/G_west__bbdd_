@@ -20,7 +20,7 @@ Desde el punto de vista técnico, el proceso de integración se llevó a cabo í
 
 \medskip
 
-La estructura de la base resultante se organiza jerárquicamente por parcela, inventario,  especie y clase diamétrica. Las tablas principales responden a claves compuestas que representan la identidad única de cada unidad de observación: \texttt{parcela}, \texttt{parcela\_inventario}, \texttt{parcela\_inventario\_especie} y \texttt{parcela\_inventario\_especie\_cd}. Además se incluye una tabla \texttt{parcela\_inventario\_estacion} en la que se almacenan los datos meteorológicos y satelitales de cada parcela que dependen de la estación. Durante el proceso de construcción se detectaron duplicidades en estas claves, causadas por errores de origen en los datos o repeticiones exactas. En una primera etapa se eliminaron todas las filas duplicadas completas. Posteriormente, para cada clave primaria compuesta, se retuvo únicamente el registro con menor número de valores ausentes (\texttt{NaN}), descartando los duplicados menos informativos.
+La estructura de la base resultante se organiza jerárquicamente por parcela, inventario, especie y clase diamétrica/árbol (existen dos ramas). Las tablas principales responden a claves compuestas que representan la identidad única de cada unidad de observación: \texttt{parcela}, \texttt{parcela\_inventario}, \texttt{parcela\_inventario\_especie} y \texttt{parcela\_inventario\_especie\_cd}/\texttt{parcela\_inventario\_arbol} . Además se incluye una tabla \texttt{parcela\_inventario\_estacion} en la que se almacenan los datos meteorológicos y satelitales de cada parcela que dependen de la estación. Durante el proceso de construcción se detectaron duplicidades en estas claves, causadas por errores de origen en los datos o repeticiones exactas. En una primera etapa se eliminaron todas las filas duplicadas completas. Posteriormente, para cada clave primaria compuesta, se retuvo únicamente el registro con menor número de valores ausentes (\texttt{NaN}), descartando los duplicados menos informativos.
 
 
 \subsection{Preprocesado de los datos}
@@ -62,7 +62,7 @@ Todo el preprocesado de los datos satelitales se realiza con la herramienta \tex
     El siguiente paso es calcular los distintos índices vegetales que vamos a incorporar al modelo. Este proceso consiste en una serie de operaciones con algunas de las bandas del satélite según las longitudes de onda que éstas observen.
 
     \begin{itemize}
-        \item \textbf{NDVI (Normalized Difference Vegetation Index)} \cite{eos_blog}
+        \item \textbf{NDVI (Normalized Difference Vegetation Index)} \cite{eos_indices_vegetacion}
         
         El NDVI es uno de los más adecuados para seguir la dinámica de desarrollo de la vegetación, ya que mide la biomasa fotosintéticamente activa de las plantas. Sin embargo, este índice de vegetación es bastante sensible a la luminosidad del suelo y a los efectos atmosféricos, mitigados en otros índices como EVI.
         
@@ -107,6 +107,52 @@ Todo el preprocesado de los datos satelitales se realiza con la herramienta \tex
 
 Una vez realizado este proceso solo quedaría extraer el valor para las latitudes y longitudes que deseemos. 
 
+\subsection{Datos meteorológicos y climáticos}
+
+Todas las variables meteorológicas y climáticas se han obtenido a partir del dataset \textit{ERA5-Land Daily Aggregated} \cite{copernicus_era5_land_daily}. Para el caso de las variables meteorológicos (aquellas de la tabla \ref{tab:era5_land}) se obtivieron para cada una el mínimo y máximo, la medida y la desviación estándar para cada periodo considerado. Esto es, para, por ejemplo, la variable \textit{temperature\_2m} (cuyo apodo en la base de datos es \textit{t2m}) podremos encontrar las siguentes variables derivadas en la base de datos:
+
+\begin{itemize}
+    \item \textit{t2m\_mean}: media de la variable \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_min\_mean}: media de las mínimas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_min\_min}: mínima de las mínimas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_min\_max}: máxima de las mínimas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_min\_std}: desviación estándar de las mínimas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_max\_mean}: media de las máximas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_max\_min}: mínima de las maximas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_max\_max}: máxima de las máximas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_max\_std}: desviación estándar de las máximas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \\
+    \vdots
+\end{itemize}
+Respecto a las variables meterorológicas, la única considerada fue el Índice de Martonne. Este se calcula con la fórmula
+\begin{equation}
+    I_M = \frac{P}{T + 10},
+\end{equation}
+siendo $P$ la media anual de precipitaciones acumuladas en mm y $T$ la temperatura media anual en grados centígrados. Se recogieron estas cantidades con el dataset \textit{ERA5 Land Daily Aggregated} para cada una de las coordenadas de las parcelas de los inventarios para un periodo de $30$ años, desde $1994$ hasta $2024$. Se eligió esta cantidad de años por ser el periodo clásico definido por la Organización Meteorológica Mundial (WMO) \cite{matthews2021annex}. 
+Para cada parcela, por tanto, se obtiene un valor, y dependiendo de este se me dentro de uno de los intervalos de la Tabla \ref{tab:indice_martonne}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor[HTML]{D9EAD3} 
+Rango de valores & \multicolumn{1}{c|}{\cellcolor[HTML]{D9EAD3}Grado de aridez} \\ \hline
+$0$ - $5$        & Zona árida                                                   \\
+$5$ - $10$       & Zona semidesértica                                           \\
+$10$ - $20$      & Zona semidesértica mediterránea                              \\
+$20$ - $30$      & Zona subhúmeda                                               \\
+$30$ - $60$      & Zona húmeda                                                  \\
+$\gt 60$         & Zona perhúmeda                                               \\ \hline
+\end{tabular}
+\caption{Rango de valores y grado de aridez del índice de Martonne}
+\label{tab:indice_martonne}
+\end{table}
+
+
+
 
 \subsubsection{Inventario Forestal Nacional}
 
@@ -123,9 +169,10 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
     \medskip
 
     \item \textbf{Creación de la variable \texttt{grupo\_id}.} Esta variable identifica el grupo arbóreo al que pertenece cada especie, permitiendo agrupar las entradas por grandes géneros o tipos taxonómicos. La variable \texttt{grupo\_id} fue creada específicamente para esta base de datos mediante una asignación sistemática basada en el nombre científico o común de la especie. 
+    
     \medskip
 
-\item \textbf{Creación de la variable \texttt{tipo\_especie}.} Dicha variable clasifica cada especie arbórea según su morfología en dos categorías principales: \texttt{0 = conífera} y \texttt{1 = frondosa}. Esta codificación binaria sigue los criterios de la FAO FRA y \textit{Forest Europe} para la tipificación de masas forestales. Esta variable es esencial para la aplicación de modelos alométricos diferenciados en el cálculo de biomasa y carbono, dado que las coníferas y las frondosas presentan estructuras de crecimiento y relaciones biomasa–altura distintas.
+    \item \textbf{Creación de la variable \texttt{tipo\_especie}.} Dicha variable clasifica cada especie arbórea según su morfología en dos categorías principales: \texttt{0 = conífera} y \texttt{1 = frondosa}. Esta codificación binaria sigue los criterios de la FAO FRA y \textit{Forest Europe} para la tipificación de masas forestales. Esta variable es esencial para la aplicación de modelos alométricos diferenciados en el cálculo de biomasa y carbono, dado que las coníferas y las frondosas presentan estructuras de crecimiento y relaciones biomasa–altura distintas.
 
     \medskip
 
@@ -176,10 +223,7 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
     \begin{enumerate}
         \item \textbf{Escasa:} De $1$ a $4$ pies en la parcela.
         \item \textbf{Normal:} De $5$ a $15$ pies en la parcela.
-        \item \textbf{Abundante:} Más de $15$ pies en la parcela.
-    
-    \medskip
-    
+        \item \textbf{Abundante:} Más de $15$ pies en la parcela.    
     \end{enumerate}
     \textbf{Para la categoría 4:}
     \begin{itemize}
@@ -211,7 +255,7 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
 
     \medskip
 
-    \item \textbf{Creación de la variable \texttt{c} (tC/ha).} Creamos la variable \texttt{c} que será la variable objetivo del modelo como \texttt{c=CA+CR} para cada entrada de la tabla \texttt{parcela\_inventario\_especie\_cd} (tabla \ref{tab:parcela_inventario_especie_cd}). Los valores de estas variables se registran en toneladas por hectárea y, por tanto, para generalizar a las entradas de la tabla \texttt{parcela\_inventario\_especie} (Tabla \ref{tab:parcela_inventario_especie}) solo se requiere agrupar en \texttt{parcela\_inventario\_especie\_cd} por especie y sumar los valores de \texttt{c}.
+    \item \textbf{Creación de la variable \texttt{c} (t/ha).} Creamos la variable \texttt{c} como \texttt{c=CA+CR} para cada entrada de la tabla \texttt{parcela\_inventario\_especie\_cd} (tabla \ref{tab:parcela_inventario_especie_cd}). Dicha variable representa el carbono total capturado por cada especie dentro de cad parcela y en un inventario concreto. Los valores de estas variables se registran en toneladas por hectárea y, por tanto, para generalizar a las entradas de la tabla \texttt{parcela\_inventario\_especie} (Tabla \ref{tab:parcela_inventario_especie}) solo se requiere agrupar en \texttt{parcela\_inventario\_especie\_cd} por especie y sumar los valores de \texttt{c}.
 
     \medskip
 
@@ -229,7 +273,7 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
 
     \item \textbf{Contenido de la tabla \texttt{parcela\_especie\_arbol}.} Cabe destacar que dicha tabla contiene unicamente los pies mayores registrados en el cuarto inventario forestal nacional pues debido a errores en la etiquetación de los árboles resulta imposible relacionar las observaciones entre inventarios. Se incluye porque permite relacionar la clase diamétrica y la altura de las especies inventariadas así como recoger los datos de volúmenes y carbono almacenado al nivel de árbol. 
 
-    \item \textbf{Creación de la variable \texttt{carbono\_bruto} (tC).}  Esta variable representa el carbono total capturado por el conjunto de árboles pertenecientes a una misma especie y clase diamétrica dentro de cada parcela.  
+    \item \textbf{Creación de la variable \texttt{carbono\_bruto} (t).}  Esta variable representa el carbono total capturado por el conjunto de árboles pertenecientes a una misma especie y clase diamétrica dentro de cada parcela.  
     Su cálculo se realiza a partir de las variables \texttt{npies}, \texttt{ht}, \texttt{clase\_especie} y \texttt{cd\_id}, que describen respectivamente el número de pies por clase, la altura media, el tipo de especie (conífera o frondosa) y la clase diamétrica del arbolado.
     
     El procedimiento sigue un modelo alométrico adaptado de \cite{chave2014} y las directrices del IPCC \cite{ipcc2006}. 
@@ -258,72 +302,9 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
     \[
     \text{Carbono\_bruto}_{\text{Total}} = \text{Carbono}_{\text{Total\_Árbol}} \times \text{npies}.
     \]
-    El resultado se expresa en \textbf{toneladas de carbono (tC)} por parcela y especie, sin normalizar por superficie (no en tC/ha).  Esta decisión permite mantener un proceso de cálculo más \textit{trazable} y directamente interpretable a partir de las variables observadas, evitando depender de factores de expansión o conversiones específicas del IFN.  Además, facilita la replicabilidad y la comparación entre inventarios, al derivarse íntegramente de datos medidos o modelados de manera transparente.
+    El resultado se expresa en \textbf{toneladas de carbono (t)} por parcela y especie, sin normalizar por superficie (no en t/ha).  Esta decisión permite mantener un proceso de cálculo más \textit{trazable} y directamente interpretable a partir de las variables observadas, evitando depender de factores de expansión o conversiones específicas del IFN.  Además, facilita la replicabilidad y la comparación entre inventarios, al derivarse íntegramente de datos medidos o modelados de manera transparente.
     
     \medskip
-
-    \item \textbf{Creación de la variable \texttt{carbono\_bruto} (tC).} 
-Esta variable representa el carbono total capturado por el conjunto de árboles pertenecientes a una misma especie y clase diamétrica dentro de cada parcela. 
-Su cálculo se realiza a partir de las variables \texttt{npies}, \texttt{ht}, \texttt{clase\_especie} y \texttt{cd\_id}, que describen respectivamente el número de pies por clase, la altura media, el tipo de especie (conífera o frondosa) y la clase diamétrica del arbolado.
-
-El procedimiento sigue un modelo alométrico adaptado de \cite{chave2014} y las directrices del IPCC \cite{ipcc2006}. 
-Inicialmente, la biomasa aérea individual se estima mediante ecuaciones específicas según el tipo de especie:
-\[
-\text{Biomasa}_{\text{coníferas}} = 0.05 \times (\text{cd}^2 \times \text{Ht})^{0.9}, \qquad
-\text{Biomasa}_{\text{frondosas}} = 0.067 \times (\text{cd}^2 \times \text{Ht})^{0.9}.
-\]
-
-A partir de esta biomasa, el carbono aéreo por árbol se obtiene aplicando el factor de conversión recomendado por el IPCC:
-\[
-\text{Carbono}_{\text{aéreo\_árbol}} = \frac{\text{Biomasa}_{\text{aérea}} \times 0.5}{1000}.
-\]
-
-\textbf{Paso adicional: Incorporación de la Fracción Radical.}  
-El objetivo es calcular el carbono total fijado en la biomasa viva de los árboles ($\Delta C_{BV}$), que incluye tanto la biomasa sobre el suelo (aérea) como la biomasa bajo el suelo (radical).  
-Para ello, se incorpora la fracción radical mediante la relación Parte Radical:Parte Aérea ($R$, o \textit{Root:Shoot Ratio}).  
-El carbono total por árbol se calcula como:
-\[
-\text{Carbono}_{\text{Total\_Árbol}} = \text{Carbono}_{\text{aéreo\_árbol}} \times (1 + R)
-\]
-donde:
-\begin{itemize}
-    \item $0.5$ es la \textbf{Fracción de Carbono} (FC), valor por defecto recomendado por el IPCC (kg C/kg m.s. o t C/t m.s.) \cite{ipcc2006}.
-    \item $R$ es la \textbf{Relación Parte Radical:Parte Aérea}, obtenida a partir de estudios específicos por especie \cite{ruizpeinado2011}.
-\end{itemize}
-
-El carbono total bruto por clase diamétrica se obtiene multiplicando el carbono total por árbol por el número de pies (\texttt{npies}) existentes en dicha clase:
-\[
-\text{Carbono\_bruto}_{\text{Total}} = \text{Carbono}_{\text{Total\_Árbol}} \times \text{npies}.
-\]
-
-El resultado se expresa en \textbf{toneladas de carbono (tC)} por parcela y especie, sin normalizar por superficie (no en tC/ha). 
-Esta decisión permite mantener un proceso de cálculo más \textit{trazable} y directamente interpretable a partir de las variables observadas, evitando depender de factores de expansión o conversiones específicas del IFN. 
-Además, facilita la replicabilidad y la comparación entre inventarios, al derivarse íntegramente de datos medidos o modelados de manera transparente.
-
-\medskip
-\textbf{Referencias para la Relación Parte Radical:Parte Aérea (R).}  
-La inclusión del factor $R$ es esencial para cuantificar el carbono en la biomasa viva bajo el suelo. La investigación ha desarrollado ratios específicos, siendo crucial emplear valores por especie para reducir la incertidumbre.
-
-Valores promedio para especies españolas:
-\begin{itemize}
-    \item Coníferas: $R = 0.265$
-    \item Frondosas: $R = 0.466$
-\end{itemize}
-
-En la investigación realizada en \cite{ruizpeinado2011} para especies forestales en España: $R = 0.466$ de media para las frondosas frente a $R = 0.265$ para las coníferas. 
-El valor de la fracción de carbono de la materia seca (FC) es el recomendado por el IPCC, $0.5 \, \text{t C/t m.s.}$ \cite{ipcc2006}.
-
-
-
-
-
-
-
-
-
-
-
-
 
     \item \textbf{Estimación de la superficie de la parcela.} El IFN no proporciona las dimensiones de cada parcela registrada. Para estimar este dato empleamos la variable \texttt{Distanci} de la tabla \textit{SIG Mayores\_exs} del IFN3 e IFN4, priorizando el segundo (se asigna un único valor por parcela). Las coordenadas de cada parcela registran el punto central de la parcela y de la documentación de los inventarios se entiende que se trata de parcelas circulares. La variable \texttt{Distanci} registra un conjunto de medidas correspondientes a la distancia entre cada pie mayor contenido en la parcela y el centro de la misma. Estimamos el radio de la parcela como la mayor de dichas distancias (distancia entre el centro de la parcela y el árbol más alejado contenido en ella). Registramos las variables \texttt{Radio} en metros y la variable \texttt{Superficie} en hectáreas. Las parcelas que no cuentan con mediciones de \texttt{Distanci} validas se imputan con la media. 
     
