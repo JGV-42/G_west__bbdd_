@@ -192,8 +192,7 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
     
     \medskip
 
-    \item \textbf{Variables \texttt{CA} y \texttt{CR}.} Estas variables (carbono arbolado y carbono radical por hectárea\footnote{Diferenciamos entre la fijación de carbono aéreo del arbolado y la fijación de carbono radical del arbolado, dos componentes distintos del almacenamiento total de carbono en un ecosistema forestal. La fijación de carbono aéreo se refiere a la cantidad de carbono almacenado en la biomasa aérea del arbolado (tronco, ramas, hojas) y la fijación de carbono radical a la cantidad de carbono almacenado en el sistema radical (raíces); representan el 70-80\% y el 20-30\% del carbono total del árbol respectivamente. Ambos son relevantes, pero el carbono aéreo es el más comúnmente contabilizado en proyectos de créditos de carbono por ser más fácil de contabilizar y de asegurar su permanencia. }) están registradas solo para el IFN4 para cada grupo de árboles de una clase diamétrica y especie concreta (tabla \texttt{parcela\_especie\_inventario\_cd} (\ref{tab:parcela_inventario_especie_cd}) restringida al inventario cuarto) y se calculan usando la Guía para la estimación de absorciones de dióxido de carbono propuesta por el MITECO \cite{miteco_guia_co2}. 
-
+    \item \textbf{Variables \texttt{CA} y \texttt{CR}.} Estas variables (carbono arbolado y carbono radical por hectárea\footnote{Diferenciamos entre la fijación de carbono aéreo del arbolado y la fijación de carbono radical del arbolado, dos componentes distintos del almacenamiento total de carbono en un ecosistema forestal. La fijación de carbono aéreo se refiere a la cantidad de carbono almacenado en la biomasa aérea del arbolado (tronco, ramas, hojas) y la fijación de carbono radical a la cantidad de carbono almacenado en el sistema radical (raíces); representan el 70-80\% y el 20-30\% del carbono total del árbol respectivamente. Ambos son relevantes, pero el carbono aéreo es el más comúnmente contabilizado en proyectos de créditos de carbono por ser más fácil de contabilizar y de asegurar su permanencia. }) están registradas solo para el IFN4 para cada grupo de árboles de una clase diamétrica y especie concreta (tabla \texttt{parcela\_especie\_inventario\_cd} (\ref{tab:parcela_inventario_especie_cd}) restringida al inventario cuarto).
     \medskip
 
     Algunas provincias —en concreto las provincias \textbf{07, 15, 27, 30, 31, 32, 33, 36, 39} y las del \textbf{País Vasco}— no cuentan con las variables \texttt{CA} (carbono aéreo) y \texttt{CR} (carbono radical) registradas, por lo que es necesario estimarlas. Para suplir estos valores ausentes, así como los faltantes derivados de errores en la toma de datos, se empleó un modelo \textit{RandomForestRegressor}, que permite predecir de forma robusta los valores de \texttt{CA} y \texttt{CR} a partir de las características disponibles en la base de datos.
@@ -216,7 +215,7 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
 
     \medskip
 
-    \item \textbf{Creación de la variable \texttt{ht} (m).} Esta variable representa la altura media del conjunto de árboles correspondientes a una misma especie y clase diamétrica dentro de cada parcela. Su estimación se realizó mediante un modelo \textit{CatBoost Regressor}, entrenado a partir de los datos del \textit{SIG Mayores\_exs} del IFN4, utilizando como variables explicativas la especie y la clase diamétrica (\texttt{cd\_id}).  
+    \item \textbf{Creación de la variable \texttt{ht} (m).} Esta variable representa la altura media del conjunto de árboles correspondientes a una misma especie y clase diamétrica. Su estimación se realizó mediante un modelo \textit{CatBoost Regressor}, entrenado a partir de los datos del \textit{SIG Mayores\_exs} del IFN4, utilizando como variables explicativas la especie y la clase diamétrica (\texttt{cd\_id}).  
 
     \medskip
 
@@ -230,25 +229,101 @@ El objetivo de los siguientes pasos es la criba de los datos, eliminación e imp
 
     \item \textbf{Contenido de la tabla \texttt{parcela\_especie\_arbol}.} Cabe destacar que dicha tabla contiene unicamente los pies mayores registrados en el cuarto inventario forestal nacional pues debido a errores en la etiquetación de los árboles resulta imposible relacionar las observaciones entre inventarios. Se incluye porque permite relacionar la clase diamétrica y la altura de las especies inventariadas así como recoger los datos de volúmenes y carbono almacenado al nivel de árbol. 
 
-    \item \textbf{Creación de la variable \texttt{carbono\_bruto} (tC).} Esta variable representa el carbono total capturado por el conjunto de árboles pertenecientes a una misma especie y clase diamétrica dentro de cada parcela. Su cálculo se realiza a partir de las variables \texttt{npies}, \texttt{ht}, \texttt{clase\_especie} y \texttt{cd\_id}, que describen respectivamente el número de pies por clase, la altura media, el tipo de especie (conífera o frondosa) y la clase diamétrica del arbolado.
-
-    El procedimiento sigue un modelo alométrico adaptado de \cite{chave2014} y las directrices del IPCC (2006). La biomasa aérea individual se estima mediante ecuaciones específicas según el tipo de especie: 
+    \item \textbf{Creación de la variable \texttt{carbono\_bruto} (tC).}  Esta variable representa el carbono total capturado por el conjunto de árboles pertenecientes a una misma especie y clase diamétrica dentro de cada parcela.  
+    Su cálculo se realiza a partir de las variables \texttt{npies}, \texttt{ht}, \texttt{clase\_especie} y \texttt{cd\_id}, que describen respectivamente el número de pies por clase, la altura media, el tipo de especie (conífera o frondosa) y la clase diamétrica del arbolado.
+    
+    El procedimiento sigue un modelo alométrico adaptado de \cite{chave2014} y las directrices del IPCC \cite{ipcc2006}. 
+    
+    Inicialmente, la biomasa aérea individual se estima mediante ecuaciones específicas según el tipo de especie:
     \[
     \text{Biomasa}_{\text{coníferas}} = 0.05 \times (\text{cd}^2 \times \text{Ht})^{0.9}, \qquad
     \text{Biomasa}_{\text{frondosas}} = 0.067 \times (\text{cd}^2 \times \text{Ht})^{0.9}.
     \]
-    A partir de esta biomasa, el carbono por árbol se obtiene aplicando el factor de conversión recomendado por el IPCC:
-    \[
-    \text{Carbono}_{\text{árbol}} = \frac{\text{Biomasa} \times 0.5}{1000}.
-    \]
-    El \texttt{carbono\_bruto} total se calcula multiplicando el carbono por árbol por el número de pies (\texttt{npies}) existentes en la clase diamétrica correspondiente:
-    \[
-    \text{Carbono\_bruto} = \text{Carbono}_{\text{árbol}} \times \text{npies}.
-    \]
 
-    El resultado se expresa en \textbf{toneladas de carbono (tC)} por parcela y especie, sin normalizar por superficie (es decir, no en toneladas por hectárea). Esta decisión permite mantener un proceso de cálculo más \textit{trazable} y directamente interpretable a partir de las variables observadas, evitando depender de los factores de expansión o conversiones específicas del IFN. Además, facilita la replicabilidad y la comparación entre inventarios, al derivarse íntegramente de datos medidos o modelados de manera transparente.
+        A partir de esta biomasa, el carbono aéreo por árbol se obtiene aplicando el factor de conversión recomendado por el IPCC:
+    \[
+    \text{Carbono}_{\text{aéreo\_árbol}} = \frac{\text{Biomasa}_{\text{aérea}} \times 0.5}{1000}.
+    \]
+        Para ello, se incorpora la fracción radical mediante la relación Parte Radical:Parte Aérea ($R$, o \textit{Root:Shoot Ratio}). El carbono total por árbol se calcula como:
+    \[
+    \text{Carbono}_{\text{Total\_Árbol}} = \text{Carbono}_{\text{aéreo\_árbol}} \times (1 + R)
+    \]
+    donde:
+    \begin{itemize}
+        \item $0.5$ es la \textbf{Fracción de Carbono} (FC), valor por defecto recomendado por el IPCC (kg C/kg m.s. o t C/t m.s.) \cite{ipcc2006}.
+        \item $R$ es la \textbf{Relación Parte Radical:Parte Aérea}, obtenida a partir de estudios específicos por especie. En particular, se emplean los valores medios por tipo de especie obtenidos en la investigación realizada en \cite{ruizpeinado2011} para especies forestales en España: $R = 0.466$ de media para las frondosas frente a $R = 0.265$ para las coníferas. 
+    \end{itemize}
 
+    El carbono total bruto por clase diamétrica se obtiene multiplicando el carbono total por árbol por el número de pies (\texttt{npies}) existentes en dicha clase:
+    \[
+    \text{Carbono\_bruto}_{\text{Total}} = \text{Carbono}_{\text{Total\_Árbol}} \times \text{npies}.
+    \]
+    El resultado se expresa en \textbf{toneladas de carbono (tC)} por parcela y especie, sin normalizar por superficie (no en tC/ha).  Esta decisión permite mantener un proceso de cálculo más \textit{trazable} y directamente interpretable a partir de las variables observadas, evitando depender de factores de expansión o conversiones específicas del IFN.  Además, facilita la replicabilidad y la comparación entre inventarios, al derivarse íntegramente de datos medidos o modelados de manera transparente.
+    
     \medskip
+
+    \item \textbf{Creación de la variable \texttt{carbono\_bruto} (tC).} 
+Esta variable representa el carbono total capturado por el conjunto de árboles pertenecientes a una misma especie y clase diamétrica dentro de cada parcela. 
+Su cálculo se realiza a partir de las variables \texttt{npies}, \texttt{ht}, \texttt{clase\_especie} y \texttt{cd\_id}, que describen respectivamente el número de pies por clase, la altura media, el tipo de especie (conífera o frondosa) y la clase diamétrica del arbolado.
+
+El procedimiento sigue un modelo alométrico adaptado de \cite{chave2014} y las directrices del IPCC \cite{ipcc2006}. 
+Inicialmente, la biomasa aérea individual se estima mediante ecuaciones específicas según el tipo de especie:
+\[
+\text{Biomasa}_{\text{coníferas}} = 0.05 \times (\text{cd}^2 \times \text{Ht})^{0.9}, \qquad
+\text{Biomasa}_{\text{frondosas}} = 0.067 \times (\text{cd}^2 \times \text{Ht})^{0.9}.
+\]
+
+A partir de esta biomasa, el carbono aéreo por árbol se obtiene aplicando el factor de conversión recomendado por el IPCC:
+\[
+\text{Carbono}_{\text{aéreo\_árbol}} = \frac{\text{Biomasa}_{\text{aérea}} \times 0.5}{1000}.
+\]
+
+\textbf{Paso adicional: Incorporación de la Fracción Radical.}  
+El objetivo es calcular el carbono total fijado en la biomasa viva de los árboles ($\Delta C_{BV}$), que incluye tanto la biomasa sobre el suelo (aérea) como la biomasa bajo el suelo (radical).  
+Para ello, se incorpora la fracción radical mediante la relación Parte Radical:Parte Aérea ($R$, o \textit{Root:Shoot Ratio}).  
+El carbono total por árbol se calcula como:
+\[
+\text{Carbono}_{\text{Total\_Árbol}} = \text{Carbono}_{\text{aéreo\_árbol}} \times (1 + R)
+\]
+donde:
+\begin{itemize}
+    \item $0.5$ es la \textbf{Fracción de Carbono} (FC), valor por defecto recomendado por el IPCC (kg C/kg m.s. o t C/t m.s.) \cite{ipcc2006}.
+    \item $R$ es la \textbf{Relación Parte Radical:Parte Aérea}, obtenida a partir de estudios específicos por especie \cite{ruizpeinado2011}.
+\end{itemize}
+
+El carbono total bruto por clase diamétrica se obtiene multiplicando el carbono total por árbol por el número de pies (\texttt{npies}) existentes en dicha clase:
+\[
+\text{Carbono\_bruto}_{\text{Total}} = \text{Carbono}_{\text{Total\_Árbol}} \times \text{npies}.
+\]
+
+El resultado se expresa en \textbf{toneladas de carbono (tC)} por parcela y especie, sin normalizar por superficie (no en tC/ha). 
+Esta decisión permite mantener un proceso de cálculo más \textit{trazable} y directamente interpretable a partir de las variables observadas, evitando depender de factores de expansión o conversiones específicas del IFN. 
+Además, facilita la replicabilidad y la comparación entre inventarios, al derivarse íntegramente de datos medidos o modelados de manera transparente.
+
+\medskip
+\textbf{Referencias para la Relación Parte Radical:Parte Aérea (R).}  
+La inclusión del factor $R$ es esencial para cuantificar el carbono en la biomasa viva bajo el suelo. La investigación ha desarrollado ratios específicos, siendo crucial emplear valores por especie para reducir la incertidumbre.
+
+Valores promedio para especies españolas:
+\begin{itemize}
+    \item Coníferas: $R = 0.265$
+    \item Frondosas: $R = 0.466$
+\end{itemize}
+
+En la investigación realizada en \cite{ruizpeinado2011} para especies forestales en España: $R = 0.466$ de media para las frondosas frente a $R = 0.265$ para las coníferas. 
+El valor de la fracción de carbono de la materia seca (FC) es el recomendado por el IPCC, $0.5 \, \text{t C/t m.s.}$ \cite{ipcc2006}.
+
+
+
+
+
+
+
+
+
+
+
+
 
     \item \textbf{Estimación de la superficie de la parcela.} El IFN no proporciona las dimensiones de cada parcela registrada. Para estimar este dato empleamos la variable \texttt{Distanci} de la tabla \textit{SIG Mayores\_exs} del IFN3 e IFN4, priorizando el segundo (se asigna un único valor por parcela). Las coordenadas de cada parcela registran el punto central de la parcela y de la documentación de los inventarios se entiende que se trata de parcelas circulares. La variable \texttt{Distanci} registra un conjunto de medidas correspondientes a la distancia entre cada pie mayor contenido en la parcela y el centro de la misma. Estimamos el radio de la parcela como la mayor de dichas distancias (distancia entre el centro de la parcela y el árbol más alejado contenido en ella). Registramos las variables \texttt{Radio} en metros y la variable \texttt{Superficie} en hectáreas. Las parcelas que no cuentan con mediciones de \texttt{Distanci} validas se imputan con la media. 
     

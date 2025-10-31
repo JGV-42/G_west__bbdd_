@@ -16,7 +16,7 @@ Una de las principales limitaciones radica en la ausencia de una medición direc
 
 \subsection*{Estimación del carbono}
 
-La estimación del contenido de carbono aéreo (\texttt{ca}), radical (\texttt{cr}) y total (\texttt{c}) por especie, parcela e inventario representa una de las áreas con mayor incertidumbre dentro de la base de datos. Aunque se trata de una fuente fiable, la documentación de los inventarios no especifica el método de calculo empleado para dichas variables (se presupone que se obtienen a partir de la medición del número de árboles de cada tamaño y especie según las directrices de la Guía del MITECO para la estimación de absorciones de CO$_2$ \cite{miteco_guia_co2}. ). Además, las variables \texttt{CA} y \texttt{CR} solo están disponibles para el inventario IFN4 y muestran ausencia completa en varias provincias (07, 15, 27, 30, 31, 32, 33, 36, 39 y las del País Vasco), lo que impide realizar análisis completos a escala nacional sin imputación.  
+La estimación del contenido de carbono aéreo (\texttt{ca}), radical (\texttt{cr}) y total (\texttt{c}) por especie, parcela, inventario y calse diamétrica representa una de las áreas con mayor incertidumbre dentro de la base de datos. Aunque se trata de una fuente fiable, las variables \texttt{CA} y \texttt{CR} solo están disponibles para el inventario IFN4 y muestran ausencia completa en varias provincias (07, 15, 27, 30, 31, 32, 33, 36, 39 y las del País Vasco), lo que impide realizar análisis completos a escala nacional sin imputación.  
 \medskip
 
 Para resolver estos vacíos, se implementó un modelo \textit{Random Forest Regressor} entrenado con datos completos del IFN4. Este modelo utiliza como predictores un conjunto de variables forestales fácilmente medibles (\texttt{Especie}, \texttt{CD}, \texttt{VSC}, \texttt{NPies}, \texttt{ABas}, \texttt{IAVC}, \texttt{VCC} y \texttt{VLE}) y permite imputar valores ausentes tanto en el propio IFN4 como en los inventarios IFN2 e IFN3, que originalmente carecen de información sobre carbono. A pesar de que el modelo presenta métricas de rendimiento satisfactorias ($R^2_{\text{test}} > 0.90$ en ambos casos), las predicciones derivan de un modelo estadístico y no de mediciones directas, lo cual limita su uso en contextos que requieran alta precisión. Como alternativa trazable se incluye la variable \texttt{carbono\_bruto}.
@@ -25,6 +25,9 @@ Para resolver estos vacíos, se implementó un modelo \textit{Random Forest Regr
 
 Por otra parte, el hecho de considerar las entradas de la tabla \texttt{brotes} con valor de carbono cero introduce una simplificación que, si bien operativamente razonable, puede subestimar el carbono real presente en la regeneración natural o vegetación arbustiva. Esta base de datos se crea con el fin de servir a proyectos de créditos de carbono por reforestación y forestación, en los que el carbono contenido en los plantones (árboles en fases del desarrollo tempranas que se plantan) no se tiene en cuenta como carbono capturado. Es por ello que se ha tomado la decisión de considerar los árboles jóvenes como libres de carbono capturado. 
 
+\medskip
+
+Como alternativa trazable a la variable de carbono proporcionada por el IFN se construyó \texttt{carbono\_bruto}, calculada directamente a partir de variables medidas en campo y expresada en toneladas de carbono (t) por parcela y especie, sin normalizar por superficie, lo que facilita la trazabilidad y la comparación entre inventarios. Cabe destacar que dicha variable se construye particularizando solo entre frondosas y coníferas, lo cual limita su precisión, según \cite{ruizpeinado2011} ecuaciones de biomasa particularizadas para cada especie pueden mejorar la precisión en la estimación hasta un 20\%. 
 
 \subsection*{Otras consideraciones}
 
@@ -44,8 +47,8 @@ Entre las líneas de mejora futura destacan:
 
 \begin{itemize}
     \item Integrar geometrías reales de las parcelas (shapefiles o polígonos precisos) cuando estén disponibles.
-    \item Integrar información sobre la gestión de los terrenos inventariados (talas, siembras y similares) y los eventos particulares que puedan influir en la evolución de los cultivos (como incendios).
-    \item Añadir información de gestión, tratamientos y alteraciones naturales del medio (por ejemplo incendios).
+    \item Integrar información sobre la gestión y tratamientos de los terrenos inventariados (talas, siembras y similares) y los eventos particulares que puedan influir en la evolución de los cultivos (como incendios).
+    \item Mejorar la precisión en la estimación de la variable \texttt{carbono\_bruto} particularizando las ecuaciones de biomasa a nivel de especie. 
     \item Mejorar la resolución espacial y temporal de los datos climáticos y espectrales empleados.
 \end{itemize}
 
