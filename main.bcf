@@ -2373,7 +2373,7 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">cmnucc1992</bcf:citekey>
-    <bcf:citekey order="1" intorder="2">kioto1997</bcf:citekey>
+    <bcf:citekey order="1" intorder="2">UNFCCC1997</bcf:citekey>
     <bcf:citekey order="2" intorder="1">ifn</bcf:citekey>
     <bcf:citekey order="3" intorder="1">copernicus_era5_land_daily</bcf:citekey>
     <bcf:citekey order="4" intorder="1">ign_pnoa</bcf:citekey>
@@ -2394,7 +2394,7 @@
     <bcf:citekey order="15" intorder="1">landsat7_data</bcf:citekey>
     <bcf:citekey order="16" intorder="1">nasadem_data</bcf:citekey>
     <bcf:citekey order="17" intorder="1">ign_pnoa</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">eos_blog</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">eos_indices_vegetacion</bcf:citekey>
     <bcf:citekey order="19" intorder="1">sentinel_hub_ndii</bcf:citekey>
     <bcf:citekey order="20" intorder="1">eos_indices_vegetacion</bcf:citekey>
     <bcf:citekey order="21" intorder="1">eos_indices_vegetacion</bcf:citekey>
@@ -2403,9 +2403,22 @@
     <bcf:citekey order="24" intorder="1">copernicus_era5_land_daily</bcf:citekey>
     <bcf:citekey order="25" intorder="1">matthews2021annex</bcf:citekey>
     <bcf:citekey order="26" intorder="1">ign_shapefile</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">miteco_guia_co2</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">chave2014</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">miteco_guia_co2</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">chave2014</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">ipcc2006</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">ipcc2006</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">ruizpeinado2011</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">chave2014</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">ipcc2006</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">ipcc2006</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">ruizpeinado2011</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">ruizpeinado2011</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">ipcc2006</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">ruizpeinado2011</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">montero2009</bcf:citekey>
+    <bcf:citekey order="38" intorder="2">ruizpeinado2011</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">miteco_ifn4_manual</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">ipcc2006</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">ipcc2006</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

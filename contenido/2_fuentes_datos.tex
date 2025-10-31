@@ -4,7 +4,7 @@ La unidad básica de análisis empleada en este estudio es la parcela, entendida
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/mapa_parcelas.png}
+    \includegraphics[width=0.8\textwidth]{figuras/mapa_parcelas.png}
     \caption{\small Imagen del mapa peninsular con las parcelas contempladas representadas. Las islas Canarias no aparecen en la imagen pero sí que se contemplan en la base de datos.}
     \label{fig:parcelas}
 \end{figure}
@@ -251,9 +251,9 @@ Las siguientes tablas documentan las variables extraídas de las bases de datos 
 
 \medskip
 
-La estructura de las tablas sigue un orden secuencial que refleja un incremento en la complejidad de las claves primarias. La primera tabla tiene como clave primaria la parcela, estableciendo la base de la organización (Tabla \ref{tab:parcela}). La segunda tabla incorpora la entidad inventario, ligando cada parcela a un momento concreto de exploración (Tabla \ref{tab:parcela_inventario}). En la tercera tabla, se incluye especie, lo que permite añadir más detalles sobre la vegetación (Tabla \ref{tab:parcela_inventario_especie}). En la cuarta tabla, la clave primaria se amplía para incluir especie, clase diamétrica (medida del tamaño del árbol) e inventario, detallando aún más la información (Tabla \ref{tab:parcela_inventario_especie_cd}). El último nivel de agregación es el árbol, esta tabla recoge los datos de los pies mayores\footnote{"Pies mayores" se refiere principalmente a árboles forestales con un diámetro superior a \(7,5\) cm y una altura de más de \(1,30\) m, según la terminología del Inventario Forestal Nacional.} identificados en los inventarios (no todos los árboles)dando lugar a una tabla cuya clave primaria es una combinación de parcela, inventario, especie y árbol (Tabla \ref{tab:parcela_inventario_especie_arbol}). Así, cada tabla presenta un nivel progresivo de particularización, pasando de una simple parcela a un grupo de árboles de una especie y tamaño concreto, en una parcela y momento concreto.
+La estructura de las tablas sigue un orden secuencial que refleja un incremento en la complejidad de las claves primarias. La primera tabla tiene como clave primaria la parcela, estableciendo la base de la organización (Tabla \ref{tab:parcela}). La segunda tabla incorpora la entidad inventario, ligando cada parcela a un momento concreto de exploración (Tabla \ref{tab:parcela_inventario}). En la tercera tabla, se incluye especie, lo que permite añadir más detalles sobre la vegetación (Tabla \ref{tab:parcela_inventario_especie}). En la cuarta tabla, la clave primaria se amplía para incluir especie, clase diamétrica (medida del tamaño del árbol) e inventario, detallando aún más la información (Tabla \ref{tab:parcela_inventario_especie_cd}). El último nivel de agregación es el árbol, esta tabla recoge los datos de los pies mayores\footnote{\textbf{Pies mayores} se refiere principalmente a árboles forestales con un diámetro superior a \(7,5\) cm y una altura de más de \(1,30\) m, según la terminología del Inventario Forestal Nacional.} identificados en los inventarios (no todos los árboles) dando lugar a una tabla cuya clave primaria es una combinación de parcela, inventario, especie y árbol (Tabla \ref{tab:parcela_inventario_especie_arbol}). Así, cada tabla presenta un nivel progresivo de particularización, pasando de una simple parcela a un grupo de árboles de una especie y tamaño concreto, en una parcela y momento concreto.
 
-También nos encontramos una tabla con información sobre los árboles pequeños de cada parcela en caso de existir (Tabla \ref{tab:brotes}). La información de esta tabla se añadirá las cuatro mencionadas anteriormente. Su procesado de tratará en apartados posteriores.
+También nos encontramos una tabla con información sobre los pies de regeneración de cada parcela en caso de existir (Tabla \ref{tab:brotes}). La información de esta tabla se añadirá las cuatro mencionadas anteriormente. Su procesado de tratará en apartados posteriores.
 
 \begin{table}[H]
 \renewcommand{\arraystretch}{2.2}
@@ -425,9 +425,9 @@ IIFL03BD & Sig: Parcelas\_exs & IAVC & float & Incremento anual del volumen con 
 \hline
 IIFL03BD & Sig: Parcelas\_exs & VLE & float & Volumen de leñas por parcela, especie y clase diamétrica (m3/ha). & -- \\
 \hline
-- & Sig: Parcelas\_exs del IFN4 & CA & float & Fijación de carbono aéreo del arbolado (t/ha). & -- \\
+- & Sig: Parcelas\_exs del IFN4 & CA & float & Fijación de carbono aéreo del arbolado (t/ha). & Anexo \ref{sec:Carbono} \\
 \hline
-- & Sig: Parcelas\_exs & CR & float & Fijación de carbono radical del arbolado (t/ha). & -- \\
+- & Sig: Parcelas\_exs & CR & float & Fijación de carbono radical del arbolado (t/ha). & Anexo \ref{sec:Carbono} \\
 \hline
 \end{tabular}%
 }
@@ -480,9 +480,9 @@ Sig: Mayores\_exs & IAVC & float & Incremento anual del volumen con corteza en d
 \hline
 Sig: Mayores\_exs & VLE & float & Volumen de leñas en decímetros cúbicos del pie medido. & -- \\
 \hline
-Sig: Mayores\_exs del IFN4 & CA & float & Fijación de carbono aéreo del pie medido (t). & -- \\
+Sig: Mayores\_exs del IFN4 & CA & float & Fijación de carbono aéreo del pie medido (kg). & Anexo \ref{sec:Carbono} \\
 \hline
-Sig: Mayores\_exs & CR & float & Fijación de carbono radical del pie medido (t). & -- \\
+Sig: Mayores\_exs & CR & float & Fijación de carbono radical del pie medido (kg). & Anexo \ref{sec:Carbono} \\
 \hline
 \end{tabular}%
 }
