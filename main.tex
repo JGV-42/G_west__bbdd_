@@ -3,14 +3,33 @@
 % Importar preámbulo con paquetes
 \input{preamble}
 
-% Título y autoría
-\title{Base de datos integrada de atributos forestales y variables espectrales para España}
-\author{Tu Nombre \\ \small{Afiliación, email@institucion.com}}
-\date{\today}
+% ---------------------------------------------------------------------------
+% Datos del artículo
+% ---------------------------------------------------------------------------
+
+\title{\textbf{GreenWest: base de datos relacional para la caracterización de los terrenos forestales españoles}\\[4pt]
+\small{Correspondiente al grupo B1 (GreenWest) de las líneas de investigación de DemIA.}}
+
+\author{
+Maider Araceli Urbón Jiménez$^{1}$\thanks{Autora de correspondencia: \href{mailto:murbon001@usal.es}{murbon001@usal.es}} \and
+Jaime Gabriel Vegas$^{1}$ \and
+Ana de Luis Reboredo$^{1}$ \and
+Belén Pérez Lancho$^{1}$ \and
+Ana-Belén Gil-González$^{1}$}
+
+\date{
+\small
+$^{1}$Grupo B1, Equipo de investigación BISITE, Universidad de Salamanca\\
+Facultad de Ciencias, Salamanca, Castilla y León, España\\[4pt]
+\texttt{\{murbon001, JaimeGabrielVegas, adeluis, lancho, abg\}@usal.es}
+}
+
+% ---------------------------------------------------------------------------
 
 \begin{document}
 
 \maketitle
+
 
 \begin{abstract}
 \input{contenido/abstract}
@@ -40,11 +59,10 @@
 \newpage
 \input{contenido/8_conclusion}
 
-\newpage
-\input{contenido/9_anexos}
-
 % \bibliographystyle{plain}
 \printbibliography
 
+\newpage
+\input{contenido/9_anexos}
 
 \end{document}
