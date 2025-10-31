@@ -2374,7 +2374,7 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">cmnucc1992</bcf:citekey>
-    <bcf:citekey order="1" intorder="2">kioto1997</bcf:citekey>
+    <bcf:citekey order="1" intorder="2">UNFCCC1997</bcf:citekey>
     <bcf:citekey order="2" intorder="1">ifn</bcf:citekey>
     <bcf:citekey order="3" intorder="1">copuernicus_temps</bcf:citekey>
     <bcf:citekey order="3" intorder="2">copernicus_pr</bcf:citekey>
@@ -2393,7 +2393,7 @@
     <bcf:citekey order="12" intorder="1">landsat7_data</bcf:citekey>
     <bcf:citekey order="13" intorder="1">nasadem_data</bcf:citekey>
     <bcf:citekey order="14" intorder="1">ign_pnoa</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">eos_blog</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">eos_indices_vegetacion</bcf:citekey>
     <bcf:citekey order="16" intorder="1">sentinel_hub_ndii</bcf:citekey>
     <bcf:citekey order="17" intorder="1">eos_indices_vegetacion</bcf:citekey>
     <bcf:citekey order="18" intorder="1">eos_indices_vegetacion</bcf:citekey>

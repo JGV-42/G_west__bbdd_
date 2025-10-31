@@ -1,0 +1,744 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{eos_indices_vegetacion}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=bd67aa93d090ece97db6381bb839be43}{%
+           family={Analytics},
+           familyi={A\bibinitperiod},
+           given={EOS\bibnamedelima Data},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{bd67aa93d090ece97db6381bb839be43}
+      \strng{fullhash}{bd67aa93d090ece97db6381bb839be43}
+      \strng{fullhashraw}{bd67aa93d090ece97db6381bb839be43}
+      \strng{bibnamehash}{bd67aa93d090ece97db6381bb839be43}
+      \strng{authorbibnamehash}{bd67aa93d090ece97db6381bb839be43}
+      \strng{authornamehash}{bd67aa93d090ece97db6381bb839be43}
+      \strng{authorfullhash}{bd67aa93d090ece97db6381bb839be43}
+      \strng{authorfullhashraw}{bd67aa93d090ece97db6381bb839be43}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accedido: 09-07-2025}
+      \field{title}{Índices de vegetación en la agricultura digital}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://eos.com/es/blog/indices-de-vegetacion/
+      \endverb
+      \verb{url}
+      \verb https://eos.com/es/blog/indices-de-vegetacion/
+      \endverb
+    \endentry
+    \entry{copernicus_pr}{misc}{}{}
+      \name{author}{6}{}{%
+        {{hash=0f2a1797446fbd4470a8dcccb4c432b5}{%
+           family={Berg},
+           familyi={B\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4a1636c7151415660c02f025c52c96e6}{%
+           family={Photiadou},
+           familyi={P\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=56b86b06b6e6611a28865e135b8efeeb}{%
+           family={Simonsson},
+           familyi={S\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=bc380f2fb59fcb8674af8536071f8553}{%
+           family={Sjokvist},
+           familyi={S\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=6add96b0608f27318543ebdf853ed4bd}{%
+           family={Thuresson},
+           familyi={T\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=768c506ee6ed114f230ee08888ac568e}{%
+           family={Mook},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{49d11d67c70c17645eba34419ee85d0d}
+      \strng{fullhash}{2cd1484ae2843d25c77588e1f49c3bb2}
+      \strng{fullhashraw}{2cd1484ae2843d25c77588e1f49c3bb2}
+      \strng{bibnamehash}{49d11d67c70c17645eba34419ee85d0d}
+      \strng{authorbibnamehash}{49d11d67c70c17645eba34419ee85d0d}
+      \strng{authornamehash}{49d11d67c70c17645eba34419ee85d0d}
+      \strng{authorfullhash}{2cd1484ae2843d25c77588e1f49c3bb2}
+      \strng{authorfullhashraw}{2cd1484ae2843d25c77588e1f49c3bb2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Copernicus Climate Change Service (C3S) Climate Data Store (CDS)}
+      \field{note}{DOI: 10.24381/cds.9eed87d5 (Accedido: 07-07-2025)}
+      \field{title}{Temperature and precipitation climate impact indicators from 1970 to 2100 derived from European climate projections}
+      \field{year}{2021}
+    \endentry
+    \entry{chave2014}{article}{}{}
+      \name{author}{24}{}{%
+        {{hash=96dcd1557addc8268aae043c16151e3e}{%
+           family={Chave},
+           familyi={C\bibinitperiod},
+           given={Jérôme},
+           giveni={J\bibinitperiod}}}%
+        {{hash=44460b6346b0f4b517ec77aeb191c640}{%
+           family={Réjou-Méchain},
+           familyi={R\bibinithyphendelim M\bibinitperiod},
+           given={Maxime},
+           giveni={M\bibinitperiod}}}%
+        {{hash=352b12da5c4762da668d369ad1fa9c3d}{%
+           family={Búrquez},
+           familyi={B\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=638790bfd397826175561b5578427a97}{%
+           family={Chidumayo},
+           familyi={C\bibinitperiod},
+           given={Emmanuel},
+           giveni={E\bibinitperiod}}}%
+        {{hash=0231f8a8f5122fa1cd7191d7531907b3}{%
+           family={Colgan},
+           familyi={C\bibinitperiod},
+           given={Matthew\bibnamedelima S.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=760cbf996782d3cd7455196e757d4573}{%
+           family={Delitti},
+           familyi={D\bibinitperiod},
+           given={Welington\bibnamedelimb B.\bibnamedelimi C.},
+           giveni={W\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=96a043bffc65eaa7cf489cabf7270ae1}{%
+           family={Duque},
+           familyi={D\bibinitperiod},
+           given={Alvaro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a8665bf1f76a9769da31472b809397ca}{%
+           family={Eid},
+           familyi={E\bibinitperiod},
+           given={Tron},
+           giveni={T\bibinitperiod}}}%
+        {{hash=af9db1271bb50de53a9452c0ea4e0424}{%
+           family={Fearnside},
+           familyi={F\bibinitperiod},
+           given={Philip\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=15173c6c584d5d1afe0382f52a51d6dd}{%
+           family={Goodman},
+           familyi={G\bibinitperiod},
+           given={Rosa\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=551ed8a31c4bb17375891527f9057df8}{%
+           family={Henry},
+           familyi={H\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=23e685ca6465e5853041a17bbc16569b}{%
+           family={Martínez-Yrízar},
+           familyi={M\bibinithyphendelim Y\bibinitperiod},
+           given={Angelina},
+           giveni={A\bibinitperiod}}}%
+        {{hash=eaff3ac5046f43f12a5aeb2e58dd8fea}{%
+           family={Mugasha},
+           familyi={M\bibinitperiod},
+           given={Wilson\bibnamedelima A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0aecb344d60bd35f9128dfaedb4c6037}{%
+           family={Muller-Landau},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Helene\bibnamedelima C.},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=e2a73cad407611f9294b5fc6ded4bcb4}{%
+           family={Mencuccini},
+           familyi={M\bibinitperiod},
+           given={Maurizio},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3ec45c7fab9ab80b89e4c9c01e6df75d}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Brian\bibnamedelima W.},
+           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=50ffc6146d8fa234e2e6c9d72e34fed2}{%
+           family={Ngomanda},
+           familyi={N\bibinitperiod},
+           given={Alfred},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5992532024b75caa63f17d410701d2cc}{%
+           family={Nogueira},
+           familyi={N\bibinitperiod},
+           given={Eurípedes\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b15cabf862cc513e620c092da5198d2e}{%
+           family={Ortiz-Malavassi},
+           familyi={O\bibinithyphendelim M\bibinitperiod},
+           given={Edgar},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e7ef6535a670bc27fbd21a8c8f1a70d6}{%
+           family={Pélissier},
+           familyi={P\bibinitperiod},
+           given={Raphaël},
+           giveni={R\bibinitperiod}}}%
+        {{hash=301f5d005dbcf82359cf9b683bf6929b}{%
+           family={Ploton},
+           familyi={P\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=84db7f625267b7d29486b29771730995}{%
+           family={Ryan},
+           familyi={R\bibinitperiod},
+           given={Casey\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=99cd18d009deeb3c341a3cfaf7e6c8a3}{%
+           family={Saldarriaga},
+           familyi={S\bibinitperiod},
+           given={Juan\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=9fff0a2bd053deb68726d13eeffd0fcd}{%
+           family={Vieilledent},
+           familyi={V\bibinitperiod},
+           given={Ghislain},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{e24b39cebb8e218918c3f996f0a18562}
+      \strng{fullhash}{6f99145df40d8c20de757ca1646d7854}
+      \strng{fullhashraw}{6f99145df40d8c20de757ca1646d7854}
+      \strng{bibnamehash}{e24b39cebb8e218918c3f996f0a18562}
+      \strng{authorbibnamehash}{e24b39cebb8e218918c3f996f0a18562}
+      \strng{authornamehash}{e24b39cebb8e218918c3f996f0a18562}
+      \strng{authorfullhash}{6f99145df40d8c20de757ca1646d7854}
+      \strng{authorfullhashraw}{6f99145df40d8c20de757ca1646d7854}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Global Change Biology}
+      \field{number}{10}
+      \field{title}{Improved allometric models to estimate the aboveground biomass of tropical trees}
+      \field{volume}{20}
+      \field{year}{2014}
+      \field{pages}{3177\bibrangedash 3190}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/gcb.12629
+      \endverb
+    \endentry
+    \entry{ipcc2006}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=7228b3cdfe23fe3f4516b401aa5b0d2c}{%
+           family={Climate\bibnamedelimb Change\bibnamedelima (IPCC)},
+           familyi={C\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim (\bibinitperiod},
+           given={Intergovernmental\bibnamedelima Panel},
+           giveni={I\bibinitperiod\bibinitdelim P\bibinitperiod},
+           prefix={on},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=e4574a971a272a84a09fca9283ed4b24}{%
+           family={Eggleston},
+           familyi={E\bibinitperiod},
+           given={H.\bibnamedelimi S.},
+           giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=c5ff905dc903c0fc2cae1cfda80b3fbb}{%
+           family={Buendia},
+           familyi={B\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=78e984e52e1320538ff52f87a0ee7483}{%
+           family={Miwa},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=aa73af7259334039dbd4d24060481887}{%
+           family={Ngara},
+           familyi={N\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=79e0821b523fd767d18db7049ab4e5d1}{%
+           family={Tanabe},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hayama, Japan}%
+      }
+      \list{publisher}{1}{%
+        {Institute for Global Environmental Strategies (IGES)}%
+      }
+      \strng{namehash}{7228b3cdfe23fe3f4516b401aa5b0d2c}
+      \strng{fullhash}{7228b3cdfe23fe3f4516b401aa5b0d2c}
+      \strng{fullhashraw}{7228b3cdfe23fe3f4516b401aa5b0d2c}
+      \strng{bibnamehash}{7228b3cdfe23fe3f4516b401aa5b0d2c}
+      \strng{authorbibnamehash}{7228b3cdfe23fe3f4516b401aa5b0d2c}
+      \strng{authornamehash}{7228b3cdfe23fe3f4516b401aa5b0d2c}
+      \strng{authorfullhash}{7228b3cdfe23fe3f4516b401aa5b0d2c}
+      \strng{authorfullhashraw}{7228b3cdfe23fe3f4516b401aa5b0d2c}
+      \strng{editorbibnamehash}{418e1ddff87ced08a7c2ce3d9740e716}
+      \strng{editornamehash}{418e1ddff87ced08a7c2ce3d9740e716}
+      \strng{editorfullhash}{37994006e42fbbdb37575cc5fdf8b284}
+      \strng{editorfullhashraw}{37994006e42fbbdb37575cc5fdf8b284}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{4-88788-032-4}
+      \field{title}{2006 IPCC Guidelines for National Greenhouse Gas Inventories. Volume 4: Agriculture, Forestry and Other Land Use (AFOLU)}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol4.html
+      \endverb
+      \verb{url}
+      \verb https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol4.html
+      \endverb
+    \endentry
+    \entry{copernicus_api}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b65bb96181a9005169aaa9da4a23f233}{%
+           family={ECMWF},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{b65bb96181a9005169aaa9da4a23f233}
+      \strng{fullhash}{b65bb96181a9005169aaa9da4a23f233}
+      \strng{fullhashraw}{b65bb96181a9005169aaa9da4a23f233}
+      \strng{bibnamehash}{b65bb96181a9005169aaa9da4a23f233}
+      \strng{authorbibnamehash}{b65bb96181a9005169aaa9da4a23f233}
+      \strng{authornamehash}{b65bb96181a9005169aaa9da4a23f233}
+      \strng{authorfullhash}{b65bb96181a9005169aaa9da4a23f233}
+      \strng{authorfullhashraw}{b65bb96181a9005169aaa9da4a23f233}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{GitHub repository}
+      \field{title}{CDSAPI}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/ecmwf/cdsapi?tab=readme-ov-file#
+      \endverb
+      \verb{url}
+      \verb https://github.com/ecmwf/cdsapi?tab=readme-ov-file#
+      \endverb
+    \endentry
+    \entry{ee_terrain_slope}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=dfd91c98a321c293e0d49a24042cecc6}{%
+           family={Engine},
+           familyi={E\bibinitperiod},
+           given={Google\bibnamedelima Earth},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{dfd91c98a321c293e0d49a24042cecc6}
+      \strng{fullhash}{dfd91c98a321c293e0d49a24042cecc6}
+      \strng{fullhashraw}{dfd91c98a321c293e0d49a24042cecc6}
+      \strng{bibnamehash}{dfd91c98a321c293e0d49a24042cecc6}
+      \strng{authorbibnamehash}{dfd91c98a321c293e0d49a24042cecc6}
+      \strng{authornamehash}{dfd91c98a321c293e0d49a24042cecc6}
+      \strng{authorfullhash}{dfd91c98a321c293e0d49a24042cecc6}
+      \strng{authorfullhashraw}{dfd91c98a321c293e0d49a24042cecc6}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accedido: 09-07-2025}
+      \field{title}{función ee.Terrain.slope}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://developers.google.com/earth-engine/apidocs/ee-terrain-slope
+      \endverb
+      \verb{url}
+      \verb https://developers.google.com/earth-engine/apidocs/ee-terrain-slope
+      \endverb
+    \endentry
+    \entry{sentinel_hub_ndii}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=1db8ce7bdc77c150006bd63cbdf35104}{%
+           family={Hub},
+           familyi={H\bibinitperiod},
+           given={Sentinel},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{1db8ce7bdc77c150006bd63cbdf35104}
+      \strng{fullhash}{1db8ce7bdc77c150006bd63cbdf35104}
+      \strng{fullhashraw}{1db8ce7bdc77c150006bd63cbdf35104}
+      \strng{bibnamehash}{1db8ce7bdc77c150006bd63cbdf35104}
+      \strng{authorbibnamehash}{1db8ce7bdc77c150006bd63cbdf35104}
+      \strng{authornamehash}{1db8ce7bdc77c150006bd63cbdf35104}
+      \strng{authorfullhash}{1db8ce7bdc77c150006bd63cbdf35104}
+      \strng{authorfullhashraw}{1db8ce7bdc77c150006bd63cbdf35104}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accedido: 09-07-2025}
+      \field{title}{NDII (Normalized difference 819/1600)}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/ndii/
+      \endverb
+      \verb{url}
+      \verb https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/ndii/
+      \endverb
+    \endentry
+    \entry{ign_shapefile}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=92dd3d4ef59979a811d13f6f0b96aad7}{%
+           family={Información\bibnamedelima Geográfica},
+           familyi={I\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Centro\bibnamedelima Nacional},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Instituto Geográfico Nacional}%
+      }
+      \list{location}{1}{%
+        {Madrid, España}%
+      }
+      \strng{namehash}{92dd3d4ef59979a811d13f6f0b96aad7}
+      \strng{fullhash}{92dd3d4ef59979a811d13f6f0b96aad7}
+      \strng{fullhashraw}{92dd3d4ef59979a811d13f6f0b96aad7}
+      \strng{bibnamehash}{92dd3d4ef59979a811d13f6f0b96aad7}
+      \strng{authorbibnamehash}{92dd3d4ef59979a811d13f6f0b96aad7}
+      \strng{authornamehash}{92dd3d4ef59979a811d13f6f0b96aad7}
+      \strng{authorfullhash}{92dd3d4ef59979a811d13f6f0b96aad7}
+      \strng{authorfullhashraw}{92dd3d4ef59979a811d13f6f0b96aad7}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{note}{Licencia: \url{https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf}}
+      \field{title}{Base de Datos de Divisiones Administrativas de España}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://datos.gob.es/es/catalogo/e00125901-spaignllm
+      \endverb
+      \verb{url}
+      \verb https://datos.gob.es/es/catalogo/e00125901-spaignllm
+      \endverb
+    \endentry
+    \entry{ign_pnoa}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=842dcda17144d527aa50957867bd7168}{%
+           family={{Instituto Geográfico Nacional}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{842dcda17144d527aa50957867bd7168}
+      \strng{fullhash}{842dcda17144d527aa50957867bd7168}
+      \strng{fullhashraw}{842dcda17144d527aa50957867bd7168}
+      \strng{bibnamehash}{842dcda17144d527aa50957867bd7168}
+      \strng{authorbibnamehash}{842dcda17144d527aa50957867bd7168}
+      \strng{authornamehash}{842dcda17144d527aa50957867bd7168}
+      \strng{authorfullhash}{842dcda17144d527aa50957867bd7168}
+      \strng{authorfullhashraw}{842dcda17144d527aa50957867bd7168}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Servicio WMS Inspire del Plan Nacional de Ortofotografía Aérea (PNOA)}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.ign.es/wms-inspire/pnoa-ma
+      \endverb
+      \verb{url}
+      \verb https://www.ign.es/wms-inspire/pnoa-ma
+      \endverb
+    \endentry
+    \entry{nasadem_data}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b72ac823d25cea6b75733918733a005d}{%
+           family={JPL},
+           familyi={J\bibinitperiod},
+           given={NASA},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {DAAC de procesos terrestres del EOSDIS de la NASA}%
+      }
+      \strng{namehash}{b72ac823d25cea6b75733918733a005d}
+      \strng{fullhash}{b72ac823d25cea6b75733918733a005d}
+      \strng{fullhashraw}{b72ac823d25cea6b75733918733a005d}
+      \strng{bibnamehash}{b72ac823d25cea6b75733918733a005d}
+      \strng{authorbibnamehash}{b72ac823d25cea6b75733918733a005d}
+      \strng{authornamehash}{b72ac823d25cea6b75733918733a005d}
+      \strng{authorfullhash}{b72ac823d25cea6b75733918733a005d}
+      \strng{authorfullhashraw}{b72ac823d25cea6b75733918733a005d}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Fecha de acceso: 09-07-2025}
+      \field{title}{NASADEM Merged DEM Global 1 arc second V001}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001
+      \endverb
+    \endentry
+    \entry{montero2009}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=9e00fdf90ef4167520d2de73c424ea1d}{%
+           family={M.\bibnamedelimi Muñoz},
+           familyi={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Gregorio\bibnamedelimb Montero\bibnamedelimb Ricardo\bibnamedelima Ruiz-Peinado},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim R\bibinithyphendelim P\bibinitperiod},
+           prefix={y},
+           prefixi={y\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Madrid, España}%
+      }
+      \list{publisher}{1}{%
+        {Instituto Nacional de Investigación y Tecnología Agraria y Alimentaria (INIA)}%
+      }
+      \strng{namehash}{9e00fdf90ef4167520d2de73c424ea1d}
+      \strng{fullhash}{9e00fdf90ef4167520d2de73c424ea1d}
+      \strng{fullhashraw}{9e00fdf90ef4167520d2de73c424ea1d}
+      \strng{bibnamehash}{9e00fdf90ef4167520d2de73c424ea1d}
+      \strng{authorbibnamehash}{9e00fdf90ef4167520d2de73c424ea1d}
+      \strng{authornamehash}{9e00fdf90ef4167520d2de73c424ea1d}
+      \strng{authorfullhash}{9e00fdf90ef4167520d2de73c424ea1d}
+      \strng{authorfullhashraw}{9e00fdf90ef4167520d2de73c424ea1d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Serie Forestal, 23}
+      \field{title}{Producción de biomasa y fijación de CO$_2$ por los bosques españoles}
+      \field{year}{2009}
+    \endentry
+    \entry{miteco_abexante_2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=04a7f847f7bcbfe6912fd8c46024b312}{%
+           family={{Ministerio para la Transición Ecológica y el Reto Demográfico}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Gobierno de España}%
+      }
+      \strng{namehash}{04a7f847f7bcbfe6912fd8c46024b312}
+      \strng{fullhash}{04a7f847f7bcbfe6912fd8c46024b312}
+      \strng{fullhashraw}{04a7f847f7bcbfe6912fd8c46024b312}
+      \strng{bibnamehash}{04a7f847f7bcbfe6912fd8c46024b312}
+      \strng{authorbibnamehash}{04a7f847f7bcbfe6912fd8c46024b312}
+      \strng{authornamehash}{04a7f847f7bcbfe6912fd8c46024b312}
+      \strng{authorfullhash}{04a7f847f7bcbfe6912fd8c46024b312}
+      \strng{authorfullhashraw}{04a7f847f7bcbfe6912fd8c46024b312}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accedido: 2025-07-16}
+      \field{title}{INSTRUCCIONES DE USO DE LA CALCULADORA DE ABSORCIONES DE CO2 EX ANTE DE LAS ESPECIES FORESTALES ARBÓREAS ESPAÑOLAS DEL MINISTERIO PARA LA TRANSICIÓN ECOLÓGICA Y EL RETO DEMOGRÁFICO}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.miteco.gob.es/content/dam/miteco/es/cambio-climatico/temas/mitigacion-politicas-y-medidas/instruccionescalculadoraabexante_tcm30-485629.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.miteco.gob.es/content/dam/miteco/es/cambio-climatico/temas/mitigacion-politicas-y-medidas/instruccionescalculadoraabexante_tcm30-485629.pdf
+      \endverb
+    \endentry
+    \entry{copuernicus_temps}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=eebcbf9c7f53d0626e56cd552676f48d}{%
+           family={Muñoz\bibnamedelima Sabater},
+           familyi={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{eebcbf9c7f53d0626e56cd552676f48d}
+      \strng{fullhash}{eebcbf9c7f53d0626e56cd552676f48d}
+      \strng{fullhashraw}{eebcbf9c7f53d0626e56cd552676f48d}
+      \strng{bibnamehash}{eebcbf9c7f53d0626e56cd552676f48d}
+      \strng{authorbibnamehash}{eebcbf9c7f53d0626e56cd552676f48d}
+      \strng{authornamehash}{eebcbf9c7f53d0626e56cd552676f48d}
+      \strng{authorfullhash}{eebcbf9c7f53d0626e56cd552676f48d}
+      \strng{authorfullhashraw}{eebcbf9c7f53d0626e56cd552676f48d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Copernicus Climate Change Service (C3S) Climate Data Store (CDS)}
+      \field{note}{DOI: 10.24381/cds.e2161bac (Accedido: 07-07-2025)}
+      \field{title}{ERA5-Land hourly data from 1950 to present}
+      \field{year}{2019}
+    \endentry
+    \entry{cmnucc1992}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=289d6d295de5d9f9e01197fab2b80b67}{%
+           family={{Naciones Unidas}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{289d6d295de5d9f9e01197fab2b80b67}
+      \strng{fullhash}{289d6d295de5d9f9e01197fab2b80b67}
+      \strng{fullhashraw}{289d6d295de5d9f9e01197fab2b80b67}
+      \strng{bibnamehash}{289d6d295de5d9f9e01197fab2b80b67}
+      \strng{authorbibnamehash}{289d6d295de5d9f9e01197fab2b80b67}
+      \strng{authornamehash}{289d6d295de5d9f9e01197fab2b80b67}
+      \strng{authorfullhash}{289d6d295de5d9f9e01197fab2b80b67}
+      \strng{authorfullhashraw}{289d6d295de5d9f9e01197fab2b80b67}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Adoptada el 9 de mayo de 1992 en Nueva York}
+      \field{note}{En vigor desde 1994}
+      \field{title}{Convención Marco de las Naciones Unidas sobre el Cambio Climático}
+      \field{year}{1992}
+    \endentry
+    \entry{ruizpeinado2011}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=266c6fdb9d6492307286ad7fab73104a}{%
+           family={Ricardo\bibnamedelima Ruiz-Peinado},
+           familyi={R\bibinitperiod\bibinitdelim R\bibinithyphendelim P\bibinitperiod},
+           given={Miguel\bibnamedelimb del\bibnamedelimb Río\bibnamedelimb y\bibnamedelimb Gregorio\bibnamedelima Montero},
+           giveni={M\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim y\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{266c6fdb9d6492307286ad7fab73104a}
+      \strng{fullhash}{266c6fdb9d6492307286ad7fab73104a}
+      \strng{fullhashraw}{266c6fdb9d6492307286ad7fab73104a}
+      \strng{bibnamehash}{266c6fdb9d6492307286ad7fab73104a}
+      \strng{authorbibnamehash}{266c6fdb9d6492307286ad7fab73104a}
+      \strng{authornamehash}{266c6fdb9d6492307286ad7fab73104a}
+      \strng{authorfullhash}{266c6fdb9d6492307286ad7fab73104a}
+      \strng{authorfullhashraw}{266c6fdb9d6492307286ad7fab73104a}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Forest Systems}
+      \field{number}{1}
+      \field{title}{New models for estimating the carbon sink capacity of Spanish softwood species}
+      \field{volume}{20}
+      \field{year}{2011}
+      \field{pages}{176\bibrangedash 188}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.5424/fs/2011201-11588
+      \endverb
+    \endentry
+    \entry{ifn}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=eb284137e2c5f121c4ac4691517831ac}{%
+           family={Transición\bibnamedelimb Ecológica\bibnamedelimb y\bibnamedelimb el\bibnamedelimb Reto\bibnamedelima Demográfico},
+           familyi={T\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim y\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={Ministerio},
+           giveni={M\bibinitperiod},
+           prefix={para\bibnamedelima la},
+           prefixi={p\bibinitperiod\bibinitdelim l\bibinitperiod}}}%
+      }
+      \strng{namehash}{eb284137e2c5f121c4ac4691517831ac}
+      \strng{fullhash}{eb284137e2c5f121c4ac4691517831ac}
+      \strng{fullhashraw}{eb284137e2c5f121c4ac4691517831ac}
+      \strng{bibnamehash}{eb284137e2c5f121c4ac4691517831ac}
+      \strng{authorbibnamehash}{eb284137e2c5f121c4ac4691517831ac}
+      \strng{authornamehash}{eb284137e2c5f121c4ac4691517831ac}
+      \strng{authorfullhash}{eb284137e2c5f121c4ac4691517831ac}
+      \strng{authorfullhashraw}{eb284137e2c5f121c4ac4691517831ac}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Inventario Forestal Nacional (IFN)}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-forestal-nacional.html
+      \endverb
+      \verb{url}
+      \verb https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-forestal-nacional.html
+      \endverb
+    \endentry
+    \entry{landsat5_data}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c331da575c7eb6f801042d5153adc8a3}{%
+           family={USGS},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{fullhash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{fullhashraw}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{bibnamehash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{authorbibnamehash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{authornamehash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{authorfullhash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{authorfullhashraw}{c331da575c7eb6f801042d5153adc8a3}
+      \field{extraname}{1}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accedido: 08-07-025}
+      \field{title}{Descripción en Google Earth Engine del dataset USGS Landsat 5 Level 2, Collection 2, Tier 1}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T1_L2?hl=es-419#description
+      \endverb
+      \verb{url}
+      \verb https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T1_L2?hl=es-419#description
+      \endverb
+    \endentry
+    \entry{landsat7_data}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c331da575c7eb6f801042d5153adc8a3}{%
+           family={USGS},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{fullhash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{fullhashraw}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{bibnamehash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{authorbibnamehash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{authornamehash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{authorfullhash}{c331da575c7eb6f801042d5153adc8a3}
+      \strng{authorfullhashraw}{c331da575c7eb6f801042d5153adc8a3}
+      \field{extraname}{2}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accedido: 08-07-2025}
+      \field{title}{Descripción en Google Earth Engine del dataset USGS Landsat 7 Level 2, Collection 2, Tier 1}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LE07_C02_T1_L2?hl=es-419
+      \endverb
+      \verb{url}
+      \verb https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LE07_C02_T1_L2?hl=es-419
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{eos_blog}
+  \missing{kioto1997}
+  \missing{miteco_ifn4_manual}
+\endrefsection
+\endinput
+
