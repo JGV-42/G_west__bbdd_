@@ -14,87 +14,123 @@ Los datos meteorológicos consisten en temperaturas (tanto de la superficie como
 
 \subsubsection*{Temperaturas}
 
-
-Los datos de temperaturas empleados provienen del dataset \textit{ERA5-Land hourly data from 1950 to present} \cite{copuernicus_temps}, procedentes del \textit{Climate Data Store} de Copernicus. Este conjunto de datos cubre toda la superficie terrestre de forma continua desde el $1950$ hasta el presente, actualizandose con un margen de $2$ a $3$ meses y recopila información de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. Proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $9$ km.
+Los datos de temperaturas empleados provienen del dataset \textit{ERA5-Land Daily Aggregated - ECMWF Climate Reanalysis}, procedentes del \textit{Climate Data Store} de Copernicus \cite{copernicus_api} y accedidos a través de Google Earth Engine \cite{copernicus_era5_land_daily}. Este conjunto de datos cubre toda la superficie terrestre de forma continua desde el $1950$ hasta el presente, actualizandose con un margen de $2$ a $3$ meses y recopila información de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. Proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $10$ km.
 
 \medskip
 
-Los datos se pueden descargar a través de la API del \textit{Climate Data Store} (CDSAPI) \cite{copernicus_api} con frecuencia hasta horaria. Las columnas empleadas se pueden ver en la Tabla \ref{tab:era5land}.
+Los datos se pueden descargar a través de la API del \textit{Climate Data Store} (CDSAPI) \cite{copernicus_api} o a través de Google Earth Engine \cite{copernicus_era5_land_daily}. Las variables extraídas se pueden están recogidas en la tabla \ref{tab:era5_land}.
 
-\begin{table}[H]
-    % Definimos el espaciado entre filas
-    \renewcommand{\arraystretch}{2.5} % Puedes modificar este valor para aumentar o reducir el espaciado entre filas
-    
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|m{4cm}|m{3cm}|m{3cm}|m{6cm}|}
-    \cline{1-4}
-    \multicolumn{4}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} ERA5-Land Hourly Data from 1950 to Present}} \\
-    \cline{1-4}
-    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Nombre de variable} & 
-    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Unidades} & 
-    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Tipo de dato} & 
-    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Descripción} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} t2m} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del aire a 2 metros sobre la superficie terrestre, marina o de aguas interiores.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} stl1} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del suelo en el nivel 1 (0-7 cm) de la capa de suelo.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} stl2} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del suelo en el nivel 2 (7-28 cm) de la capa de suelo.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} stl3} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del suelo en el nivel 3 (28-100 cm) de la capa de suelo.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} stl4} & \centering {\color[HTML]{202124} Kelvin} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Temperatura del suelo en el nivel 4 (100-289 cm) de la capa de suelo.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} valid\_time} & \centering {\color[HTML]{202124} -} & \centering {\color[HTML]{202124} datetime64[ns]} & {\color[HTML]{202124} Fecha de los datos de temperatura. Formato: YYYY-MM-DD.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} latitude} & \centering {\color[HTML]{202124} Grados norte} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Grados de latitud de cada punto de los datos respecto al ecuador. Positivo hacia el norte, negativo hacia el sur.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} longitude} & \centering {\color[HTML]{202124} Grados este} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Grados de longitud de cada punto respecto al Meridiano de Greenwich. Positivo hacia el este, negativo hacia el oeste.} \\
-    \cline{1-4}
-    \cline{1-4}
-    \end{tabular}%
-    }
-    \caption{Datos horarios de ERA5-Land desde 1950 hasta el presente}
-    \label{tab:era5land}
-\end{table}
 
 
 \subsubsection*{Precipitaciones}
 
-Los datos de precipitaciones empleados provienen del dataset \textit{Temperature and precipitation climate impact indicators from 1970 to 2100 derived from European climate projections} \cite{copernicus_pr}, procedentes del \textit{Climate Data Store} de Copernicus. Este conjunto de datos contiene estimaciones tanto históricas como futuras de temperaturas y precipitaciones en Europa continental. Está disponible con resoluciones espaciales tanto de $0.11^\circ \times 0.11^\circ$ como de $5$km $\times$ $5$km, y una resolución temporal diaria, mensual o anual. De dicho \textit{dataset} empleamos los registros de deposiciones de agua sobre la superficie terrestre en forma de lluvia, nieve, hielo o granizo (tabla \ref{tab:climate_impact_indicators}).
+Los datos de precipitaciones empleados provienen del dataset \textit{ERA5-Land Daily Aggregated - ECMWF Climate Reanalysis}, procedentes del \textit{Climate Data Store} de Copernicus \cite{copernicus_api} y accedidos a través de Google Earth Engine \cite{copernicus_era5_land_daily}. Este conjunto de datos cubre toda la superficie terrestre de forma continua desde el $1950$ hasta el presente, actualizandose con un margen de $2$ a $3$ meses y recopila información de diversas fuentes, como datos en tierra, satélites o globos meteorológicos. Proporciona una serie temporal de datos en una cuadrícula de latitud-longitud, con una cobertura horizontal global y vertical a varios niveles de profundidad, desde el suelo hasta aproximadamente $200$ cm bajo la superficie. La resolución horizontal es de $0.1^\circ \times 0.1^\circ$, lo que equivale a alrededor de $10$ km..
 
-\begin{table}[H]
-    % Definimos el espaciado entre filas
-    \renewcommand{\arraystretch}{2.5} % Puedes modificar este valor para aumentar o reducir el espaciado entre filas
-    
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|m{4cm}|m{3cm}|m{3cm}|m{6cm}|}  % Cambié 'm' por 'p' en la última columna
-    \cline{1-4}
-    \multicolumn{4}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Temperature and Precipitation Climate Impact Indicators from 1970 to 2100}} \\
-    \cline{1-4}
-    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Nombre de variable} & 
-    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Unidades} & 
-    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Tipo de dato} & 
-    \cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Descripción} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} prAdjust (time, $y$, $x$)} & \centering {\color[HTML]{202124} $\frac{kg}{m^2s}$} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} La deposición de agua sobre la superficie terrestre en forma de lluvia, nieve, hielo o granizo. Los datos se dan como la masa de agua por unidad de área y tiempo.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} time} & \centering {\color[HTML]{202124} -} & \centering {\color[HTML]{202124} datetime64[ns]} & {\color[HTML]{202124} Fecha de los datos. Formato: YYYY-MM-DD.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} lat ($y$, $x$)} & \centering {\color[HTML]{202124} Grados norte} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Grados de latitud de cada punto de los datos respecto al ecuador. Positivo hacia el norte, negativo hacia el sur.} \\
-    \cline{1-4}
-    \centering {\color[HTML]{202124} lon ($y$, $x$)} & \centering {\color[HTML]{202124} Grados este} & \centering {\color[HTML]{202124} float} & {\color[HTML]{202124} Grados de longitud de cada punto respecto al Meridiano de Greenwich. Positivo hacia el este, negativo hacia el oeste.} \\
-    \cline{1-4}
-    \end{tabular}
-    }
-    \caption{Indicadores de impacto climático de temperatura y precipitación desde 1970 hasta 2100 derivados de proyecciones climáticas europeas.}
-    \label{tab:climate_impact_indicators}
+Los datos se pueden descargar a través de la API del \textit{Climate Data Store} (CDSAPI) \cite{copernicus_api}. Las columnas empleadas se puede ver en la Tabla \ref{tab:era5_land}.
+
+
+    \begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5} % Aumenta la separación entre las filas
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|m{5cm}|m{2cm}|m{1cm}|m{8cm}|} % Columnas con ancho fijo y centrado vertical
+\cline{1-4}
+\multicolumn{4}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} ERA5-Land Daily Aggregated - ECMWF Climate Reanalysis}} \\
+\cline{1-4}
+\multicolumn{1}{|c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Nombre de la variable}} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Unidades}} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Tipo de datos}} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{D9EAD3}{\color[HTML]{000000} Descripción}} \\
+\cline{1-4}
+\centering {\color[HTML]{202124} temperature\_2m} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Temperatura del aire a 2 m sobre la superficie de la tierra, el mar o las aguas interiores. La temperatura a 2 m se calcula interpolando entre el nivel más bajo del modelo y la superficie de la Tierra, teniendo en cuenta las condiciones atmosféricas.} \\ \cline{1-4}
+\centering {\color[HTML]{202124} skin\_temperature} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Temperatura de la superficie de la Tierra. La temperatura cutánea es la temperatura teórica necesaria para satisfacer el equilibrio de energía superficial. Representa la temperatura de la capa superficial superior, que no tiene capacidad calorífica y, por lo tanto, puede responder instantáneamente a los cambios en los flujos de superficie. La temperatura cutánea se calcula de manera diferente en tierra y mar.} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_1} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Temperatura del suelo en la capa 1 (0 a 7 cm) del Sistema Integrado de Previsión del ECMWF.} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_2} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Temperatura del suelo en la capa 2 (7-28 cm) del Sistema Integrado de Previsión del ECMWF.} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_3} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Temperatura del suelo en la capa 3 (28 a 100 cm) del Sistema Integrado de Previsión del ECMWF.} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_4} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Temperatura del suelo en la capa 4 (100-289 cm) del Sistema Integrado de Previsión del ECMWF.} \\ \cline{1-4}
+\centering {\color[HTML]{202124} temperature\_2m\_min} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor de temperatura mínima diaria a 2 m} \\ \cline{1-4}
+\centering {\color[HTML]{202124} temperature\_2m\_max} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor de la temperatura máxima diaria a 2 m} \\ \cline{1-4}
+\centering {\color[HTML]{202124} skin\_temperature\_min} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor mínimo diario de skin\_temperature} \\ \cline{1-4}
+\centering {\color[HTML]{202124} skin\_temperature\_max} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor máximo diario de skin\_temperature} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_1\_min} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor mínimo diario de soil\_temperature\_level\_1} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_1\_max} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor máximo diario de soil\_temperature\_level\_1} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_2\_min} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor mínimo diario de soil\_temperature\_level\_2} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_2\_max} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor máximo diario de soil\_temperature\_level\_2} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_3\_min} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor mínimo diario de soil\_temperature\_level\_3} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_3\_max} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor máximo diario de soil\_temperature\_level\_3} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_4\_min} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor mínimo diario de soil\_temperature\_level\_4} \\ \cline{1-4}
+\centering {\color[HTML]{202124} soil\_temperature\_level\_4\_max} &
+  \centering {\color[HTML]{202124} K} &
+  \centering float &
+  {\color[HTML]{202124} Valor máximo diario de soil\_temperature\_level\_4} \\ \cline{1-4}
+\centering {\color[HTML]{202124} total\_precipitation\_sum} &
+  \centering {\color[HTML]{202124} m de equivalente de agua} &
+  \centering float &
+  {\color[HTML]{202124} Agua líquida y congelada acumulada, incluida la lluvia y la nieve, que cae a la superficie de la Tierra.} \\ \cline{1-4}
+\centering {\color[HTML]{202124} total\_precipitation\_min} &
+  \centering {\color[HTML]{202124} m} &
+  \centering float &
+  {\color[HTML]{202124} Valor mínimo diario de total\_precipitation} \\ \cline{1-4}
+\centering {\color[HTML]{202124} total\_precipitation\_max} &
+  \centering {\color[HTML]{202124} m} &
+  \centering float &
+  {\color[HTML]{202124} Valor máximo diario de total\_precipitation} \\ \cline{1-4}
+\end{tabular}%
+}
+\caption{Columnas empleadas del dataset ERA5 Land}
+\label{tab:era5_land}
 \end{table}
-
-    Los datos se pueden descargar a través de la API del \textit{Climate Data Store} (CDSAPI) \cite{copernicus_api}. Las columnas empleadas se puede ver en la Tabla \ref{tab:climate_impact_indicators}
-
 
 \subsection{Datos satelitales}
 Los datos satelitales consisten en imágenes de la superficie terrestre y mapas digitales de elevación.
@@ -137,6 +173,7 @@ Los datos incluyen varias bandas espectrales que describen la reflectancia de la
 \end{table}
 
 
+
 \subsubsection*{Mapa de elevación digital: \textit{NASA 30m Digital Elevation Model}}
 
 NASADEM \cite{nasadem_data} es una versión actualizada del Modelo Digital de Elevación (DEM) y de los productos asociados generados a partir de los datos obtenidos por la Misión de Topografía por Radar del Transbordador Espacial (SRTM). Este modelo se emplea para obtener los datos de elevación del terreno. Los datos originales de radar SRTM fueron reprocesados mediante algoritmos mejorados e integrados con información complementaria proveniente principalmente del sistema LIDAR del Satélite de Elevación de Hielo, Nubes y Tierra (ICESat) y de los instrumentos ASTER, lo que permitió incrementar la precisión y cobertura del modelo.
@@ -171,6 +208,8 @@ NASADEM \cite{nasadem_data} es una versión actualizada del Modelo Digital de El
 % - Nivel de agregación (parcela, masa, etc.)
 % - Cómo se accedieron los datos (formato, licencia, web)
 % - Observaciones sobre calidad o formato
+
+
 
 
 

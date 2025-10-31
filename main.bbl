@@ -81,56 +81,6 @@
       \verb https://eos.com/es/blog/indices-de-vegetacion/
       \endverb
     \endentry
-    \entry{copernicus_pr}{misc}{}{}
-      \name{author}{6}{}{%
-        {{hash=0f2a1797446fbd4470a8dcccb4c432b5}{%
-           family={Berg},
-           familyi={B\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=4a1636c7151415660c02f025c52c96e6}{%
-           family={Photiadou},
-           familyi={P\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=56b86b06b6e6611a28865e135b8efeeb}{%
-           family={Simonsson},
-           familyi={S\bibinitperiod},
-           given={L.},
-           giveni={L\bibinitperiod}}}%
-        {{hash=bc380f2fb59fcb8674af8536071f8553}{%
-           family={Sjokvist},
-           familyi={S\bibinitperiod},
-           given={E.},
-           giveni={E\bibinitperiod}}}%
-        {{hash=6add96b0608f27318543ebdf853ed4bd}{%
-           family={Thuresson},
-           familyi={T\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=768c506ee6ed114f230ee08888ac568e}{%
-           family={Mook},
-           familyi={M\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{49d11d67c70c17645eba34419ee85d0d}
-      \strng{fullhash}{2cd1484ae2843d25c77588e1f49c3bb2}
-      \strng{fullhashraw}{2cd1484ae2843d25c77588e1f49c3bb2}
-      \strng{bibnamehash}{49d11d67c70c17645eba34419ee85d0d}
-      \strng{authorbibnamehash}{49d11d67c70c17645eba34419ee85d0d}
-      \strng{authornamehash}{49d11d67c70c17645eba34419ee85d0d}
-      \strng{authorfullhash}{2cd1484ae2843d25c77588e1f49c3bb2}
-      \strng{authorfullhashraw}{2cd1484ae2843d25c77588e1f49c3bb2}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{Copernicus Climate Change Service (C3S) Climate Data Store (CDS)}
-      \field{note}{DOI: 10.24381/cds.9eed87d5 (Accessed on DD-MMM-YYYY)}
-      \field{title}{Temperature and precipitation climate impact indicators from 1970 to 2100 derived from European climate projections}
-      \field{year}{2021}
-    \endentry
     \entry{chave2014}{article}{}{}
       \name{author}{24}{}{%
         {{hash=96dcd1557addc8268aae043c16151e3e}{%
@@ -463,6 +413,82 @@
       \verb https://doi.org/10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001
       \endverb
     \endentry
+    \entry{matthews2021annex}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=ffc8c2e1710f55b31e6896a0b89270c9}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={JB\bibnamedelima Robin},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=ca55a9bbefb5e88ed0b7644de083892d}{%
+           family={Möller},
+           familyi={M\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod}}}%
+        {{hash=d5d0115bbfe66301c27eb1645de5c76d}{%
+           family={Diemen},
+           familyi={D\bibinitperiod},
+           given={Renée},
+           giveni={R\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=28f7e1e6609e529377bd4fce8cc9e411}{%
+           family={Fuglestvedt},
+           familyi={F\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6353363baf7fef1e2b7e6e86d6c23588}{%
+           family={Masson-Delmotte},
+           familyi={M\bibinithyphendelim D\bibinitperiod},
+           given={Valérie},
+           giveni={V\bibinitperiod}}}%
+        {{hash=741344e8f33542d3e90834851049941d}{%
+           family={Méndez},
+           familyi={M\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=dcc75bdb1247d0d0a860d83f236bd9c3}{%
+           family={Reisinger},
+           familyi={R\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cde434e8c04952e78abfb9d4ce0fa731}{%
+           family={Barimalala},
+           familyi={B\bibinitperiod},
+           given={Rondrotiana},
+           giveni={R\bibinitperiod}}}%
+        {{hash=b5f40f79960e5d5eae259b1014b75aed}{%
+           family={Bojariu},
+           familyi={B\bibinitperiod},
+           given={Roxana},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7cb0fa0b5ea91065952031fac10b33ae}{%
+           family={Cherchi},
+           familyi={C\bibinitperiod},
+           given={Annalisa},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4adc19fdfe59bc2485e464b66f27430}
+      \strng{fullhash}{2879a901e1954eca7c32dc089bbae411}
+      \strng{fullhashraw}{2879a901e1954eca7c32dc089bbae411}
+      \strng{bibnamehash}{d4adc19fdfe59bc2485e464b66f27430}
+      \strng{authorbibnamehash}{d4adc19fdfe59bc2485e464b66f27430}
+      \strng{authornamehash}{d4adc19fdfe59bc2485e464b66f27430}
+      \strng{authorfullhash}{2879a901e1954eca7c32dc089bbae411}
+      \strng{authorfullhashraw}{2879a901e1954eca7c32dc089bbae411}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Notes}
+      \field{title}{Annex VII-Glossary 3}
+      \field{volume}{29}
+      \field{year}{2021}
+      \field{pages}{30}
+      \range{pages}{1}
+    \endentry
     \entry{miteco_abexante_2025}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=04a7f847f7bcbfe6912fd8c46024b312}{%
@@ -490,31 +516,6 @@
       \verb{url}
       \verb https://www.miteco.gob.es/content/dam/miteco/es/cambio-climatico/temas/mitigacion-politicas-y-medidas/instruccionescalculadoraabexante_tcm30-485629.pdf
       \endverb
-    \endentry
-    \entry{copuernicus_temps}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=eebcbf9c7f53d0626e56cd552676f48d}{%
-           family={Muñoz\bibnamedelima Sabater},
-           familyi={M\bibinitperiod\bibinitdelim S\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{eebcbf9c7f53d0626e56cd552676f48d}
-      \strng{fullhash}{eebcbf9c7f53d0626e56cd552676f48d}
-      \strng{fullhashraw}{eebcbf9c7f53d0626e56cd552676f48d}
-      \strng{bibnamehash}{eebcbf9c7f53d0626e56cd552676f48d}
-      \strng{authorbibnamehash}{eebcbf9c7f53d0626e56cd552676f48d}
-      \strng{authornamehash}{eebcbf9c7f53d0626e56cd552676f48d}
-      \strng{authorfullhash}{eebcbf9c7f53d0626e56cd552676f48d}
-      \strng{authorfullhashraw}{eebcbf9c7f53d0626e56cd552676f48d}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{Copernicus Climate Change Service (C3S) Climate Data Store (CDS)}
-      \field{note}{DOI: 10.24381/cds.e2161bac (Accessed on 07-07-2025)}
-      \field{title}{ERA5-Land hourly data from 1950 to present}
-      \field{year}{2019}
     \endentry
     \entry{cmnucc1992}{article}{}{}
       \name{author}{1}{}{%
@@ -562,6 +563,30 @@
       \field{howpublished}{Adoptado el 11 de diciembre de 1997 en Kioto, Japón}
       \field{title}{Protocolo de Kioto}
       \field{year}{1997}
+    \endentry
+    \entry{copernicus_era5_land_daily}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=0001e3946217f277fd5784ced328a4ab}{%
+           family={Store},
+           familyi={S\bibinitperiod},
+           given={Climate\bibnamedelima Data},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{0001e3946217f277fd5784ced328a4ab}
+      \strng{fullhash}{0001e3946217f277fd5784ced328a4ab}
+      \strng{fullhashraw}{0001e3946217f277fd5784ced328a4ab}
+      \strng{bibnamehash}{0001e3946217f277fd5784ced328a4ab}
+      \strng{authorbibnamehash}{0001e3946217f277fd5784ced328a4ab}
+      \strng{authornamehash}{0001e3946217f277fd5784ced328a4ab}
+      \strng{authorfullhash}{0001e3946217f277fd5784ced328a4ab}
+      \strng{authorfullhashraw}{0001e3946217f277fd5784ced328a4ab}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Google Earth Engine}
+      \field{note}{DOI: 10.24381/cds.e2161bac (Accessed on 07-07-2025)}
+      \field{title}{ERA5-Land Daily Aggregated - ECMWF Climate Reanalysis}
     \endentry
     \entry{miteco_guia_co2}{report}{}{}
       \name{author}{1}{}{%

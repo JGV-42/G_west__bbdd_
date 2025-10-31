@@ -107,6 +107,52 @@ Todo el preprocesado de los datos satelitales se realiza con la herramienta \tex
 
 Una vez realizado este proceso solo quedaría extraer el valor para las latitudes y longitudes que deseemos. 
 
+\subsection{Datos meteorológicos y climáticos}
+
+Todas las variables meteorológicas y climáticas se han obtenido a partir del dataset \textit{ERA5-Land Daily Aggregated} \cite{copernicus_era5_land_daily}. Para el caso de las variables meteorológicos (aquellas de la tabla \ref{tab:era5_land}) se obtivieron para cada una el mínimo y máximo, la medida y la desviación estándar para cada periodo considerado. Esto es, para, por ejemplo, la variable \textit{temperature\_2m} (cuyo apodo en la base de datos es \textit{t2m}) podremos encontrar las siguentes variables derivadas en la base de datos:
+
+\begin{itemize}
+    \item \textit{t2m\_mean}: media de la variable \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_min\_mean}: media de las mínimas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_min\_min}: mínima de las mínimas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_min\_max}: máxima de las mínimas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_min\_std}: desviación estándar de las mínimas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_max\_mean}: media de las máximas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_max\_min}: mínima de las maximas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_max\_max}: máxima de las máximas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \item \textit{t2m\_max\_std}: desviación estándar de las máximas diarias de la variables \textit{temperature\_2m} para el periodo considerado.
+    \\
+    \vdots
+\end{itemize}
+Respecto a las variables meterorológicas, la única considerada fue el Índice de Martonne. Este se calcula con la fórmula
+\begin{equation}
+    I_M = \frac{P}{T + 10},
+\end{equation}
+siendo $P$ la media anual de precipitaciones acumuladas en mm y $T$ la temperatura media anual en grados centígrados. Se recogieron estas cantidades con el dataset \textit{ERA5 Land Daily Aggregated} para cada una de las coordenadas de las parcelas de los inventarios para un periodo de $30$ años, desde $1994$ hasta $2024$. Se eligió esta cantidad de años por ser el periodo clásico definido por la Organización Meteorológica Mundial (WMO) \cite{matthews2021annex}. 
+Para cada parcela, por tanto, se obtiene un valor, y dependiendo de este se me dentro de uno de los intervalos de la Tabla \ref{tab:indice_martonne}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor[HTML]{D9EAD3} 
+Rango de valores & \multicolumn{1}{c|}{\cellcolor[HTML]{D9EAD3}Grado de aridez} \\ \hline
+$0$ - $5$        & Zona árida                                                   \\
+$5$ - $10$       & Zona semidesértica                                           \\
+$10$ - $20$      & Zona semidesértica mediterránea                              \\
+$20$ - $30$      & Zona subhúmeda                                               \\
+$30$ - $60$      & Zona húmeda                                                  \\
+$\gt 60$         & Zona perhúmeda                                               \\ \hline
+\end{tabular}
+\caption{Rango de valores y grado de aridez del índice de Martonne}
+\label{tab:indice_martonne}
+\end{table}
+
+
+
 
 \subsubsection{Inventario Forestal Nacional}
 
