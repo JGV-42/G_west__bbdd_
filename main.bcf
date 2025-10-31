@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bcf:controlfile version="3.11" bltxversion="3.20" xmlns:bcf="https://sourceforge.net/projects/biblatex">
+<bcf:controlfile version="3.11" bltxversion="3.21" xmlns:bcf="https://sourceforge.net/projects/biblatex">
   <!-- BIBER OPTIONS -->
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
@@ -514,6 +514,7 @@
     <bcf:option datatype="string">alphaothers</bcf:option>
     <bcf:option datatype="string">sortalphaothers</bcf:option>
     <bcf:option datatype="string">presort</bcf:option>
+    <bcf:option datatype="string">citepagerange</bcf:option>
     <bcf:option datatype="string">texencoding</bcf:option>
     <bcf:option datatype="string">bibencoding</bcf:option>
     <bcf:option datatype="string">sortingtemplatename</bcf:option>
@@ -2407,18 +2408,12 @@
     <bcf:citekey order="28" intorder="1">ipcc2006</bcf:citekey>
     <bcf:citekey order="29" intorder="1">ipcc2006</bcf:citekey>
     <bcf:citekey order="30" intorder="1">ruizpeinado2011</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">chave2014</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">ipcc2006</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">ipcc2006</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">ruizpeinado2011</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">ruizpeinado2011</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">ipcc2006</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">ruizpeinado2011</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">montero2009</bcf:citekey>
-    <bcf:citekey order="38" intorder="2">ruizpeinado2011</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">miteco_ifn4_manual</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">ipcc2006</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">ipcc2006</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">ruizpeinado2011</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">montero2009</bcf:citekey>
+    <bcf:citekey order="32" intorder="2">ruizpeinado2011</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">miteco_ifn4_manual</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">ipcc2006</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">ipcc2006</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
