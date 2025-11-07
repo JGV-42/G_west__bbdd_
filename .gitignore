@@ -12,7 +12,7 @@
 *.fls
 *.fdb_latexmk
 *.log
-*.synctex.gz # Archivo para sincronización entre editor y PDF
+# *.synctex.gz # Archivo para sincronización entre editor y PDF
 
 # ----------------------------------------------------------------
 # Archivos de Bibliografía (BibTeX/Biber)
