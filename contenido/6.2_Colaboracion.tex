@@ -1,0 +1,56 @@
+%===========================================================
+% Sección: Revisión de calidad de los datos originales del IFN
+%===========================================================
+
+\section{Revisión de calidad de los datos originales del IFN}
+\label{sec:revision-ifn}
+
+Durante la creación y validación de la base de datos relacional se llevó a cabo una revisión exhaustiva de los datos procedentes del \textbf{Inventario Forestal Nacional (IFN)}, en sus ediciones IFN2, IFN3 e IFN4, con el objetivo de garantizar la coherencia estructural, espacial y semántica de la información integrada.
+
+En el transcurso de este trabajo se detectaron diversas \textbf{inconsistencias en los datos fuente}, cuya documentación y comunicación a los responsables del IFN han contribuido al fortalecimiento de los mecanismos de control de calidad y a la mejora de la trazabilidad de los conjuntos de datos públicos.  
+Esta revisión se enmarca en la colaboración técnica mantenida con la entidad responsable del Inventario Forestal Nacional del \textbf{Gobierno de España (MITECO–IGN)}, orientada a apoyar la identificación de posibles incidencias y la propuesta de medidas para su subsanación en futuras ediciones del inventario.
+
+A continuación se describen las principales incidencias identificadas y comunicadas en el marco de dicha colaboración.
+
+%-----------------------------------------------------------
+\subsection{Inconsistencias territoriales en la estructura de los datos del IFN4}
+
+En el conjunto de datos del IFN4 se observó una \textbf{inconsistencia en la organización territorial de la información}. La base de datos se presenta agrupando las observaciones/parcelas por \textit{provincia}, a excepción de \textbf{País Vasco}, \textbf{Canarias}, \textbf{Cataluña} y \textbf{Extremadura} para los que se presenta un único archivo que agrupa cada \textit{comunidad autónoma}. Esta diferencia en el nivel de desagregación complica la integración automatizada y el tratamiento uniforme de los datos a escala nacional.
+
+%-----------------------------------------------------------
+\subsection{Problemas en la localización de las parcelas}
+
+Durante la revisión de la información espacial del IFN se identificaron \textbf{inconsistencias sistemáticas en la localización de las parcelas de muestreo}.  
+En distintas ediciones del inventario (IFN2, IFN3 e IFN4) se detectaron registros con valores faltantes en los campos de \texttt{Huso}, \texttt{CoorX} y/o \texttt{CoorY}, así como parcelas situadas fuera de su provincia o incluso del territorio nacional al representarlas en un sistema de referencia geográfico estándar.
+
+El análisis permitió determinar que estos desplazamientos se deben principalmente a una \textbf{asignación incorrecta del huso geográfico UTM}.  
+En provincias atravesadas por límites de huso, las parcelas mantienen un único valor de huso en toda la provincia, sin ajustarse a la división geográfica real, lo que genera errores espaciales significativos.
+
+La detección y comunicación de esta incidencia permitió poner de manifiesto un error sistemático en la asignación del huso geográfico, contribuyendo a la mejora de la calidad posicional de las parcelas en futuras actualizaciones del IFN.
+
+%-----------------------------------------------------------
+\subsection{Discrepancia en la escala de coordenadas del IFN2}
+
+En el registro geográfico de las parcelas del IFN2 (tabla DATEST) se identificó una \textbf{discrepancia en la escala de las coordenadas UTM}.  
+Las columnas \texttt{CoorX} y \texttt{CoorY} presentaban valores significativamente inferiores a los esperados para el sistema métrico empleado en los inventarios posteriores, debido a diferencias en la unidad de medida:
+
+\begin{itemize}
+  \item \texttt{CoorX} estaba expresada en kilómetros.
+  \item \texttt{CoorY} presentaba una escala cien veces menor que la esperada.
+\end{itemize}
+
+Esta información fue transmitida a los responsables del IFN para su consideración, con el fin de homogeneizar las escalas métricas y asegurar la compatibilidad espacial entre las distintas ediciones del inventario.
+
+%-----------------------------------------------------------
+\subsection{Unidades incorrectas en las variables CA y CR de \emph{Mayores\_exs SIG IFN4}}
+
+En la tabla \texttt{Mayores\_exs SIG} del IFN4 se detectó una \textbf{inconsistencia en la documentación de las unidades} de las variables \texttt{CA} y \texttt{CR}.  
+Aunque los metadatos indicaban que los valores estaban expresados en toneladas, el análisis de los datos evidenció que las magnitudes correspondían realmente a kilogramos, con un factor de escala de 1\,000.
+
+La identificación de este error fue comunicada a los gestores del IFN, acompañada de la sugerencia de revisar las unidades y aplicar validaciones automáticas de rango y coherencia numérica en los procesos de control de calidad.
+
+%-----------------------------------------------------------
+\subsection*{Conclusión}
+
+La identificación y comunicación de estas inconsistencias ha supuesto una aportación significativa al esfuerzo colectivo por mantener y mejorar la calidad de los datos del Inventario Forestal Nacional.  
+El trabajo desarrollado ha reforzado la colaboración entre la comunidad investigadora y las instituciones gestoras del IFN, favoreciendo la construcción de un sistema de información forestal más \textbf{coherente, interoperable y transparente}, en línea con los principios de ciencia abierta y mejora continua de los datos públicos ambientales.

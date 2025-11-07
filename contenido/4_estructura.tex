@@ -19,16 +19,16 @@ El núcleo contiene las entidades troncales que almacenan la información princi
 \paragraph{Núcleo}
 \begin{itemize}
   \item \textbf{parcelas}: identifica la unidad espacial (\texttt{parcela\_id}) y almacena su geometría básica (coordenadas, superficie, elevación, pendiente, etc.). Es la entidad raíz del modelo.
-  \item \textbf{parcela\_inventario}: describe el estado de cada parcela en un inventario determinado (\texttt{parcela\_id}, \texttt{inventario\_id}), incluyendo atributos edáficos y de contexto (p. ej., \texttt{nivel1\_id}, \texttt{textura\_id}).
+  \item \textbf{parcela\_inventario}: describe el estado de cada parcela en un inventario determinado (\texttt{parcela\_id}, \texttt{inventario\_id}), incluyendo atributos edáficos y de contexto (p. ej., \\ \texttt{nivel1\_id}, \texttt{textura\_id}).
   \item \textbf{parcela\_inventario\_especie}: detalla la presencia y condición de cada especie dentro de una parcela e inventario, incorporando descriptores de masa y tratamientos silvícolas.
   \item \textbf{parcela\_inventario\_especie\_cd}: describe las poblaciones arbóreas por parcela, especie y \emph{clase diamétrica} (\texttt{cd\_id}): n.º de pies (\texttt{npies}), área basimétrica (\texttt{abas}), volúmenes (\texttt{vcc}, \texttt{vsc}, \texttt{vle}), incrementos (\texttt{iavc}) y carbono (\texttt{ca}, \texttt{cr}).
   \item \textbf{parcela\_especie\_arbol}: caracteriza los pies mayores identificados por parcela y especie en el inventario cuarto. Recoge las caracteristicas particulares de cada pie como altura (\texttt{ht}), diámetros (\texttt{dn1} y \texttt{dn2}), ubicación respecto del centro de la parcela (\texttt{rumbo}, \texttt{distancia}), volumen (\texttt{vcc, vsc, vle}), incremento (\texttt{iavc}) y carbono (\texttt{ca, cr}).  
-  \item \textbf{parcela\_inventario\_estacion}: almacena agregados climático-biofísicos por estación (\texttt{estacion\_id}) en la misma granularidad parcela–inventario, incluyendo variables como precipitación (\texttt{PR}) y temperatura (\texttt{T2M, SKT, STL*}), junto a índices de vegetación (NDVI, EVI, NDII, GNDVI).
+  \item \textbf{parcela\_inventario\_estacion}: almacena agregados climático-biofísicos por estación \\ (\texttt{estacion\_id}) en la misma granularidad parcela–inventario, incluyendo variables como precipitación (\texttt{PR}) y temperatura (\texttt{T2M, SKT, STL*}), junto a índices de vegetación (NDVI, EVI, NDII, GNDVI).
   \item \textbf{especies} y \textbf{grupos}: recogen la información taxonómica y su clasificación jerárquica, estableciendo la relación entre especies individuales y grupos funcionales.
 \end{itemize}
 
 \paragraph{Catálogos}
-Cada variable categórica posee una tabla de catálogo propia (\texttt{cat\_}), donde se definen los valores posibles y sus descripciones. Por ejemplo, \texttt{cat\_textura}, \texttt{cat\_nivel1}, \texttt{cat\_tratmasa} o \texttt{cat\_origen}. Todas siguen un patrón uniforme: la clave primaria es el identificador de la variable (\texttt{<variable>\_id}), y las tablas núcleo referencian este mismo campo como clave foránea. Esto permite mantener un dominio controlado y una semántica coherente en toda la base de datos.
+Cada variable categórica posee una tabla de catálogo propia (\texttt{cat\_}), donde se definen los valores posibles y sus descripciones. Por ejemplo, \texttt{cat\_textura}, \texttt{cat\_nivel1}, \\ \texttt{cat\_tratmasa} o \texttt{cat\_origen}. Todas siguen un patrón uniforme: la clave primaria es el identificador de la variable (\texttt{<variable>\_id}), y las tablas núcleo referencian este mismo campo como clave foránea. Esto permite mantener un dominio controlado y una semántica coherente en toda la base de datos.
 
 \subsection*{Representación del esquema}
 
@@ -61,11 +61,11 @@ El volumen actual por tabla es:
 \midrule
 \texttt{parcelas} & 52{,}298 \\
 \texttt{parcela\_inventario} & 147{,}995 \\
-\texttt{parcela\_inventario\_especie} & 417{,}119 \\
+\texttt{parcela\_inventario\_especie} & 417{,}106 \\
 \texttt{parcela\_inventario\_especie\_cd} & 1{,}191{,}070 \\
 \texttt{parcela\_especie\_arbol} & 855{,}860 \\
 \texttt{parcela\_inventario\_estacion} & 470{,}056 \\
-\texttt{especies} & 195 \\
+\texttt{especies} & 190 \\
 \texttt{grupos} & 33 \\
 \bottomrule
 \end{tabular}
