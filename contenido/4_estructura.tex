@@ -51,8 +51,6 @@ Cada columna se tipifica en una de cuatro categorías:
   \item \textbf{Geográfico}: coordenadas y derivados topográficos (\texttt{latitud}, \texttt{longitud}, \texttt{coorx}/\texttt{coory}, \texttt{pendiente}, \texttt{orientacion}).
 \end{itemize}
 
-Las variables satelitales y climáticas usan convenciones de \emph{valores especiales} para datos no disponibles o enmascarados por calidad (\texttt{NA}); los rangos esperados se documentan en \texttt{meta\_variables}. Todas las claves categóricas referencian explícitamente su catálogo homólogo (\texttt{<variable>\_id} $\rightarrow$ \texttt{cat\_<variable>(<variable>\_id)}).
-
 \subsection*{Cardinalidad y completitud}
 
 El volumen actual por tabla es:
@@ -73,7 +71,6 @@ El volumen actual por tabla es:
 \end{tabular}
 \end{center}
 
-Las \textit{FK} estructurales están activas y cubren el 100\,\% de los valores no nulos (sin huérfanos). La completitud de campos numéricos puede verse afectada por enmascaramientos de calidad en series satelitales/climáticas, registrados como \texttt{NA} según \texttt{meta\_variables}. Las variables categóricas presentan dominios cerrados controlados por sus catálogos.
 
 \subsection*{Diccionario resumido de variables (núcleo)}
 \small
@@ -175,11 +172,3 @@ Las \textit{FK} estructurales están activas y cubren el 100\,\% de los valores 
 \texttt{grupos.nombregrupo} & Nombre del grupo. & -- & Texto \\
 \end{longtable}
 \normalsize
-\subsection*{Calidad de datos y valores faltantes}
-
-Las validaciones automáticas garantizan:
-\begin{enumerate}
-  \item \textbf{Integridad referencial}: todas las \textit{FK} (\texttt{parcela\_id}, \texttt{inventario\_id}, \texttt{especie\_id} y catálogos \texttt{cat\_*}) están resueltas sin registros huérfanos.
-  \item \textbf{Rangos y dominios}: se verifican contra \texttt{rango\_esperado} y \texttt{valores\_especiales} de \texttt{meta\_variables}.
-  \item \textbf{Faltantes}: en variables derivadas de teledetección o reanálisis es esperable \texttt{NA} por enmascaramiento de nubes o cobertura temporal; estos valores se excluyen de los estadísticos agregados o se imputan explícitamente según el análisis.
-\end{enumerate}
