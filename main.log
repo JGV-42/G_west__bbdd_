@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.9)  31 OCT 2025 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.9)  5 NOV 2025 11:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1141,8 +1141,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-
-No file main.aux.
+ (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -1165,7 +1164,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 29.
 LaTeX Font Info:    Trying to load font information for FML+futm on input line 29.
-(c:/texlive/2025/texmf-dist/tex/latex/fourier/fmlfutm.fd
+ (c:/texlive/2025/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
 LaTeX Font Info:    ... okay on input line 29.
@@ -1410,7 +1409,7 @@ Underfull \hbox (badness 2189) in paragraph at lines 292--292
 
 
 Underfull \hbox (badness 5954) in paragraph at lines 292--292
-[]|\T1/futs/m/n/10.95 Huso geo-grï¿½-fi-co en el
+[]|\T1/futs/m/n/10.95 Huso geo-grá-fi-co en el
  []
 
 
@@ -1532,7 +1531,7 @@ LaTeX Warning: Reference `sec:OrgMasa' on page 10 undefined on input line 385.
 
 
 Underfull \hbox (badness 1242) in paragraph at lines 385--385
-\T1/futs/m/n/10.95 rea for-ma-da se-gï¿½n su pro-ce-
+\T1/futs/m/n/10.95 rea for-ma-da se-gún su pro-ce-
  []
 
 
@@ -1602,7 +1601,7 @@ Overfull \hbox (0.9675pt too wide) in paragraph at lines 433--433
 
 
 Underfull \hbox (badness 6125) in paragraph at lines 433--433
-[]|\T1/futs/m/n/10.95 ï¿½rea ba-si-mï¿½-tri-ca por par-ce-
+[]|\T1/futs/m/n/10.95 Área ba-si-mé-tri-ca por par-ce-
  []
 
 
@@ -1627,7 +1626,7 @@ Overfull \hbox (0.9675pt too wide) in paragraph at lines 433--433
 
 
 Underfull \hbox (badness 1048) in paragraph at lines 433--433
-[]|\T1/futs/m/n/10.95 Volumen de le-ï¿½as por par-ce-
+[]|\T1/futs/m/n/10.95 Volumen de le-ñas por par-ce-
  []
 
 
@@ -1647,7 +1646,7 @@ LaTeX Warning: Reference `sec:especies' on page 12 undefined on input line 488.
 
 
 Underfull \hbox (badness 2005) in paragraph at lines 488--488
-[]|\T1/futs/m/n/10.95 Diï¿½metro nor-mal cal-cu-la-do en di-rec-ciï¿½n
+[]|\T1/futs/m/n/10.95 Diámetro nor-mal cal-cu-la-do en di-rec-ción
  []
 
 
@@ -1684,7 +1683,7 @@ LaTeX Warning: Reference `sec:CatDesDensidad' on page 14 undefined on input line
 
 
 Overfull \hbox (54.3357pt too wide) in paragraph at lines 533--534
-[]\T1/futs/m/n/10.95 Las imï¿½-ge-nes pue-den ob-te-ner-se me-dian-te pe-ti-cio-nes al ser-vi-cio WMS de la ca-pa \T1/cmtt/m/n/10.95 OI.OrthoimageCoverage\T1/futs/m/n/10.95 ,
+[]\T1/futs/m/n/10.95 Las imá-ge-nes pue-den ob-te-ner-se me-dian-te pe-ti-cio-nes al ser-vi-cio WMS de la ca-pa \T1/cmtt/m/n/10.95 OI.OrthoimageCoverage\T1/futs/m/n/10.95 ,
  []
 
 <figuras/15_1903_1997.0.jpg, id=127, 1003.75pt x 1003.75pt>
@@ -1707,8 +1706,8 @@ Package pdftex.def Info: figuras/37_688_2002.0.jpg  used on input line 550.
 [14])
 
 [15 <./figuras/15_1903_1997.0.jpg> <./figuras/25_2209_2001.0.jpg> <./figuras/37_688_2002.0.jpg>] (./contenido/3_metodologia.tex
-Overfull \hbox (139.63492pt too wide) in paragraph at lines 23--24
-\T1/cmtt/m/n/10.95 parcela_inventario\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 parcela_inventario_especie \T1/futs/m/n/10.95 y \T1/cmtt/m/n/10.95 parcela_inventario_especie_cd\T1/futs/m/n/10.95 /\T1/cmtt/m/n/10.95 parcela_inventario_arbol
+Overfull \hbox (0.31143pt too wide) in paragraph at lines 23--24
+\T1/cmtt/m/n/10.95 parcela_inventario_especie_cd\T1/futs/m/n/10.95 /\T1/cmtt/m/n/10.95 parcela_inventario_arbol \T1/futs/m/n/10.95 . Ade-más se in-clu-ye una ta-
  []
 
 
@@ -1796,7 +1795,7 @@ LaTeX Warning: Reference `tab:parcela_inventario_especie_cd' on page 22 undefine
 ./contenido/3_metodologia.tex:246: Incompatible glue units.
 \es@sppercent ...fnum \gluestretchorder \lastskip 
                                                   =\z@ \unskip \fi \textorma...
-l.246 ...ï¿½o, los datos se dividieron en un $80\,\%
+l.246 ...±o, los datos se dividieron en un $80\,\%
                                                   $ para entrenamiento y un ...
 I'm going to assume that 1mu=1pt when they're mixed.
 
@@ -1809,7 +1808,7 @@ I'm going to assume that 1mu=1pt when they're mixed.
 
 
 Overfull \hbox (13.64117pt too wide) in paragraph at lines 246--247
-[]\T1/futs/m/n/10.95 El mo-de-lo se en-tre-nï¿½ uti-li-zan-do un con-jun-to de va-ria-bles pre-dic-to-ras que in-clu-yen \T1/cmtt/m/n/10.95 Especie\T1/futs/m/n/10.95 ,
+[]\T1/futs/m/n/10.95 El mo-de-lo se en-tre-nó uti-li-zan-do un con-jun-to de va-ria-bles pre-dic-to-ras que in-clu-yen \T1/cmtt/m/n/10.95 Especie\T1/futs/m/n/10.95 ,
  []
 
 
@@ -1841,20 +1840,6 @@ Overfull \hbox (2.64774pt too wide) in paragraph at lines 270--271
 [23])
 
 [24] (./contenido/4_estructura.tex
-Overfull \hbox (25.65471pt too wide) in paragraph at lines 22--23
-\T1/futs/m/n/10.95 (\T1/cmtt/m/n/10.95 parcela_id\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 inventario_id\T1/futs/m/n/10.95 ), in-clu-yen-do atri-bu-tos edï¿½-fi-cos y de con-tex-to (p. ej., \T1/cmtt/m/n/10.95 nivel1_id\T1/futs/m/n/10.95 ,
- []
-
-
-Overfull \hbox (50.62086pt too wide) in paragraph at lines 26--27
-[]\T1/futs/b/n/10.95 parcela_inventario_estacion\T1/futs/m/n/10.95 : al-ma-ce-na agre-ga-dos climï¿½tico-biofï¿½sicos por es-ta-ciï¿½n (\T1/cmtt/m/n/10.95 estacion_id\T1/futs/m/n/10.95 )
- []
-
-
-Overfull \hbox (31.48824pt too wide) in paragraph at lines 31--32
-\T1/futs/m/n/10.95 fi-nen los va-lo-res po-si-bles y sus des-crip-cio-nes. Por ejem-plo, \T1/cmtt/m/n/10.95 cat_textura\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 cat_nivel1\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 cat_tratmasa
- []
-
 
 LaTeX Warning: Reference `fig:GWest_BBDD' on page 25 undefined on input line 35.
 
@@ -1867,7 +1852,7 @@ Package pdftex.def Info: figuras/Estrctr_BBDD_GWest.png  used on input line 39.
 
 [25]
 Overfull \hbox (40.71112pt too wide) in paragraph at lines 50--51
-[]\T1/futs/b/n/10.95 Identificador\T1/futs/m/n/10.95 : cla-ves pri-ma-rias y fo-rï¿½-neas ter-mi-na-das en \T1/cmtt/m/n/10.95 _id \T1/futs/m/n/10.95 (p.ej., \T1/cmtt/m/n/10.95 parcela_id\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 inventario_id\T1/futs/m/n/10.95 ,
+[]\T1/futs/b/n/10.95 Identificador\T1/futs/m/n/10.95 : cla-ves pri-ma-rias y fo-rá-neas ter-mi-na-das en \T1/cmtt/m/n/10.95 _id \T1/futs/m/n/10.95 (p.ej., \T1/cmtt/m/n/10.95 parcela_id\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 inventario_id\T1/futs/m/n/10.95 ,
  []
 
 
@@ -1934,7 +1919,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--134
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 135--136
-[]|\T1/futs/m/n/10 Numï¿½rico dis-
+[]|\T1/futs/m/n/10 Numérico dis-
  []
 
 
@@ -1949,7 +1934,7 @@ Underfull \hbox (badness 7133) in paragraph at lines 148--148
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 150--151
-[]|\T1/futs/m/n/10 Numï¿½rico dis-
+[]|\T1/futs/m/n/10 Numérico dis-
  []
 
 
@@ -1964,7 +1949,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--160
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 161--161
-[]|\T1/futs/m/n/10 mm/(m$[]\FMS/futm/m/n/10 ^^A$\T1/futs/m/n/10 dï¿½a),
+[]|\T1/futs/m/n/10 mm/(m$[]\FMS/futm/m/n/10 ^^A$\T1/futs/m/n/10 día),
  []
 
 
@@ -1998,24 +1983,35 @@ Overfull \hbox (65.07135pt too wide) in alignment at lines 93--173
 
 [29] (./contenido/6_aplicaciones.tex
 Overfull \hbox (0.99376pt too wide) in paragraph at lines 23--24
-[]\T1/futs/b/n/10.95 Evaluaciï¿½n de ser-vi-cios eco-sis-tï¿½-mi-cos\T1/futs/m/n/10.95 : me-dian-te los in-di-ca-do-res de car-bono (aï¿½-reo, sub-
+[]\T1/futs/b/n/10.95 Evaluación de ser-vi-cios eco-sis-té-mi-cos\T1/futs/m/n/10.95 : me-dian-te los in-di-ca-do-res de car-bono (aé-reo, sub-
  []
 
 )
 
-[30] (./contenido/7_limitaciones.tex
+[30] (./contenido/6.2_Colaboracion.tex
 
 [31])
 
-[32] (./contenido/8_conclusion.tex)
+[32] (./contenido/7_limitaciones.tex
 
-[33]
+[33])
 
-[34] (./contenido/9_anexos.tex
+[34] (./contenido/8_conclusion.tex)
 
-[35]
+[35] (./contenido/agradecimientos.tex)
+Overfull \hbox (9.40616pt too wide) in paragraph at lines 70--70
+[][]$\T1/cmtt/m/n/10.95 https : / / www . miteco . gob . es / es / biodiversidad / temas / inventarios -[] nacionales /
+ []
+
+
 
 [36]
+
+[37] (./contenido/9_anexos.tex
+
+[38]
+
+[39]
 ./contenido/9_anexos.tex:199: Undefined control sequence.
 l.199 \subsectionv
                   {Anexo: Textura del Suelo}\label{sec:textura}
@@ -2027,84 +2023,74 @@ and I'll forget about whatever was undefined.
 
 
 
-[37]
-
-./contenido/9_anexos.tex:301: LaTeX Error: Not allowed in LR mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.301 }
-       
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./contenido/9_anexos.tex:301: Missing } inserted.
-<inserted text> 
-                }
-l.301 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./contenido/9_anexos.tex:301: Extra }, or forgotten \endgroup.
-\multirow@vbox ...\if #1b\relax \else \vfill \fi }
-                                                  
-l.301 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-./contenido/9_anexos.tex:301: LaTeX Error: Not allowed in LR mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.301 }
-       
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./contenido/9_anexos.tex:301: Missing } inserted.
-<inserted text> 
-                }
-l.301 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./contenido/9_anexos.tex:301: Extra }, or forgotten \endgroup.
-\multirow@vbox ...\if #1b\relax \else \vfill \fi }
-                                                  
-l.301 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-
-[38]
-
-[39]
-
 [40]
 
-LaTeX Warning: Citation 'miteco_ifn4_manual' on page 41 undefined on input line 440.
+./contenido/9_anexos.tex:301: LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.301 }
+       
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./contenido/9_anexos.tex:301: Missing } inserted.
+<inserted text> 
+                }
+l.301 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./contenido/9_anexos.tex:301: Extra }, or forgotten \endgroup.
+\multirow@vbox ...\if #1b\relax \else \vfill \fi }
+                                                  
+l.301 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+./contenido/9_anexos.tex:301: LaTeX Error: Not allowed in LR mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.301 }
+       
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./contenido/9_anexos.tex:301: Missing } inserted.
+<inserted text> 
+                }
+l.301 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./contenido/9_anexos.tex:301: Extra }, or forgotten \endgroup.
+\multirow@vbox ...\if #1b\relax \else \vfill \fi }
+                                                  
+l.301 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
 
 
@@ -2113,6 +2099,12 @@ LaTeX Warning: Citation 'miteco_ifn4_manual' on page 41 undefined on input line 
 [42]
 
 [43]
+
+[44]
+
+[45]
+
+[46]
 Underfull \hbox (badness 10000) in paragraph at lines 659--659
 []|\T1/futs/m/n/10 Mezcla de fron-do-sas de
  []
@@ -2137,11 +2129,11 @@ Underfull \hbox (badness 7522) in paragraph at lines 817--817
 []|\T1/futs/m/n/10 Betula his-pa-ni-ca, Abe-dul
  []
 
-[44
+[47
 
-] [45] [46] [47] [48] [49] [50] [51]
+] [48] [49] [50] [51] [52] [53] [54]
 
-[52]) (./main.aux
+[55]) (./main.aux
 LaTeX Info: Redefining \sptext on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
@@ -2164,7 +2156,7 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  6A055328F87D6260F6E1DBAE4CCA7182;7725.
+(rerunfilecheck)             After:  1410B79F08E7B2A3B50EB9B2C27431E5;9581.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -2175,18 +2167,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43243 strings out of 467800
- 880322 string characters out of 5436062
- 2053087 words of memory out of 5000000
- 70959 multiletter control sequences out of 15000+600000
+ 43272 strings out of 467800
+ 881063 string characters out of 5436062
+ 2053078 words of memory out of 5000000
+ 70969 multiletter control sequences out of 15000+600000
  768916 words of font info for 194 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,20n,124p,1604b,2149s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,20n,124p,1604b,2148s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><c:/texlive/2025/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/adobe/utopia/putbi8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on main.pdf (52 pages, 8348901 bytes).
+Output written on main.pdf (55 pages, 8358341 bytes).
 PDF statistics:
- 599 PDF objects out of 1000 (max. 8388607)
- 510 compressed objects within 6 object streams
- 235 named destinations out of 1000 (max. 500000)
+ 624 PDF objects out of 1000 (max. 8388607)
+ 532 compressed objects within 6 object streams
+ 246 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
